@@ -1,23 +1,23 @@
 ---
-title: Port forwarding
-description: Information on how to set up UDP port forwarding required for Geyser.
+title: 端口转发
+description: 有关如何设置 Geyser 所需的 UDP 端口转发的信息。
 ---
 
-# Port forwarding
-This page contains information on how to set up port forwarding required for Geyser to work when self-hosting.
-There are also guides for specific configurations, such as Docker/Pterodactyl, or on specific VPS/KVM providers, such as OVH or Oracle Cloud. 
+# 端口转发
+本页面包含有关如何在自托管时设置 Geyser 工作所需的端口转发的信息。
+还有针对特定配置的指南，例如 Docker/Pterodactyl，或特定 VPS/KVM 提供商（如 OVH 或 Oracle Cloud）的指南。 
 
 :::caution
 
-If you are using a Minecraft server hosting provider (e.g. Aternos, or Nodecraft), you should refer to the hosting provider setup on the [setup](/wiki/geyser/setup) page instead.
+如果您使用的是 Minecraft 服务器托管提供商（例如 Aternos 或 Nodecraft），您应该参考设置页面上的托管提供商设置。
 
 :::
 
-## Port forwarding on Linux/Windows/macOS {#port-forwarding-on-linuxwindowsmacos}
-To allow others to play on your server, you will need to set up port forwarding on the device hosting Geyser.
-Additionally, you will need to port forward the port on your router/modem (in other words, allow and route traffic on that port to the proper machine) if you want the server to be accessible outside your own home network. 
-See [here](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/) or [here](https://www.lifewire.com/how-to-port-forward-4163829) for helpful guides.
-Do note: if you do not have a static IP address, your IP address may change over time. 
+## 在 Linux/Windows/macOS 上的端口转发 {#port-forwarding-on-linuxwindowsmacos}
+为了允许其他人在您的服务器上玩，您需要在托管 Geyser 的设备上设置端口转发。
+此外，如果您希望服务器可以在您自己的家庭网络之外访问，您还需要在路由器/调制解调器上转发端口（换句话说，允许并将该端口上的流量路由到正确的机器）。
+查看[此处](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/)或[此处](https://www.lifewire.com/how-to-port-forward-4163829)以获取有用的指南。
+请注意：如果您没有静态 IP 地址，您的 IP 地址可能会随时间变化。 
 
 :::info
 

@@ -15,10 +15,10 @@ function HomepageHeader() {
                 <img src={HeroImage} alt="Geyser Logo" className={styles.heroImageBackgroundBlur}/>
                 <div className={styles.textSection}>
                     <Heading as="h1" className="hero__title">
-                        <Translate id='pages.main.title'>Revolutionize Your Minecraft Server</Translate>
+                        <Translate id='pages.main.title'>革新你的Minecraft服务器</Translate>
                     </Heading>
                     <p className="hero__subtitle">
-                        <Translate id='pages.main.subtitle'>Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server</Translate>
+                        <Translate id='pages.main.subtitle'>让Minecraft基岩版玩家加入你的Java版服务器</Translate>
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
     return (
         <Layout
             title="Geyser"
-            description="Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server."
+            description="让Minecraft基岩版玩家加入你的Java版服务器。"
         >
             <HomepageHeader />
             <main>

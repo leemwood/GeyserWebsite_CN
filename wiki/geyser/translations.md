@@ -1,53 +1,53 @@
 ---
-title: Supported Languages & Translations
-description: Geyser supports a wide variety of languages to offer the best experience for players all over the globe. Community members can help translate Geyser into more languages.
+title: 支持的语言和翻译
+description: Geyser 支持多种语言，为全球玩家提供最佳体验。社区成员可以帮助将 Geyser 翻译成更多语言。
 ---
 
-Geyser supports a wide variety of languages to offer the best experience for players all over the globe.
-When players join your server, Geyser will automatically detect their locale and provide the appropriate language.
+Geyser 支持多种语言，为全球玩家提供最佳体验。
+当玩家加入您的服务器时，Geyser 会自动检测他们的区域设置并提供相应的语言。
 
-## What languages are supported? {#what-languages-are-supported}
-We aim to support any of the Bedrock languages - below is a list of them and all the language codes. 
+## 支持哪些语言？ {#what-languages-are-supported}
+我们的目标是支持所有基岩版语言——以下是这些语言的列表以及所有语言代码。
 
-| Name                         | Code  |
-|------------------------------|-------|
-| Bulgarian                    | bg_bg |
-| Czech                        | cs_cz |
-| Danish                       | da_dk |
-| German                       | de_de |
-| Greek                        | el_gr |
-| British English              | en_gb |
-| American English             | en_us |
-| Spanish                      | es_es |
-| Mexican Spanish              | es_mx |
-| Finnish                      | fi_fi |
-| Canadian French              | fr_ca |
-| French                       | fr_fr |
-| Hungarian                    | hu_hu |
-| Indonesian                   | id_id |
-| Italian                      | it_it |
-| Japanese                     | ja_jp |
-| Korean                       | ko_kr |
-| Dutch                        | nl_nl |
-| Norwegian Bokmål             | nb_no |
-| Polish                       | pl_pl |
-| Brazilian Portuguese         | pt_br |
-| Portuguese                   | pt_pt |
-| Russian                      | ru_ru |
-| Slovak                       | sk_sk |
-| Swedish                      | sv_se |
-| Turkish                      | tr_tr |
-| Ukrainian                    | uk_ua |
-| Chinese Simplified (China)   | zh_cn |
-| Chinese Traditional (Taiwan) | zh_tw |
+| 名称 | 代码 |
+|---|---|
+| 保加利亚语 | bg_bg |
+| 捷克语 | cs_cz |
+| 丹麦语 | da_dk |
+| 德语 | de_de |
+| 希腊语 | el_gr |
+| 英式英语 | en_gb |
+| 美式英语 | en_us |
+| 西班牙语 | es_es |
+| 墨西哥西班牙语 | es_mx |
+| 芬兰语 | fi_fi |
+| 加拿大法语 | fr_ca |
+| 法语 | fr_fr |
+| 匈牙利语 | hu_hu |
+| 印度尼西亚语 | id_id |
+| 意大利语 | it_it |
+| 日语 | ja_jp |
+| 韩语 | ko_kr |
+| 荷兰语 | nl_nl |
+| 挪威语（书面语） | nb_no |
+| 波兰语 | pl_pl |
+| 巴西葡萄牙语 | pt_br |
+| 葡萄牙语 | pt_pt |
+| 俄语 | ru_ru |
+| 斯洛伐克语 | sk_sk |
+| 瑞典语 | sv_se |
+| 土耳其语 | tr_tr |
+| 乌克兰语 | uk_ua |
+| 简体中文（中国） | zh_cn |
+| 繁体中文（台湾） | zh_tw |
 
-### Additional languages {#additional-languages}
-These languages are also supported, and are available in the Bedrock client using [the Translations for Minecraft resource pack](https://www.curseforge.com/minecraft-bedrock/addons/translations-for-minecraft).
+### 其他语言 {#additional-languages}
+还支持这些语言，并且可以使用 [Minecraft 翻译资源包](https://www.curseforge.com/minecraft-bedrock/addons/translations-for-minecraft)在基岩客户端中使用。
 
-| Name                | Code  |
-|---------------------|-------|
-| Afrikaans           | af_za |
-| Belarusian          | be_by |
+| 名称 | 代码 |
+|---|---|
+| 南非荷兰语 | af_za |
+| 白俄罗斯语 | be_by |
 | Hebrew              | he_il |
 | Hindi               | hi_in |
 

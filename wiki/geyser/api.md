@@ -1,53 +1,53 @@
 ---
 title: Geyser API
-description: The Geyser API allows you to interact with Geyser in your own plugins, mods, or extensions.
+description: Geyser API 允许您在自己的插件、模组或扩展中与 Geyser 进行交互。
 ---
 
-Geyser has an API to extend what is possible with Geyser, and to allow you to interact with Geyser in your own plugins, mods, or extensions.
+Geyser 提供了一个 API，以扩展 Geyser 的可能性，并允许您在自己的插件、模组或扩展中与 Geyser 进行交互。
 
-### Where can I use the Geyser API? {#where-can-i-use-the-geyser-api}
-You could use the Geyser API in:
-- A plugin for Paper/Spigot, Velocity, Waterfall/BungeeCord, etc.
-- A mod for Fabric or NeoForge
-- A Geyser Extension
+### 在哪里可以使用 Geyser API？ {#where-can-i-use-the-geyser-api}
+您可以在以下场景中使用 Geyser API：
+- Paper/Spigot、Velocity、Waterfall/BungeeCord 等平台的插件
+- Fabric 或 NeoForge 的模组
+- Geyser 扩展
 
-### Accessing the Geyser API {#accessing-the-geyser-api}
-See [here](/wiki/geyser/getting-started-with-the-api) for how to include the Geyser API dependency in your project.
+### 访问 Geyser API {#accessing-the-geyser-api}
+有关如何在项目中包含 Geyser API 依赖项，请参阅[此处](/zh-CN/wiki/geyser/getting-started-with-the-api)。
 
-### Documentation {#documentation}
+### 文档 {#documentation}
 
-The Geyser API offers events to subscribe to, or information on whether a player is joining through Geyser, and gives you the ability to enhance what is possible with Geyser (i.e. register custom items).
-(soon, blocks and entities too).
-It can be used easily in Geyser Extensions, see [here](/wiki/geyser/extensions) for details on those.
+Geyser API 提供了可订阅的事件，或关于玩家是否通过 Geyser 加入的信息，并使您能够增强 Geyser 的功能（例如注册自定义物品）。
+（很快还将支持方块和实体）。
+它可以在 Geyser 扩展中轻松使用，有关详细信息，请参阅[此处](/zh-CN/wiki/geyser/extensions)。
 
-**Quick overview:**   
+**快速概览：**   
 :::info
-    Javadocs can be found <a href="https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest">here</a>.
+    Javadocs 可以在<a href="https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest">此处</a>找到。
 :::
 
 #### [GeyserApi](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/GeyserApi.java): {#geyserapi}
-The GeyserApi interface serves as a central access point to various functionalities provided by the Geyser API, providing methods to e.g. interact with player connections.
-It extends the [Base API](https://github.com/GeyserMC/api/blob/master/base/src/main/java/org/geysermc/api/GeyserApiBase.java) interface, which provides basic information about individual players.
+GeyserApi 接口是访问 Geyser API 提供的各种功能的中心入口点，提供了例如与玩家连接交互的方法。
+它扩展了 [Base API](https://github.com/GeyserMC/api/blob/master/base/src/main/java/org/geysermc/api/GeyserApiBase.java) 接口，该接口提供有关单个玩家的基本信息。
 
-The class GeyserApi is the base class of the API and you need to use it to access any part of the API.  
-To access it, you simply type:
+GeyserApi 类是 API 的基类，您需要使用它来访问 API 的任何部分。
+要访问它，您只需键入：
 ```java
 GeyserApi.api();
 ```
 
-After you got the instance, you have access to all the methods.  
-Use the documentation in the API module to see (and get info about) every single method available.  
-Most [API methods have a simple explanation](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/GeyserApi.java).
-Since the Geyser API extends the Base API that is shared across Floodgate and Geyser, you can also use the [methods from the Base API](https://github.com/GeyserMC/api/blob/master/base/src/main/java/org/geysermc/api/GeyserApiBase.java).
+获取实例后，您就可以访问所有方法。
+使用 API 模块中的文档来查看（并获取有关）每个可用方法的信息。
+大多数[API 方法都有简单的解释](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/GeyserApi.java)。
+由于 Geyser API 扩展了 Floodgate 和 Geyser 共享的 Base API，因此您也可以使用[Base API 中的方法](https://github.com/GeyserMC/api/blob/master/base/src/main/java/org/geysermc/api/GeyserApiBase.java)。
 
 
-#### We'll highlight a few to get you started quickly: {#well-highlight-a-few-to-get-you-started-quickly}
+#### 我们将重点介绍一些内容，以帮助您快速入门： {#well-highlight-a-few-to-get-you-started-quickly}
 `GeyserApi#isBedrockPlayer(UUID)`  
-Used to check if the given UUID of an **online** player is a Bedrock player.
+用于检查给定 **在线** 玩家的 UUID 是否为基岩版玩家。
 
 `GeyserApi#connectionByUuid(UUID)`  
-Used to get the [Connection](https://github.com/GeyserMC/api/blob/master/base/src/main/java/org/geysermc/api/connection/Connection.java) of an **online** player.  
-This method will return null if the player is not a Bedrock player.
+用于获取 **在线** 玩家的[连接](https://github.com/GeyserMC/api/blob/master/base/src/main/java/org/geysermc/api/connection/Connection.java)。
+如果玩家不是基岩版玩家，此方法将返回 null。
 
 :::info
     You don't need to wait until the Bedrock player is online to use the getPlayer and isBedrockPlayer methods.  

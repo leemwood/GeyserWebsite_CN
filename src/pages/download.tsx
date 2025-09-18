@@ -21,8 +21,8 @@ import Translate from '@docusaurus/Translate';
 const DownloadPage: React.FC = () => (
     <>
         <HeroBanner
-            title={<Translate id='pages.download.title'>Download</Translate>}
-            subheading={<Translate id='pages.download.subheading'>Download the latest versions of our various projects.</Translate>}
+            title={<Translate id='pages.download.title'>下载</Translate>}
+            subheading={<Translate id='pages.download.subheading'>下载我们各种项目的最新版本。</Translate>}
             backgroundImage={HeroBackground}
         />
 
@@ -30,14 +30,14 @@ const DownloadPage: React.FC = () => (
             <TabItem value="geyser" label="Geyser" default>
                 <ProjectDownload
                     projectId="geyser"
-                    description={<Translate id='pages.download.description.geyser'>A bridge/proxy allowing you to connect to Minecraft: Java Edition servers with Minecraft: Bedrock Edition.</Translate>}
+                    description={<Translate id='pages.download.description.geyser'>一个桥接/代理工具，允许您使用Minecraft基岩版连接到Minecraft Java版服务器。</Translate>}
                     setup="/wiki/geyser/setup"
                     downloadsInfo={{
                         bungeecord: <PlatformIcon svg={WaterfallBungeeCordIcon} text="BungeeCord" />,
                         fabric: <PlatformIcon img={FabricIcon} text="Fabric" />,
                         neoforge: <PlatformIcon img={NeoForgeIcon} text="NeoForge" />,
                         spigot: <PlatformIcon img={PaperSpigotIcon} text="Spigot/Paper" />,
-                        standalone: <PlatformIcon img={StandaloneIcon} text="Standalone" />,
+                        standalone: <PlatformIcon img={StandaloneIcon} text="独立版" />,
                         velocity: <PlatformIcon img={VelocityIcon} text="Velocity" />,
                         viaproxy: <PlatformIcon img={ViaProxyIcon} text="ViaProxy" />,
                     }}
@@ -46,7 +46,7 @@ const DownloadPage: React.FC = () => (
             <TabItem value="floodgate" label="Floodgate">
                 <ProjectDownload
                     projectId="floodgate"
-                    description={<Translate id='pages.download.description.floodgate'>Hybrid mode plugin to allow for connections from Geyser to join online mode servers.</Translate>}
+                    description={<Translate id='pages.download.description.floodgate'>混合模式插件，允许Geyser连接加入在线模式服务器。</Translate>}
                     setup="/wiki/floodgate/setup"
                     downloadsInfo={{
                         bungee: <PlatformIcon svg={WaterfallBungeeCordIcon} text="BungeeCord" />,
@@ -67,11 +67,11 @@ const DownloadPage: React.FC = () => (
                     }}
                 />
             </TabItem>
-            <TabItem value="other-projects" label="Other Projects">
+            <TabItem value="other-projects" label="其他项目">
                 <Collapsibles>
                     <Collapsible
                         title='GeyserOptionalPack'
-                        subtitle={<Translate id='pages.download.description.geyseroptionalpack'>An optional Bedrock resource pack to extend Geyser functionality.</Translate>}
+                        subtitle={<Translate id='pages.download.description.geyseroptionalpack'>一个可选的基岩版资源包，用于扩展Geyser功能。</Translate>}
                         id='geyseroptionalpack'
                         inner={
                             <ProjectDownload
@@ -86,7 +86,7 @@ const DownloadPage: React.FC = () => (
                     />
                     <Collapsible
                         title='ThirdPartyCosmetics'
-                        subtitle={<Translate id='pages.download.description.thirdpartycosmetics'>An extension that adds support for loading ears and other third party cosmetics on java players</Translate>}
+                        subtitle={<Translate id='pages.download.description.thirdpartycosmetics'>一个扩展，用于在Java玩家上加载耳朵和其他第三方装饰</Translate>}
                         id='thirdpartycosmetics'
                         inner={
                             <ProjectDownload
@@ -101,7 +101,7 @@ const DownloadPage: React.FC = () => (
                     />
                     <Collapsible
                         title='Hurricane'
-                        subtitle={<Translate id='pages.download.description.hurricane'>A plugin with various workarounds for Geyser players that modify the server in order to achieve their goal.</Translate>}
+                        subtitle={<Translate id='pages.download.description.hurricane'>一个插件，为Geyser玩家提供各种变通方法，通过修改服务器来实现其目标。</Translate>}
                         id='hurricane'
                         inner={
                             <ProjectDownload
@@ -116,7 +116,7 @@ const DownloadPage: React.FC = () => (
                     />
                     <Collapsible
                         title='GeyserConnect'
-                        subtitle={<Translate id='pages.download.description.geyserconnect'>A Geyser extension allowing players to connect to different Java or Geyser servers.</Translate>}
+                        subtitle={<Translate id='pages.download.description.geyserconnect'>一个Geyser扩展，允许玩家连接到不同的Java或Geyser服务器。</Translate>}
                         id='geyserconnect'
                         inner={
                             <ProjectDownload
@@ -131,9 +131,9 @@ const DownloadPage: React.FC = () => (
                     />
                     <Collapsible
                         title='Rainbow'
-                        subtitle={<Translate id='pages.download.description.rainbow'>A Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's custom item API (v2). </Translate>}
+                        subtitle={<Translate id='pages.download.description.rainbow'>一个Minecraft模组，用于生成Geyser物品映射和基岩版资源包，与Geyser的自定义物品API(v2)一起使用。</Translate>}
                         id='rainbow'
-                        tags={['Beta']}
+                        tags={['测试版']}
                         inner={
                             <ProjectDownload
                                 projectId="rainbow"
@@ -147,9 +147,9 @@ const DownloadPage: React.FC = () => (
                     />
                     <Collapsible
                         title='Hydraulic'
-                        subtitle={<Translate id='pages.download.description.hydraulic'>A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers.</Translate>}
+                        subtitle={<Translate id='pages.download.description.hydraulic'>Geyser的配套模组，允许基岩版玩家加入模组化的Minecraft Java版服务器。</Translate>}
                         id='hydraulic'
-                        tags={['Beta']}
+                        tags={['测试版']}
                         inner={
                             <ProjectDownload
                                 projectId="hydraulic"
@@ -162,7 +162,7 @@ const DownloadPage: React.FC = () => (
                                 warning={ // Remove when Item API V2 is merged!
                                     <>
                                         <Translate id='pages.download.warning.hydraulic'>
-                                           A preview version of Geyser is required to run Hydraulic, you can download the Item API V2 preview below:
+                                           运行Hydraulic需要Geyser的预览版本，您可以在下方下载Item API V2预览版：
                                         </Translate>
                                         <p>
                                            <a href="https://download.geysermc.org/v2/projects/geyserpreview/versions/pr.5189/builds/latest/downloads/fabric">Fabric</a>
@@ -176,9 +176,9 @@ const DownloadPage: React.FC = () => (
                     />
                     <Collapsible
                         title='Thunder'
-                        subtitle={<Translate id='pages.download.description.thunder'>A java application to convert simple Java Edition resource packs to Bedrock Edition ones.</Translate>}
+                        subtitle={<Translate id='pages.download.description.thunder'>一个Java应用程序，用于将简单的Java版资源包转换为基岩版资源包。</Translate>}
                         id='thunder'
-                        tags={['Beta']}
+                        tags={['测试版']}
                         inner={
                             <ProjectDownload
                                 projectId="thunder"
@@ -199,8 +199,8 @@ const DownloadPage: React.FC = () => (
 export default function Download(): JSX.Element {
     return (
         <Layout
-            title={`Download`}
-            description="Download the latest versions of our various projects."
+            title={`下载`}
+            description="下载我们各种项目的最新版本。"
         >
             <main>
                 <div className="container container--fluid margin-vert--lg">
@@ -210,4 +210,3 @@ export default function Download(): JSX.Element {
         </Layout>
     )
 }
-

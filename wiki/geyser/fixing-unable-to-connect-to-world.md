@@ -1,54 +1,54 @@
 ---
-title: Fixing 'Unable to Connect to World'
-description: Common issues and solutions for the 'Unable to Connect to World' error.
+title: 修复“无法连接到世界”
+description: “无法连接到世界”错误的常见问题和解决方案。
 ---
 
-## Fixing 'Unable to Connect to World' errors {#fixing-unable-to-connect-to-world-errors}
-This is by far the most common error people get when attempting to set up Geyser. Here's some steps on how to solve it.
-Usually, this error is caused by improper configuration of Geyser, or issues with your network.
+## 修复“无法连接到世界”错误 {#fixing-unable-to-connect-to-world-errors}
+这是人们尝试设置 Geyser 时最常见的错误。以下是解决此问题的一些步骤。
+通常，此错误是由 Geyser 配置不当或网络问题引起的。
 
 :::warning
-If you are using a Minecraft server hosting provider (e.g. Aternos, or Apex Hosting), you should refer to the hosting provider setup instructions on 
-the [setup](/wiki/geyser/setup) page. Following these will most likely resolve the issue!
+如果您使用的是 Minecraft 服务器托管提供商（例如 Aternos 或 Apex Hosting），您应该参考设置页面上的托管提供商设置说明。
+按照这些说明操作很可能会解决问题！
 :::
 
-If you are not using a Minecraft server hosting provider, carry on.
+如果您没有使用 Minecraft 服务器托管提供商，请继续。
 
 :::info
-To check if your server is (theoretically) reachable on Bedrock edition, try running the following command in your server console: 
-`geyser connectiontest <ip> <port>`, and see what it suggests to try.
+要检查您的服务器是否（理论上）可以在基岩版上访问，请尝试在服务器控制台中运行以下命令：
+`geyser connectiontest <ip> <port>`，并查看它建议尝试什么。
 :::
 
-### Java Edition players can't connect! {#java-edition-players-cant-connect}
+### Java 版玩家无法连接！ {#java-edition-players-cant-connect}
 
-This **should not be** a Geyser problem. Geyser does not modify server behavior. Floodgate does modify the login structure, but only for Bedrock players. 
-Contact your hosting provider or look elsewhere for fixing this connection issue.
+这**不应该**是 Geyser 的问题。Geyser 不会修改服务器行为。Floodgate 确实会修改登录结构，但仅针对基岩玩家。
+请联系您的托管提供商或在其他地方寻找解决此连接问题的方法。
 
-### Connecting fails after updating Geyser {#connecting-fails-after-updating-geyser}
+### 更新 Geyser 后连接失败 {#connecting-fails-after-updating-geyser}
 
-If this occurred after updating a plugin version of Geyser, ensure that you shut off your server, swapped the Geyser jar, and then started up your server. 
-Incase you reset your configuration file, check out the [setup guide](/wiki/geyser/setup/) again.
+如果这是在更新 Geyser 插件版本后发生的，请确保关闭服务器，更换 Geyser jar 文件，然后重新启动服务器。
+如果您重置了配置文件，请再次查看[设置指南](/wiki/geyser/setup/)。
 
-### There are errors in my console! {#there-are-errors-in-my-console}
+### 我的控制台中有错误！ {#there-are-errors-in-my-console}
 
-Please read through the [common issues page](/wiki/geyser/common-issues/). If there is another error not documented there, join us on our [Discord](https://discord.geysermc.org).
+请通读[常见问题页面](/wiki/geyser/common-issues/)。如果那里有未记录的其他错误，请加入我们的 [Discord](https://discord.geysermc.org)。
 
-### Try restarting the server and game {#try-restarting-the-server-and-game}
+### 尝试重启服务器和游戏 {#try-restarting-the-server-and-game}
 
-Especially on mobile devices, sometimes just restarting Minecraft fixes the issue.
+尤其是在移动设备上，有时只需重启 Minecraft 即可解决问题。
 
-### Is it the server or the client? {#is-it-the-server-or-the-client}
+### 是服务器还是客户端的问题？ {#is-it-the-server-or-the-client}
 
-Run your Java server IP and Bedrock address here: https://mcsrvstat.us/. It's a great way of determining if the server is reachable in the first place. 
-Additionally, check if you can see a connection attempt in the server console. If you can't, it's likely a network issue.
+在此处运行您的 Java 服务器 IP 和基岩地址：https://mcsrvstat.us/。这是确定服务器是否可访问的好方法。
+此外，检查您是否可以在服务器控制台中看到连接尝试。如果不能，则可能是网络问题。
 
-For console players specifically: If only they can't join, while other Bedrock players can, it is likely an issue with their console connecting method.
+对于主机玩家：如果只有他们无法加入，而其他基岩玩家可以，则可能是他们的主机连接方法有问题。
 
-# General troubleshooting steps
+# 一般故障排除步骤
 
-### Ensure you're connecting on the right IP and Port {#ensure-youre-connecting-on-the-right-ip-and-port}
+### 确保您连接到正确的 IP 和端口 {#ensure-youre-connecting-on-the-right-ip-and-port}
 
-You should be connecting with the Java server IP and the Bedrock port (set in the Geyser config). If you port forwarded 19132, for example, you should specify port 19132 when connecting from Bedrock.
+您应该使用 Java 服务器 IP 和基岩端口（在 Geyser 配置中设置）进行连接。例如，如果您转发了端口 19132，则在从基岩版连接时应指定端口 19132。
 
 ### I'm using a hosting provider or VPS! {#im-using-a-hosting-provider-or-vps}
 

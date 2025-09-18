@@ -1,55 +1,55 @@
 ---
-title: Common Issues
-description: Common issues that people may encounter with Geyser and potential fixes for them.
+title: 常见问题
+description: 人们在使用 Geyser 时可能遇到的常见问题及其潜在的解决方法。
 ---
 
-# Common Issues
+# 常见问题
 
-Commonly, people may have issues with Geyser not showing up in their server list or run into similar issues. 
-This page contains a few common issues people may encounter that you might have as well as potential fixes for them. 
-If you still can't make it work, join [our Discord](https://discord.gg/geysermc) for support.
+通常，人们可能会遇到 Geyser 未显示在服务器列表中或遇到类似的问题。
+本页面包含一些人们可能遇到的常见问题以及潜在的解决方法。
+如果您仍然无法解决问题，请加入[我们的 Discord](https://discord.gg/geysermc)寻求支持。
 
 # Floodgate
-For Floodgate issues see: [Floodgate: Known Issues/Caveats](/wiki/floodgate/issues/).
+关于 Floodgate 的问题，请参阅：[Floodgate：已知问题/注意事项](/zh-CN/wiki/floodgate/issues/)。
 
-# I can't connect! (Either the server doesn't show up in the friends list or I get "Unable to connect to world")
-* If you don't use a reverse proxy such as TCPShield make sure that `enable-proxy-protocol` is set to false.
-To fix "Unable to connect to world" with no console errors, see [here](/wiki/geyser/fixing-unable-to-connect-to-world/).
+# 我无法连接！（服务器未显示在好友列表中，或者我收到“无法连接到世界”）
+* 如果您不使用 TCPShield 等反向代理，请确保 `enable-proxy-protocol` 设置为 false。
+要修复在没有控制台错误的情况下出现的“无法连接到世界”问题，请参阅[此处](/zh-CN/wiki/geyser/fixing-unable-to-connect-to-world/)。
 
-## If the server doesn't show up in the friends list {#if-the-server-doesnt-show-up-in-the-friends-list}
+## 如果服务器未显示在好友列表中 {#if-the-server-doesnt-show-up-in-the-friends-list}
 
-* *If using Windows 10, iOS, or Android*: try adding the server to the Servers list in-game.
-* *If using Xbox One*: try connecting with [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
-* *If using PS4*: [try using a LAN proxy.](/wiki/geyser/using-geyser-with-consoles#playstation-4)
-* *If using Nintendo Switch*: there is currently no way for local servers to show up in the Friends tab, but you can still connect using [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
+* *如果使用 Windows 10、iOS 或 Android*：尝试在游戏中将服务器添加到服务器列表。
+* *如果使用 Xbox One*：尝试使用 [BedrockConnect](/zh-CN/wiki/geyser/using-geyser-with-consoles/) 连接。
+* *如果使用 PS4*：[尝试使用局域网代理。](/zh-CN/wiki/geyser/using-geyser-with-consoles#playstation-4)
+* *如果使用 Nintendo Switch*：目前没有办法让本地服务器显示在“好友”选项卡中，但您仍然可以使用 [BedrockConnect](/zh-CN/wiki/geyser/using-geyser-with-consoles/) 连接。
 
-*If the Geyser instance is locally hosted:* try using `localhost` or `0.0.0.0` as the IP address.
-*If that doesn't work, or your Geyser instance is on another computer in the network*: use your **local** IPv4 address.
+*如果 Geyser 实例是本地托管的：* 尝试使用 `localhost` 或 `0.0.0.0` 作为 IP 地址。
+*如果这不起作用，或者您的 Geyser 实例在网络中的另一台计算机上：* 使用您的**本地** IPv4 地址。
 
 :::warning
 
-See [here](/wiki/geyser/fixing-unable-to-connect-to-world/) for fixing "Unable to Connect to World" with no console errors
+有关修复在没有控制台错误的情况下出现的“无法连接到世界”问题，请参阅[此处](/zh-CN/wiki/geyser/fixing-unable-to-connect-to-world/)。
 
 :::
 
 ### `java.net.BindException: Address already in use: bind` on startup. {#javanetbindexception-address-already-in-use-bind-on-startup}
-This means something (likely another instance of Geyser) is running on the port you have specified in the config. Please make sure you close all applications running on this port. If you don't recall opening anything, usually restarting your computer fixes this.
+这意味着您在配置中指定的端口上已有程序（很可能是另一个 Geyser 实例）在运行。请确保关闭所有在此端口上运行的应用程序。如果您不记得打开过任何程序，通常重启计算机可以解决此问题。
 
 ### [...]` has been compiled by a more recent version of the Java Runtime (class file version 60.0)` {#-has-been-compiled-by-a-more-recent-version-of-the-java-runtime-class-file-version-600}
 
-See this link for updating to Java 17: https://docs.papermc.io/misc/java-install.
+请参阅此链接以更新到 Java 17：https://docs.papermc.io/misc/java-install。
 
-### Hosting provider will not immediately open up UDP. {#hosting-provider-will-not-immediately-open-up-udp}
+### 主机提供商不会立即开放 UDP。 {#hosting-provider-will-not-immediately-open-up-udp}
 
-These steps only apply for the standalone version of Geyser.
-This usually has something to do on your host's end. Most commonly, it's because they do not open up ports over the UDP protocol, which is what Minecraft: Bedrock Edition uses, opposed to Minecraft: Java Edition using TCP. 
-One way to get around this (if you're using an online host) is to shut down your server, and when asking for a server jar, select Nukkit, or any other Bedrock edition server software (you won't actually be switching to Nukkit). Afterward, open up your FTP file manager and find the Nukkit jar. Then, replace this jar with the server software you're using. Upon starting up the server, it should open up ports over UDP whilst still allowing you to use the server jar you desire.
+这些步骤仅适用于独立版 Geyser。
+这通常与您的主机端有关。最常见的原因是，他们不通过 UDP 协议开放端口，而我的世界：基岩版使用 UDP 协议，与我的世界：Java 版使用 TCP 协议不同。
+一种解决方法（如果您使用的是在线主机）是关闭您的服务器，并在请求服务器 jar 时，选择 Nukkit 或任何其他基岩版服务器软件（您实际上不会切换到 Nukkit）。然后，打开您的 FTP 文件管理器并找到 Nukkit jar。然后，用您正在使用的服务器软件替换此 jar。启动服务器后，它应该会通过 UDP 开放端口，同时仍然允许您使用您想要的服务器 jar。
 
-**PLEASE NOTE:** If your server automatically redownloads jars upon startup, such as with an autoupdate system, this workaround will not work. Please contact your host if this does not work for you as there is nothing we can do.
+**请注意：** 如果您的服务器在启动时自动重新下载 jar，例如使用自动更新系统，则此解决方法将不起作用。如果此方法对您不起作用，请联系您的主机，因为我们无能为力。
 
-# Stuck on "Locating Server" with no errors
+# 卡在“正在定位服务器”且无错误 {#stuck-on-locating-server-with-no-errors}
 
-You may need to update your Java version. If so, update at [Adoptium.net](https://adoptium.net/).
+您可能需要更新您的 Java 版本。如果是这样，请在 [Adoptium.net](https://adoptium.net/) 更新。
 
 Sometimes this happens in poor-network environments. There is an `mtu` option in the Geyser config; lower this number slowly (in batches of 100), restart each time, and re-test joining.
 

@@ -1,7 +1,7 @@
 ---
-title: Setup
+title: 安装
 page_sidebar: false
-description: Guides to setup Geyser on all supported platforms
+description: 在所有支持的平台上安装Geyser的指南
 ---
 
 import Tabs from "@theme/Tabs";
@@ -27,35 +27,35 @@ import StandaloneIcon from '@site/static/img/icons/geyser.png';
 import { ProviderSelector } from "@site/src/components/Provider";
 
 <Tabs queryString="host" className="tabs-host-type">
-    <TabItem value="provider" label="Host Provider" default>
+    <TabItem value="provider" label="主机提供商" default>
         <ProviderSelector/>
         <Tabs queryString="platform">
             <TabItem value="paper-spigot" label={<PlatformIcon img={PaperSpigotIcon} text="Paper / Spigot"/>} default>
                 <PaperSpigot/>
             </TabItem>
-            <TabItem value="modded-servers" label={<PlatformIcon img={ModIcon} text="Modded Servers"/>}>
+            <TabItem value="modded-servers" label={<PlatformIcon img={ModIcon} text="模组服务器"/>}>
                 <ModdedServers/>
             </TabItem>
-            <TabItem value="proxy-servers" label={<PlatformIcon img={ProxyServersIcon} text="Proxy Servers"/>}>
+            <TabItem value="proxy-servers" label={<PlatformIcon img={ProxyServersIcon} text="代理服务器"/>}>
                 <ProxyServers/>
             </TabItem>
         </Tabs>
     </TabItem>
-    <TabItem value="self" label="Self Host">
+    <TabItem value="self" label="自托管">
         <Tabs queryString="platform">
             <TabItem value="paper-spigot" label={<PlatformIcon img={PaperSpigotIcon} text="Paper / Spigot"/>} default>
                 <PaperSpigotSelf/>
             </TabItem>
-            <TabItem value="modded-servers" label={<PlatformIcon img={ModIcon} text="Modded Servers"/>}>
+            <TabItem value="modded-servers" label={<PlatformIcon img={ModIcon} text="模组服务器"/>}>
                 <ModdedServersSelf/>
             </TabItem>
-            <TabItem value="proxy-servers" label={<PlatformIcon img={ProxyServersIcon} text="Proxy Servers"/>}>
+            <TabItem value="proxy-servers" label={<PlatformIcon img={ProxyServersIcon} text="代理服务器"/>}>
                 <ProxyServersSelf/>
             </TabItem>
             <TabItem value="viaproxy" label={<PlatformIcon img={ViaProxyIcon} text="ViaProxy"/>}>
                 <ViaProxy/>
             </TabItem>
-            <TabItem value="standalone" label={<PlatformIcon img={StandaloneIcon} text="Standalone"/>}>
+            <TabItem value="standalone" label={<PlatformIcon img={StandaloneIcon} text="独立版"/>}>
                 <Standalone/>
             </TabItem>
         </Tabs>

@@ -1,14 +1,14 @@
 {
   "title": {
-    "message": "Blog",
-    "description": "The title for the blog used in SEO"
+    "message": "博客",
+    "description": "博客页面的标题"
   },
   "description": {
-    "message": "Blog",
-    "description": "The description for the blog used in SEO"
+    "message": "阅读 GeyserMC 团队关于 Geyser、Floodgate 及相关项目的博客文章。",
+    "description": "博客页面的元描述"
   },
   "sidebar.title": {
-    "message": "Recent posts",
-    "description": "The label for the left sidebar"
+    "message": "最近文章",
+    "description": "博客侧边栏的标题"
   }
 }

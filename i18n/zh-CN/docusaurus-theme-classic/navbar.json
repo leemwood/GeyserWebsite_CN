@@ -1,50 +1,46 @@
 {
-  "title": {
-    "message": "GeyserMC",
-    "description": "The title in the navbar"
+  "title.home": {
+    "message": "首页",
+    "description": "首页的标题"
   },
-  "logo.alt": {
-    "message": "GeyserMC logo",
-    "description": "The alt text of navbar logo"
+  "title.downloads": {
+    "message": "下载",
+    "description": "下载页面的标题"
+  },
+  "title.wiki": {
+    "message": "维基",
+    "description": "维基页面的标题"
+  },
+  "title.api": {
+    "message": "API",
+    "description": "API页面的标题"
+  },
+  "title.blog": {
+    "message": "博客",
+    "description": "博客页面的标题"
+  },
+  "item.label.Home": {
+    "message": "首页",
+    "description": "导航栏首页项目的标签"
+  },
+  "item.label.Downloads": {
+    "message": "下载",
+    "description": "导航栏下载项目的标签"
   },
   "item.label.Wiki": {
-    "message": "Wiki",
-    "description": "Navbar item with label Wiki"
+    "message": "维基",
+    "description": "导航栏维基项目的标签"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "导航栏API项目的标签"
   },
   "item.label.Blog": {
-    "message": "Blog",
-    "description": "Navbar item with label Blog"
+    "message": "博客",
+    "description": "导航栏博客项目的标签"
   },
-  "item.label.Utilities": {
-    "message": "Utilities",
-    "description": "Navbar item with label Utilities"
-  },
-  "item.label.Download": {
-    "message": "Download",
-    "description": "Navbar item with label Download"
-  },
-  "item.label.Geyser": {
-    "message": "Geyser",
-    "description": "Navbar item with label Geyser"
-  },
-  "item.label.Floodgate": {
-    "message": "Floodgate",
-    "description": "Navbar item with label Floodgate"
-  },
-  "item.label.REST APIs": {
-    "message": "REST APIs",
-    "description": "Navbar item with label REST APIs"
-  },
-  "item.label.Other": {
-    "message": "Other",
-    "description": "Navbar item with label Other"
-  },
-  "item.label.Config Editor": {
-    "message": "Config Editor",
-    "description": "Navbar item with label Config Editor"
-  },
-  "item.label.Dump Viewer": {
-    "message": "Dump Viewer",
-    "description": "Navbar item with label Dump Viewer"
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "导航栏GitHub项目的标签"
   }
 }

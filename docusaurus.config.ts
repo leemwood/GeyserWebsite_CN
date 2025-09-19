@@ -8,7 +8,7 @@ const config: Config = {
     tagline: '革新你的Minecraft服务器',
     favicon: 'img/favicon.ico',
     
-    url: 'https://geysermc.org',
+    url: 'https://geysermc.cn',
     baseUrl: '/',
 
     organizationName: 'GeyserMC',
@@ -29,7 +29,7 @@ const config: Config = {
                 docs: {
                     sidebarPath: require.resolve("./sidebars.ts"),
                     editUrl:
-                        'https://github.com/GeyserMC/GeyserWebsite/tree/master/',
+                        'https://github.com/leemwood/GeyserWebsite_CN/tree/master/',
 
                     routeBasePath: '/wiki',
                     docItemComponent: "@theme/ApiItem",

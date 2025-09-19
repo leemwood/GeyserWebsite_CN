@@ -1,190 +1,190 @@
 {
   "version.label": {
-    "message": "Next",
-    "description": "The label for version current"
+    "message": "下一个",
+    "description": "当前版本的标签"
   },
   "sidebar.apiSidebar.category.api.geysermc.org": {
     "message": "api.geysermc.org",
-    "description": "The label for category api.geysermc.org in sidebar apiSidebar"
+    "description": "侧边栏 apiSidebar 中 api.geysermc.org 类别的标签"
   },
   "sidebar.apiSidebar.category.api.geysermc.org.link.generated-index.title": {
-    "message": "Global API",
-    "description": "The generated-index page title for category api.geysermc.org in sidebar apiSidebar"
+    "message": "全局 API",
+    "description": "侧边栏 apiSidebar 中 api.geysermc.org 类别的生成索引页面标题"
   },
   "sidebar.apiSidebar.category.api.geysermc.org.link.generated-index.description": {
-    "message": "Global API",
-    "description": "The generated-index page description for category api.geysermc.org in sidebar apiSidebar"
+    "message": "全局 API",
+    "description": "侧边栏 apiSidebar 中 api.geysermc.org 类别的生成索引页面描述"
   },
   "sidebar.apiSidebar.category.health": {
-    "message": "health",
-    "description": "The label for category health in sidebar apiSidebar"
+    "message": "健康检查",
+    "description": "侧边栏 apiSidebar 中 health 类别的标签"
   },
   "sidebar.apiSidebar.category.link": {
-    "message": "link",
-    "description": "The label for category link in sidebar apiSidebar"
+    "message": "链接",
+    "description": "侧边栏 apiSidebar 中 link 类别的标签"
   },
   "sidebar.apiSidebar.category.stats": {
-    "message": "stats",
-    "description": "The label for category stats in sidebar apiSidebar"
+    "message": "统计",
+    "description": "侧边栏 apiSidebar 中 stats 类别的标签"
   },
   "sidebar.apiSidebar.category.xbox": {
-    "message": "xbox",
-    "description": "The label for category xbox in sidebar apiSidebar"
+    "message": "Xbox",
+    "description": "侧边栏 apiSidebar 中 xbox 类别的标签"
   },
   "sidebar.apiSidebar.category.skin": {
-    "message": "skin",
-    "description": "The label for category skin in sidebar apiSidebar"
+    "message": "皮肤",
+    "description": "侧边栏 apiSidebar 中 skin 类别的标签"
   },
   "sidebar.apiSidebar.category.utils": {
-    "message": "utils",
-    "description": "The label for category utils in sidebar apiSidebar"
+    "message": "工具",
+    "description": "侧边栏 apiSidebar 中 utils 类别的标签"
   },
   "sidebar.apiSidebar.category.UNTAGGED": {
-    "message": "UNTAGGED",
-    "description": "The label for category UNTAGGED in sidebar apiSidebar"
+    "message": "未标记",
+    "description": "侧边栏 apiSidebar 中 UNTAGGED 类别的标签"
   },
   "sidebar.apiSidebar.category.download.geysermc.org": {
     "message": "download.geysermc.org",
-    "description": "The label for category download.geysermc.org in sidebar apiSidebar"
+    "description": "侧边栏 apiSidebar 中 download.geysermc.org 类别的标签"
   },
   "sidebar.apiSidebar.category.download.geysermc.org.link.generated-index.title": {
-    "message": "Downloads API",
-    "description": "The generated-index page title for category download.geysermc.org in sidebar apiSidebar"
+    "message": "下载 API",
+    "description": "侧边栏 apiSidebar 中 download.geysermc.org 类别的生成索引页面标题"
   },
   "sidebar.apiSidebar.category.download.geysermc.org.link.generated-index.description": {
-    "message": "Downloads API",
-    "description": "The generated-index page description for category download.geysermc.org in sidebar apiSidebar"
+    "message": "下载 API",
+    "description": "侧边栏 apiSidebar 中 download.geysermc.org 类别的生成索引页面描述"
   },
   "sidebar.apiSidebar.category.projects-controller": {
-    "message": "projects-controller",
-    "description": "The label for category projects-controller in sidebar apiSidebar"
+    "message": "项目控制器",
+    "description": "侧边栏 apiSidebar 中 projects-controller 类别的标签"
   },
   "sidebar.apiSidebar.category.project-controller": {
-    "message": "project-controller",
-    "description": "The label for category project-controller in sidebar apiSidebar"
+    "message": "项目控制器",
+    "description": "侧边栏 apiSidebar 中 project-controller 类别的标签"
   },
   "sidebar.apiSidebar.category.version-controller": {
-    "message": "version-controller",
-    "description": "The label for category version-controller in sidebar apiSidebar"
+    "message": "版本控制器",
+    "description": "侧边栏 apiSidebar 中 version-controller 类别的标签"
   },
   "sidebar.apiSidebar.category.version-builds-controller": {
-    "message": "version-builds-controller",
-    "description": "The label for category version-builds-controller in sidebar apiSidebar"
+    "message": "版本构建控制器",
+    "description": "侧边栏 apiSidebar 中 version-builds-controller 类别的标签"
   },
   "sidebar.apiSidebar.category.version-build-controller": {
-    "message": "version-build-controller",
-    "description": "The label for category version-build-controller in sidebar apiSidebar"
+    "message": "版本构建控制器",
+    "description": "侧边栏 apiSidebar 中 version-build-controller 类别的标签"
   },
   "sidebar.apiSidebar.category.download-controller": {
-    "message": "download-controller",
-    "description": "The label for category download-controller in sidebar apiSidebar"
+    "message": "下载控制器",
+    "description": "侧边栏 apiSidebar 中 download-controller 类别的标签"
   },
   "sidebar.apiSidebar.doc.Simple server online check": {
-    "message": "Simple server online check",
-    "description": "The label for the doc item Simple server online check in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-health-controller-health"
+    "message": "简单的服务器在线检查",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-health-controller-health 的文档项 Simple server online check 的标签"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.LinkController.get_bedrock_link_v1": {
     "message": "GlobalApiWeb.Api.LinkController.get_bedrock_link_v1",
-    "description": "The label for the doc item GlobalApiWeb.Api.LinkController.get_bedrock_link_v1 in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-link-controller-get-bedrock-link-v-1"
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-link-controller-get-bedrock-link-v-1 的文档项 GlobalApiWeb.Api.LinkController.get_bedrock_link_v1 的标签"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.LinkController.get_java_link_v1": {
     "message": "GlobalApiWeb.Api.LinkController.get_java_link_v1",
-    "description": "The label for the doc item GlobalApiWeb.Api.LinkController.get_java_link_v1 in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-link-controller-get-java-link-v-1"
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-link-controller-get-java-link-v-1 的文档项 GlobalApiWeb.Api.LinkController.get_java_link_v1 的标签"
   },
   "sidebar.apiSidebar.doc.Get linked Java account from Bedrock xuid": {
-    "message": "Get linked Java account from Bedrock xuid",
-    "description": "The label for the doc item Get linked Java account from Bedrock xuid in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-link-controller-get-bedrock-link-v-2"
+    "message": "从 Bedrock xuid 获取关联的 Java 账户",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-link-controller-get-bedrock-link-v-2 的文档项 Get linked Java account from Bedrock xuid 的标签"
   },
   "sidebar.apiSidebar.doc.Get linked Bedrock account from Java UUID": {
-    "message": "Get linked Bedrock account from Java UUID",
-    "description": "The label for the doc item Get linked Bedrock account from Java UUID in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-link-controller-get-java-link-v-2"
+    "message": "从 Java UUID 获取关联的 Bedrock 账户",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-link-controller-get-java-link-v-2 的文档项 Get linked Bedrock account from Java UUID 的标签"
   },
   "sidebar.apiSidebar.doc.Get all publicly available Global Api statistics": {
-    "message": "Get all publicly available Global Api statistics",
-    "description": "The label for the doc item Get all publicly available Global Api statistics in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-stats-controller-get-all-stats-2"
+    "message": "获取所有公开可用的全局 API 统计信息",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-stats-controller-get-all-stats-2 的文档项 Get all publicly available Global Api statistics 的标签"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.XboxController.get_gamertag_v1": {
     "message": "GlobalApiWeb.Api.XboxController.get_gamertag_v1",
-    "description": "The label for the doc item GlobalApiWeb.Api.XboxController.get_gamertag_v1 in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-xbox-controller-get-gamertag-v-1"
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-xbox-controller-get-gamertag-v-1 的文档项 GlobalApiWeb.Api.XboxController.get_gamertag_v1 的标签"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.XboxController.get_xuid_v1": {
     "message": "GlobalApiWeb.Api.XboxController.get_xuid_v1",
-    "description": "The label for the doc item GlobalApiWeb.Api.XboxController.get_xuid_v1 in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-xbox-controller-get-xuid-v-1"
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-xbox-controller-get-xuid-v-1 的文档项 GlobalApiWeb.Api.XboxController.get_xuid_v1 的标签"
   },
   "sidebar.apiSidebar.doc.Get the gamertag from a xuid": {
-    "message": "Get the gamertag from a xuid",
-    "description": "The label for the doc item Get the gamertag from a xuid in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-xbox-controller-get-gamertag-v-2"
+    "message": "从 xuid 获取玩家标签",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-xbox-controller-get-gamertag-v-2 的文档项 Get the gamertag from a xuid 的标签"
   },
   "sidebar.apiSidebar.doc.Get the xuid from a gamertag": {
-    "message": "Get the xuid from a gamertag",
-    "description": "The label for the doc item Get the xuid from a gamertag in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-xbox-controller-get-xuid-v-2"
+    "message": "从玩家标签获取 xuid",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-xbox-controller-get-xuid-v-2 的文档项 Get the xuid from a gamertag 的标签"
   },
   "sidebar.apiSidebar.doc.Get a list of the most recently uploaded skins": {
-    "message": "Get a list of the most recently uploaded skins",
-    "description": "The label for the doc item Get a list of the most recently uploaded skins in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-skin-controller-get-recent-uploads"
+    "message": "获取最近上传的皮肤列表",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-skin-controller-get-recent-uploads 的文档项 Get a list of the most recently uploaded skins 的标签"
   },
   "sidebar.apiSidebar.doc.Get the most recently converted skin of a Bedrock player": {
-    "message": "Get the most recently converted skin of a Bedrock player",
-    "description": "The label for the doc item Get the most recently converted skin of a Bedrock player in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-skin-controller-get-skin"
+    "message": "获取 Bedrock 玩家最近转换的皮肤",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-skin-controller-get-skin 的文档项 Get the most recently converted skin of a Bedrock player 的标签"
   },
   "sidebar.apiSidebar.doc.Utility endpoint to get either a Java UUID or a Bedrock xuid": {
-    "message": "Utility endpoint to get either a Java UUID or a Bedrock xuid",
-    "description": "The label for the doc item Utility endpoint to get either a Java UUID or a Bedrock xuid in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-utils-controller-get-bedrock-or-java-uuid"
+    "message": "用于获取 Java UUID 或 Bedrock xuid 的工具端点",
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-utils-controller-get-bedrock-or-java-uuid 的文档项 Utility endpoint to get either a Java UUID or a Bedrock xuid 的标签"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.RenderController.get_front_texture": {
     "message": "GlobalApiWeb.Api.RenderController.get_front_texture",
-    "description": "The label for the doc item GlobalApiWeb.Api.RenderController.get_front_texture in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-render-controller-get-front-texture"
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-render-controller-get-front-texture 的文档项 GlobalApiWeb.Api.RenderController.get_front_texture 的标签"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.RenderController.get_raw_texture": {
     "message": "GlobalApiWeb.Api.RenderController.get_raw_texture",
-    "description": "The label for the doc item GlobalApiWeb.Api.RenderController.get_raw_texture in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-render-controller-get-raw-texture"
+    "description": "侧边栏 apiSidebar 中链接到 api/api.geysermc.org/global-api-web-api-render-controller-get-raw-texture 的文档项 GlobalApiWeb.Api.RenderController.get_raw_texture 的标签"
   },
   "sidebar.apiSidebar.doc.Gets a list of all available projects.": {
-    "message": "Gets a list of all available projects.",
-    "description": "The label for the doc item Gets a list of all available projects. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/projects"
+    "message": "获取所有可用项目的列表。",
+    "description": "侧边栏 apiSidebar 中链接到 api/downloads.geysermc.org/projects 的文档项 Gets a list of all available projects. 的标签"
   },
   "sidebar.apiSidebar.doc.Gets information about a project.": {
-    "message": "Gets information about a project.",
-    "description": "The label for the doc item Gets information about a project. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/project"
+    "message": "获取有关项目的信息。",
+    "description": "侧边栏 apiSidebar 中链接到 api/downloads.geysermc.org/project 的文档项 Gets information about a project. 的标签"
   },
   "sidebar.apiSidebar.doc.Gets information about a version.": {
-    "message": "Gets information about a version.",
-    "description": "The label for the doc item Gets information about a version. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/version"
+    "message": "获取有关版本的信息。",
+    "description": "侧边栏 apiSidebar 中链接到 api/downloads.geysermc.org/version 的文档项 Gets information about a version. 的标签"
   },
   "sidebar.apiSidebar.doc.Gets all available builds for a project's version.": {
-    "message": "Gets all available builds for a project's version.",
-    "description": "The label for the doc item Gets all available builds for a project's version. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/builds"
+    "message": "获取项目版本的所有可用构建。",
+    "description": "侧边栏 apiSidebar 中链接到 api/downloads.geysermc.org/builds 的文档项 Gets all available builds for a project's version. 的标签"
   },
   "sidebar.apiSidebar.doc.Gets information related to a specific build.": {
-    "message": "Gets information related to a specific build.",
-    "description": "The label for the doc item Gets information related to a specific build. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/build-latest"
+    "message": "获取与特定构建相关的信息。",
+    "description": "侧边栏 apiSidebar 中链接到 api/downloads.geysermc.org/build-latest 的文档项 Gets information related to a specific build. 的标签"
   },
   "sidebar.apiSidebar.doc.Downloads the given file from a build's data.": {
-    "message": "Downloads the given file from a build's data.",
-    "description": "The label for the doc item Downloads the given file from a build's data. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/download-latest"
+    "message": "从构建数据中下载给定文件。",
+    "description": "侧边栏 apiSidebar 中链接到 api/downloads.geysermc.org/download-latest 的文档项 Downloads the given file from a build's data. 的标签"
   },
   "sidebar.geyserSidebar.category.Setup": {
-    "message": "Setup",
-    "description": "The label for category Setup in sidebar geyserSidebar"
+    "message": "设置",
+    "description": "侧边栏 geyserSidebar 中 Setup 类别的标签"
   },
   "sidebar.geyserSidebar.category.Common Issues": {
-    "message": "Common Issues",
-    "description": "The label for category Common Issues in sidebar geyserSidebar"
+    "message": "常见问题",
+    "description": "侧边栏 geyserSidebar 中 Common Issues 类别的标签"
   },
   "sidebar.geyserSidebar.category.Configuring Geyser": {
-    "message": "Configuring Geyser",
-    "description": "The label for category Configuring Geyser in sidebar geyserSidebar"
+    "message": "配置 Geyser",
+    "description": "侧边栏 geyserSidebar 中 Configuring Geyser 类别的标签"
   },
   "sidebar.geyserSidebar.category.FAQ": {
-    "message": "FAQ",
-    "description": "The label for category FAQ in sidebar geyserSidebar"
+    "message": "常见问题",
+    "description": "侧边栏 geyserSidebar 中 FAQ 类别的标签"
   },
   "sidebar.geyserSidebar.category.Geyser API": {
     "message": "Geyser API",
-    "description": "The label for category Geyser API in sidebar geyserSidebar"
+    "description": "侧边栏 geyserSidebar 中 Geyser API 类别的标签"
   },
   "sidebar.geyserSidebar.category.Custom Resource Packs": {
-    "message": "Custom Resource Packs",
-    "description": "The label for category Custom Resource Packs in sidebar geyserSidebar"
+    "message": "自定义资源包",
+    "description": "侧边栏 geyserSidebar 中 Custom Resource Packs 类别的标签"
   }
 }

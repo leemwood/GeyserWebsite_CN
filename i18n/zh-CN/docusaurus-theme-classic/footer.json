@@ -1,70 +1,158 @@
 {
   "link.title.Wiki": {
-    "message": "Wiki",
-    "description": "The title of the footer links column with title=Wiki in the footer"
-  },
-  "link.title.Downloads": {
-    "message": "Downloads",
-    "description": "The title of the footer links column with title=Downloads in the footer"
-  },
-  "link.title.Community": {
-    "message": "Community",
-    "description": "The title of the footer links column with title=Community in the footer"
-  },
-  "link.title.More": {
-    "message": "More",
-    "description": "The title of the footer links column with title=More in the footer"
+    "message": "维基",
+    "description": "页脚 Wiki 链接列的标题"
   },
   "link.item.label.Geyser": {
     "message": "Geyser",
-    "description": "The label of footer link with label=Geyser linking to download?project=geyser"
+    "description": "页脚中 Geyser 链接的标签"
   },
   "link.item.label.Floodgate": {
     "message": "Floodgate",
-    "description": "The label of footer link with label=Floodgate linking to download?project=floodgate"
+    "description": "页脚中 Floodgate 链接的标签"
   },
-  "link.item.label.REST APIs": {
-    "message": "REST APIs",
-    "description": "The label of footer link with label=REST APIs linking to wiki/api/api.geysermc.org/global-api"
+  "link.item.label.Understanding the Config": {
+    "message": "理解配置",
+    "description": "页脚中 Understanding the Config 链接的标签"
   },
-  "link.item.label.Other": {
-    "message": "Other",
-    "description": "The label of footer link with label=Other linking to download?project=other-projects"
+  "link.item.label.Common Issues": {
+    "message": "常见问题",
+    "description": "页脚中 Common Issues 链接的标签"
   },
-  "link.item.label.Crowdin": {
-    "message": "Crowdin",
-    "description": "The label of footer link with label=Crowdin linking to https://translate.geysermc.org/"
+  "link.item.label.FAQ": {
+    "message": "常见问题",
+    "description": "页脚中 FAQ 链接的标签"
+  },
+  "link.title.Downloads": {
+    "message": "下载",
+    "description": "页脚 Downloads 链接列的标题"
+  },
+  "link.item.label.Downloads": {
+    "message": "下载",
+    "description": "页脚中 Downloads 链接的标签"
+  },
+  "link.item.label.Velocity": {
+    "message": "Velocity",
+    "description": "页脚中 Velocity 链接的标签"
+  },
+  "link.item.label.BungeeCord": {
+    "message": "BungeeCord",
+    "description": "页脚中 BungeeCord 链接的标签"
+  },
+  "link.item.label.Spigot": {
+    "message": "Spigot",
+    "description": "页脚中 Spigot 链接的标签"
+  },
+  "link.item.label.Fabric": {
+    "message": "Fabric",
+    "description": "页脚中 Fabric 链接的标签"
+  },
+  "link.item.label.Standalone": {
+    "message": "独立版",
+    "description": "页脚中 Standalone 链接的标签"
+  },
+  "link.title.Community": {
+    "message": "社区",
+    "description": "页脚 Community 链接列的标题"
   },
   "link.item.label.Discord": {
     "message": "Discord",
-    "description": "The label of footer link with label=Discord linking to https://discord.gg/geysermc"
+    "description": "页脚中 Discord 链接的标签"
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/GeyserMC/Geyser"
-  },
-  "link.item.label.Reddit": {
-    "message": "Reddit",
-    "description": "The label of footer link with label=Reddit linking to https://www.reddit.com/r/GeyserMC/"
+    "description": "页脚中 GitHub 链接的标签"
   },
   "link.item.label.Twitter": {
     "message": "Twitter",
-    "description": "The label of footer link with label=Twitter linking to https://twitter.com/Geyser_MC"
+    "description": "页脚中 Twitter 链接的标签"
   },
-  "link.item.label.Blog": {
-    "message": "Blog",
-    "description": "The label of footer link with label=Blog linking to blog"
+  "link.item.label.Reddit": {
+    "message": "Reddit",
+    "description": "页脚中 Reddit 链接的标签"
   },
-  "link.item.label.Donate": {
-    "message": "Donate",
-    "description": "The label of footer link with label=Donate linking to https://opencollective.com/geysermc"
+  "link.item.label.Crowdin": {
+    "message": "Crowdin",
+    "description": "页脚中 Crowdin 链接的标签"
   },
-  "link.item.label.Global Linking": {
-    "message": "Global Linking",
-    "description": "The label of footer link with label=Global Linking linking to https://link.geysermc.org/"
+  "link.title.More": {
+    "message": "更多",
+    "description": "页脚 More 链接列的标题"
+  },
+  "link.item.label.REST APIs": {
+    "message": "REST API",
+    "description": "页脚中 REST APIs 链接的标签"
+  },
+  "link.item.label.Config Editor": {
+    "message": "配置编辑器",
+    "description": "页脚中 Config Editor 链接的标签"
+  },
+  "link.item.label.Dump Viewer": {
+    "message": "转储查看器",
+    "description": "页脚中 Dump Viewer 链接的标签"
+  },
+  "link.item.label.GeyserOptionalPack": {
+    "message": "GeyserOptionalPack",
+    "description": "页脚中 GeyserOptionalPack 链接的标签"
+  },
+  "link.item.label.GeyserOptionalPack (Bedrock)": {
+    "message": "GeyserOptionalPack (Bedrock)",
+    "description": "页脚中 GeyserOptionalPack (Bedrock) 链接的标签"
+  },
+  "link.item.label.Test Server": {
+    "message": "测试服务器",
+    "description": "页脚中 Test Server 链接的标签"
+  },
+  "link.item.label.GeyserConnect": {
+    "message": "GeyserConnect",
+    "description": "页脚中 GeyserConnect 链接的标签"
+  },
+  "link.item.label.GeyserOptionalPack (Java)": {
+    "message": "GeyserOptionalPack (Java)",
+    "description": "页脚中 GeyserOptionalPack (Java) 链接的标签"
+  },
+  "link.item.label.Geyser-Fabric": {
+    "message": "Geyser-Fabric",
+    "description": "页脚中 Geyser-Fabric 链接的标签"
+  },
+  "link.item.label.Geyser-Velocity": {
+    "message": "Geyser-Velocity",
+    "description": "页脚中 Geyser-Velocity 链接的标签"
+  },
+  "link.item.label.Geyser-BungeeCord": {
+    "message": "Geyser-BungeeCord",
+    "description": "页脚中 Geyser-BungeeCord 链接的标签"
+  },
+  "link.item.label.Geyser-Spigot": {
+    "message": "Geyser-Spigot",
+    "description": "页脚中 Geyser-Spigot 链接的标签"
+  },
+  "link.item.label.Geyser-Standalone": {
+    "message": "Geyser-Standalone",
+    "description": "页脚中 Geyser-Standalone 链接的标签"
+  },
+  "link.item.label.floodgate-fabric": {
+    "message": "floodgate-fabric",
+    "description": "页脚中 floodgate-fabric 链接的标签"
+  },
+  "link.item.label.floodgate-velocity": {
+    "message": "floodgate-velocity",
+    "description": "页脚中 floodgate-velocity 链接的标签"
+  },
+  "link.item.label.floodgate-bungee": {
+    "message": "floodgate-bungee",
+    "description": "页脚中 floodgate-bungee 链接的标签"
+  },
+  "link.item.label.floodgate-spigot": {
+    "message": "floodgate-spigot",
+    "description": "页脚中 floodgate-spigot 链接的标签"
   },
   "logo.alt": {
-    "message": "GeyserMC logo",
-    "description": "The alt text of footer logo"
+    "message": "GeyserMC 标志",
+    "description": "页脚标志的替代文本"
+  },
+  "copyright": {
+    "message": "版权所有 © 2024 GeyserMC",
+    "description": "页脚版权文本"
   }
 }

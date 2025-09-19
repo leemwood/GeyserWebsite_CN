@@ -1,818 +1,378 @@
+
 {
-  "components.provider.instructions": {
-    "message": "Provider Instructions"
-  },
-  "components.provider.select": {
-    "message": "Select a provider to see specific installation instructions"
-  },
-  "providers.templates.default": {
-    "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and connect with the Java IP and port."
-  },
-  "providers.templates.ip_and_port": {
-    "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), uncomment `bedrock address`, and change `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
-  },
-  "providers.templates.forwarding_option": {
-    "message": "Offers a working port forwarding option."
-  },
-  "providers.templates.java_ip": {
-    "message": "Make sure your remote address is 'auto', uncomment `bedrock address`, and change `0.0.0.0` to your Java server's IP."
-  },
-  "providers.provider.apex_hosting.description": {
-    "message": "Full auto installation. Go to the Customizations tab in the panel and select 'Enabled' under the 'Geyser Auto Installer' option. Then, restart and connect to your server with your Java IP and port. See [Apex's article](https://apexminecrafthosting.com/geysermc/) for more details."
-  },
-  "providers.provider.aternos.description": {
-    "message": "Install Geyser in the Aternos plugin list and connect to your server with your Java IP and port. See [Aternos's article](https://support.aternos.org/hc/en-us/articles/360051047631) for more details. Do note: Aternos automatically installs the latest version of the plugin, but does not auto update it. To update Geyser on Aternos, simply reinstall the plugin (no need to uninstall the plugin/deleting the plugin files)."
-  },
-  "providers.provider.birdflop.description": {
-    "message": "Open an allocation in the networks tab. If you have a dedicated IP, you can open a ticket to request allocation of the default Bedrock port (19132). Update the config to use the allocated port and restart the server."
-  },
-  "providers.provider.cloud_nord.description": {
-    "message": "Go to their [Crossplay Server](https://cloudnord.net/minecraftcrossplay-server-hosting/) hosting section and order your server. Instructions on how to join are provided."
-  },
-  "providers.provider.creeperhost.description": {
-    "message": "Has a toggle within the control panel to automatically enable Geyser. May not be enabled by default, so you may need to toggle it and restart the server."
-  },
-  "providers.provider.cubes_hosting.description": {
-    "message": "Install Geyser using the plugin manager. Then restart the server and Geyser will run on an additional port - you can check it in the server console. Geyser-Standalone can be set up through a support ticket."
-  },
-  "providers.provider.exaroton.description": {
-    "message": "Install Geyser in the exaroton plugin list and connect to your server with your Java IP and port. See [exaroton's article](https://support.exaroton.com/hc/en-us/articles/360019857918-Geyser) for more details."
-  },
-  "providers.provider.ggservers.description": {
-    "message": "Can be installed to any server from their auto plugin setups. No further configuration needed."
-  },
-  "providers.provider.lilypad.description": {
-    "message": "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [lilypad.gg/bedrock](https://lilypad.gg/bedrock)."
-  },
-  "providers.provider.mcprohosting.description": {
-    "message": "Click 'Enable Bedrock Support' on the server dashboard and follow the steps. For manual installation: Add 'Destination Port' `19132` with 'Protocol UDP' to the port forward mapping and connect to the given source port."
-  },
-  "providers.provider.minefort.description": {
-    "message": "On the server dashboard under 'Connect Support', make sure 'Allow Bedrock' is enabled. Then connect via `play.minefort.com` and join using `/server [servername]`, or connect via `[servername].minefort.com`."
-  },
-  "providers.provider.minehut.description": {
-    "message": "Connect via `bedrock.minehut.com` and do `/join [servername]`, or connect directly via `[servername].bedrock.minehut.gg`."
-  },
-  "providers.provider.omgserv.description": {
-    "message": "Select Geyser in the [Install Menu](https://i.imgur.com/Gewpsrq.png), it will be automatically installed. You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
-  },
-  "providers.provider.piglinhost.description": {
-    "message": "Order from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html). Alternatively, contact their support by creating a [support ticket](https://billing.piglinhost.com/submitticket.php?step=2&deptid=5) or via discord for installation and configuration help."
-  },
-  "providers.provider.playhosting.description": {
-    "message": "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [help.play.hosting/minecraft/crossplay](https://help.play.hosting/minecraft/crossplay)."
-  },
-  "providers.provider.pufferfish_host.description": {
-    "message": "Geyser is installed and configured on all servers by default."
-  },
-  "providers.provider.server.pro.description": {
-    "message": "Different instructions for different plans: On VPS, select Geyser in the [Service Type Menu](https://i.imgur.com/loSNmvu.png), Floodgate can be enabled on the dashboard configuration. For manual installation: Using a Premium or Free plan, use the same port as your Java server for the Bedrock port in the configuration file and connect that; for the Free plan, also enable the `clone-remote-port` option. If you are using a PRO or a VPS plan, you can use any port, which can be opened on the Firewall tab."
-  },
-  "providers.provider.snakecraft_hosting.description": {
-    "message": "Select 'Paper + Geyser with Floodgate' under the Jar Type at checkout to install the Geyser plugin. Players will Connect with the same IP and port as you would on Java."
-  },
-  "providers.provider.srkhost.description": {
-    "message": "You can enable Geyser on the version changer page. Geyser will run on the given port by the host."
-  },
-  "providers.provider.virtual_gladiators.description": {
-    "message": "Find the plugin in the control panel under the 'VG Recommended' category and restart your server. IP and port are the same as Java."
-  },
-  "providers.provider.wisehosting.description": {
-    "message": "Both auto and manual installation available. Find the GeyserMC presets from the `Properties` tab in the Game Panel. There, click `Install` and restart your server. See [Crossplay FAQ](https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server) for additional details."
-  },
-  "providers.provider.zaphosting.description": {
-    "message": "Find the plugin in the control panel and restart your server. IP and port are the same as Java."
-  },
-  "providers.provider.365hosts.description": {
-    "message": "Go to their [Minecraft: Crossplay](https://www.365hosts.com/gaming/crossplayminecraft) hosting section and order your server. Instructions on how to join are provided."
-  },
-  "providers.provider.aquatis.description": {
-    "message": "Need to open a support ticket to get a UDP port, then use that as the `bedrock port`."
-  },
-  "providers.provider.bisecthosting.description": {
-    "message": "You must have a plan with a dedicated IP. In Geyser's config, uncomment the `bedrock address` and set it to the public IP of your server (e.g. `address: 51.79.129.18`). Leave the port as `19132`. Under the home tab, select 'Enable UDP Network' and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
-  },
-  "providers.provider.bloomhost.description": {
-    "message": "See [Bloom's documentation](https://docs.bloom.host/plugins/geysermc/) for setup instructions."
-  },
-  "providers.provider.craft-hosting.description": {
-    "message": "Set the Bedrock port to the Java server's port and connect with that port; note that this provider appears to only provide service in Russia."
-  },
-  "providers.provider.dedicatedmc.description": {
-    "message": "Check [DedicatedMC's documentation](https://docs.dedicatedmc.io/plugins-mods/how-to-install-geysermc/) for specific instructions."
-  },
-  "providers.provider.elfidc.description": {
-    "message": "When placing an order, choose Paper/Spigot + Geyser, which will automatically install the Geyser plugin. Connect with the Java server's IP and port. Note: This provider only provides service in China."
-  },
-  "providers.provider.fadehost.description": {
-    "message": "Set the Bedrock port to the Java server's port and connect with that port. Alternatively, buy a dedicated IP address to support a different port."
-  },
-  "providers.provider.fakaheda.description": {
-    "message": "Set the `bedrock port` in the config to the Java server's port or use one of the available ports allocated to your server, and connect with that port."
-  },
-  "providers.provider.falixnodes.description": {
-    "message": "Open a port yourself on the network page in the game panel, then use that port in the bedrock section of the Geyser config."
-  },
-  "providers.provider.ferox_hosting.description": {
-    "message": "Open a port yourself in their panel and check out the [knowledgebase article](https://feroxhosting.nl/kb/) for how to install and configure Geyser."
-  },
-  "providers.provider.fusion_hosting.description": {
-    "message": "Get Geyser as a plugin. Use the same port as your Java server for the Bedrock port in your config (either by setting it yourself, or enabling “clone-remote-port”) and connect with the same IP and port as you would on Java or create a port in the Network tab on the panel & use this for Geyser."
-  },
-  "providers.provider.gportal.description": {
-    "message": "You have to adjust the port according to your query port. Scheme: Query port: xxx65. The ports from xxx66 to xxx70 are available. For example, if your query port is 12365, then Geyser can only run under the port range 12366-12370. Furthermore, you have to change the 'Bedrock' 'address' in the Geyser config to your IP address. You can find it above your query port. Don't forget to delete the # in front of `address'."
-  },
-  "providers.provider.heavynode.description": {
-    "message": "Open a port yourself in the networking section of the control panel. Port `19132` is only available with a dedicated IP (contact support), otherwise you will need to use a randomly assigned port. To resolve further connection issues for servers located in Canada and the UK, contact their support with the info found [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
-  },
-  "providers.provider.hicoria.description": {
-    "message": "Use one of the available ports allocated for your server for the Bedrock port in your config and connect with that port."
-  },
-  "providers.provider.hosterfy.description": {
-    "message": "Use the same port as your Java server for the Bedrock port in your config (either by setting it yourself, or enabling `clone-remote-port`) and connect with the same IP and port as you would on Java. You can also ask for a new port."
-  },
-  "providers.provider.hostez.description": {
-    "message": "Geyser plugin supported with self-install or installed on request with its own port."
-  },
-  "providers.provider.hosting-minecraft.description": {
-    "message": "Create a new port and use that port in the config. If you have a plan from the 'Boost' category, you will need to open a [support ticket](https://my.hosting-minecraft.pro/submitticket.php) to get a port with UDP protocol enabled."
-  },
-  "providers.provider.humbleservers.description": {
-    "message": "Set the Bedrock port to the Java server's port, or to one of the two extra ports, and connect with that port. If the subdomain doesn't work, use your regular numbered IP address."
-  },
-  "providers.provider.kekshost.description": {
-    "message": "Use the default bedrock port (19132) and the server ip to connect on Bedrock edition. No changes to the Geyser config are needed. You can also ask for a new port and use it instead."
-  },
-  "providers.provider.kinetic_hosting.description": {
-    "message": "Open a port in the Network and Ports page, and set that port as the `bedrock port` in the Geyser config. Alternatively, use the Java server's port by enabling the `clone-remote-port` option in the config. Connect with the same IP as on Java, and the port that you have chosen. For more info see the hosts [support article](https://www.kinetichosting.net/articles/minecraft-java/plugins/geyser)."
-  },
-  "providers.provider.mcpehost.ru.description": {
-    "message": "Create an additional port in the server settings and enable UDP protocol, then use that as the `bedrock port` in the config. Connect with the Java IP and that new port."
-  },
-  "providers.provider.meloncube.description": {
-    "message": "Contact the support for a UDP port to use for Geyser. Set that port as the `bedrock port`, and connect with it."
-  },
-  "providers.provider.netbela.description": {
-    "message": "Install Geyser with the dedicated Plugin installer. Use the same port as your Java server in your config. Connect with the same address and port as your Java server."
-  },
-  "providers.provider.nfoservers.description": {
-    "message": "Uncomment and set `bedrock address` to the server IP in the Geyser config file. As an alternative, you can run Geyser standalone separately on an Unmanaged VDS."
-  },
-  "providers.provider.nitrado.description": {
-    "message": "Get Geyser as a plugin. Add 4 to the Port of the Java server. See [here](https://wiki.nitrado.net/en/How_to_install_GeyserMC_and_Floodgate) for specific instructions."
-  },
-  "providers.provider.nodecraft.description": {
-    "message": "Use the default server port and `0.0.0.0` or your server IP as the host address."
-  },
-  "providers.provider.pebblehost.description": {
-    "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and connect with the Java IP and port. See [this video](https://youtu.be/v9lC80UBZF4) for a PebbleHost-specific tutorial."
-  },
-  "providers.provider.pubcs.description": {
-    "message": "Set the Bedrock port to the Java server's port and connect with that port, or upgrade to a plan that includes dedicated IP address to support a different port."
-  },
-  "providers.provider.revivenode.description": {
-    "message": "Set `bedrock port` to the Java server's port (either by setting it yourself, or enabling `clone-remote-port`). You can also create a secondary port in the `network tab` and use that. To fix random `Unable to Connect` issues, see [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
-  },
-  "providers.provider.shockbyte.description": {
-    "message": "The port will be automatically set after you download Geyser and restart the server. Connect with the same IP and port as on Java. For Geyser Standalone installation instructions, see [here](https://shockbyte.com/billing/knowledgebase/173/Introduction-to-GeyserMCorDragonProxy-How-GeyserMC-Works.html)."
-  },
-  "providers.provider.skynode.pro.description": {
-    "message": "Go to 'Server Details', add a new port, and set the `bedrock port` in your config to that port. Connect with it and the Java server's address."
-  },
-  "providers.provider.stipe.description": {
-    "message": "Set the Bedrock port to the Java server's port and connect with that port; note that this provider only provides service in Australia."
-  },
-  "providers.provider.syntexhosting.description": {
-    "message": "Set the Bedrock port to the Java server's port and connect with that port, or request a (free) additional port."
-  },
-  "providers.provider.the_minecraft hosting.description": {
-    "message": "Try using `19132` as the Bedrock port, if that does not work, use the same Java server's port for the `bedrock port` in your config and connect with that port and the Java server's IP."
-  },
-  "providers.provider.volthosting.description": {
-    "message": "Enable clone-remote-port (or manually set bedrock port to the Java port), and connect with the Java IP and port. Alternatively, request an additional port, or buy a dedicated IP address. If you continue to have issues, please [contact VoltHosting support](https://volthosting.co.uk/contact.html) for further assistance."
-  },
-  "providers.provider.vultam.description": {
-    "message": "Set the `bedrock port` to the Java server's port, or request an additional port. The additional port can be `19132` if you buy a dedicated IP."
-  },
-  "providers.provider.winternode.description": {
-    "message": "Set the Bedrock port to the Java server's port and connect with that port. Alternatively, request an additional port, or buy a dedicated IP address."
-  },
-  "providers.provider.witherhosting.description": {
-    "message": "Either use the Java server's port, or create a port in the ports manager on the panel and use that for Bedrock. Refer to the hosts [support article](https://support.witherhosting.com/en/article/how-to-install-and-use-geysermc-1xn5l6v/) for further info."
-  },
-  "providers.provider.myarena.description": {
-    "message": "Does seem to be working, but the Java version is too old in order for Geyser to run properly."
-  },
-  "providers.provider.nicraft.description": {
-    "message": "Does not provide Bedrock support, and are affected by a [firewall configuration issue](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart), which prohibits most players from joining."
-  },
-  "providers.provider.feather.description": {
-    "message": "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
-  },
-  "pages.main.title": {
-    "message": "Revolutionize Your Minecraft Server"
-  },
-  "pages.main.subtitle": {
-    "message": "Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server"
-  },
-  "components.homepage_features.1": {
-    "message": "Geyser is a program that allows Minecraft: Bedrock Edition clients to join Minecraft: Java Edition servers, allowing for true crossplay between both editions of the game. The ultimate goal of this project is to allow Minecraft: Bedrock Edition users to join Minecraft: Java Edition servers as seamlessly as possible."
-  },
-  "components.homepage_features.features.2": {
-    "message": "Geyser acts as a translator which sits between the Bedrock client and the Java server. It takes data from the Bedrock client and translates it into a format the Java server understands and vice versa. Geyser works with any modern Minecraft version and can be installed either as a plugin or ran as a standalone program."
-  },
-  "components.homepage_features.features.3": {
-    "message": "Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles. Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server! If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!"
-  },
-  "pages.download.title": {
-    "message": "Download"
-  },
-  "pages.download.subheading": {
-    "message": "Download the latest versions of our various projects."
-  },
-  "pages.download.description.geyser": {
-    "message": "A bridge/proxy allowing you to connect to Minecraft: Java Edition servers with Minecraft: Bedrock Edition."
-  },
-  "pages.download.description.floodgate": {
-    "message": "Hybrid mode plugin to allow for connections from Geyser to join online mode servers."
-  },
-  "pages.download.description.geyserconnect": {
-    "message": "A plugin to allow for Geyser players to connect to your server without needing to use a proxy."
-  },
-  "pages.download.description.geyseroptionalpack": {
-    "message": "An optional Bedrock resource pack to extend Geyser functionality."
-  },
-  "pages.download.description.thirdpartycosmetics": {
-    "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
-  },
-  "pages.configeditor.noconfigselected.heading": {
-    "message": "No config selected."
-  },
-  "pages.configeditor.noconfigselected.subheading": {
-    "message": "Upload a file or get started with the default config!"
-  },
-  "pages.configeditor.button.defaultconfig": {
-    "message": "Default"
-  },
-  "pages.configeditor.button.upload": {
-    "message": "Upload"
-  },
-  "pages.configeditor.button.export": {
-    "message": "Export"
-  },
-  "pages.configeditor.title": {
-    "message": "Config Editor"
-  },
-  "pages.configeditor.subheading": {
-    "message": "Edit your Geyser configuration."
-  },
-  "pages.dumpviewer.title": {
-    "message": "Dump Viewer"
-  },
-  "pages.dumpviewer.subheading": {
-    "message": "View the breakdown of your Geyser dump."
-  },
-  "pages.dumpviewer.enterdumpid": {
-    "message": "Enter Dump ID or URL below and click load."
-  },
-  "pages.dumpviewer.button.load": {
-    "message": "Load"
-  },
-  "pages.dumpviewer.versions": {
-    "message": "Versions"
-  },
-  "pages.dumpviewer.versions.geyserver": {
-    "message": "Geyser Version"
-  },
-  "pages.dumpviewer.versions.javaver": {
-    "message": "Java Version"
-  },
-  "pages.dumpviewer.versions.os": {
-    "message": "Operating System"
-  },
-  "pages.dumpviewer.geyserver": {
-    "message": "Geyser Version"
-  },
-  "pages.dumpviewer.geyserver.build": {
-    "message": "Build"
-  },
-  "pages.dumpviewer.geyserver.commit": {
-    "message": "Commit Hash"
-  },
-  "pages.dumpviewer.geyserver.branch": {
-    "message": "Branch"
-  },
-  "pages.dumpviewer.platform": {
-    "message": "Platform Info"
-  },
-  "pages.dumpviewer.platform.id": {
-    "message": "Platform Identifier"
-  },
-  "pages.dumpviewer.platform.name": {
-    "message": "Platform Name"
-  },
-  "pages.dumpviewer.platform.version": {
-    "message": "Platform Version"
-  },
-  "pages.dumpviewer.platform.apiver": {
-    "message": "Platform API Version"
-  },
-  "pages.dumpviewer.platform.onlinemode": {
-    "message": "Online Mode"
-  },
-  "pages.dumpviewer.sysinfo": {
-    "message": "System Info"
-  },
-  "pages.dumpviewer.cpucount": {
-    "message": "CPU Count"
-  },
-  "pages.dumpviewer.cpuname": {
-    "message": "CPU Name"
-  },
-  "pages.dumpviewer.ram": {
-    "message": "RAM"
-  },
-  "pages.dumpviewer.javaname": {
-    "message": "Java Name"
-  },
-  "pages.dumpviewer.javavendor": {
-    "message": "Java Vendor"
-  },
-  "pages.dumpviewer.dockercheck": {
-    "message": "Uses Docker?"
-  },
-  "pages.dumpviewer.plugins": {
-    "message": "Plugins"
-  },
-  "pages.dumpviewer.plugins.noplugins": {
-    "message": "No plugins to show."
-  },
-  "pages.dumpviewer.plugins.helptext": {
-    "message": "Click on a plugin to view more information."
-  },
-  "pages.dumpviewer.config": {
-    "message": "Config"
-  },
-  "pages.dumpviewer.viewsource": {
-    "message": "View dump source"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "This page crashed.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Scroll back to top",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.blog.archive.title": {
-    "message": "Archive",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "Archive",
-    "description": "The page & hero description of the blog archive page"
-  },
-  "theme.blog.paginator.navAriaLabel": {
-    "message": "Blog list page navigation",
-    "description": "The ARIA label for the blog pagination"
-  },
-  "theme.blog.paginator.newerEntries": {
-    "message": "Newer Entries",
-    "description": "The label used to navigate to the newer blog posts page (previous page)"
-  },
-  "theme.blog.paginator.olderEntries": {
-    "message": "Older Entries",
-    "description": "The label used to navigate to the older blog posts page (next page)"
-  },
-  "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Blog post page navigation",
-    "description": "The ARIA label for the blog posts pagination"
-  },
-  "theme.blog.post.paginator.newerPost": {
-    "message": "Newer Post",
-    "description": "The blog post button label to navigate to the newer/previous post"
-  },
-  "theme.blog.post.paginator.olderPost": {
-    "message": "Older Post",
-    "description": "The blog post button label to navigate to the older/next post"
-  },
-  "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
-    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
-    "description": "The title of the page for a blog tag"
-  },
-  "theme.tags.tagsPageLink": {
-    "message": "View All Tags",
-    "description": "The label of the link targeting the tag list page"
-  },
-  "theme.colorToggle.ariaLabel": {
-    "message": "Switch between dark and light mode (currently {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
-  },
-  "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "dark mode",
-    "description": "The name for the dark color mode"
-  },
-  "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "light mode",
-    "description": "The name for the light color mode"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
-    "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.paginator.navAriaLabel": {
-    "message": "Docs pages",
-    "description": "The ARIA label for the docs pagination"
-  },
-  "theme.docs.paginator.previous": {
-    "message": "Previous",
-    "description": "The label used to navigate to the previous doc"
-  },
-  "theme.docs.paginator.next": {
-    "message": "Next",
-    "description": "The label used to navigate to the next doc"
-  },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
-    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "message": "1 个文档已标记|{count} 个文档已标记",
+    "description": "“{count} 个文档已标记”的复数形式标签。使用您的语言支持的复数形式（由“|”分隔）（请参阅 https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html）"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
-    "description": "The title of the page for a docs tag"
+    "message": "{nDocsTagged} 标记为“{tagName}”",
+    "description": "文档标签页面的标题"
   },
   "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
+    "message": "版本：{versionLabel}"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
-    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+    "message": "这是 {siteTitle} {versionLabel} 版本的未发布文档。",
+    "description": "用于告诉用户他正在浏览未发布的文档版本的标签"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
-    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+    "message": "这是 {siteTitle} {versionLabel} 的文档，该版本不再积极维护。",
+    "description": "用于告诉用户他正在浏览不再维护的文档版本的标签"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
-    "description": "The label used to tell the user to check the latest version"
+    "message": "如需最新文档，请查看 {latestVersionLink}（{versionLabel}）。",
+    "description": "用于告诉用户检查最新版本的标签"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "latest version",
-    "description": "The label used for the latest version suggestion link label"
+    "message": "最新版本",
+    "description": "最新版本建议链接标签的标签"
   },
   "theme.common.editThisPage": {
-    "message": "Edit this page",
-    "description": "The link label to edit the current page"
+    "message": "编辑此页面",
+    "description": "编辑当前页面的链接标签"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Direct link to {heading}",
-    "description": "Title for link to heading"
+    "message": "直接链接到 {heading}",
+    "description": "标题链接的标题"
   },
   "theme.lastUpdated.atDate": {
-    "message": " on {date}",
-    "description": "The words used to describe on which date a page has been last updated"
+    "message": " 于 {date}",
+    "description": "用于描述页面最后更新日期的词语"
   },
   "theme.lastUpdated.byUser": {
-    "message": " by {user}",
-    "description": "The words used to describe by who the page has been last updated"
+    "message": " 由 {user}",
+    "description": "用于描述页面最后更新者的词语"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Last updated{atDate}{byUser}",
-    "description": "The sentence used to display when a page has been last updated, and by who"
+    "message": "最后更新{atDate}{byUser}",
+    "description": "显示页面最后更新时间和更新者的句子"
   },
   "theme.NotFound.title": {
-    "message": "Page Not Found",
-    "description": "The title of the 404 page"
+    "message": "页面未找到",
+    "description": "404 页面的标题"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
-    "description": "The label for the navbar versions dropdown on mobile view"
+    "message": "版本",
+    "description": "移动视图中导航栏版本下拉菜单的标签"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Tags:",
-    "description": "The label alongside a tag list"
+    "message": "标签：",
+    "description": "标签列表旁边的标签"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Close",
-    "description": "The ARIA label for close button of announcement bar"
+    "message": "关闭",
+    "description": "公告栏关闭按钮的 ARIA 标签"
   },
   "theme.admonition.caution": {
-    "message": "caution",
-    "description": "The default label used for the Caution admonition (:::caution)"
+    "message": "注意",
+    "description": "警告提示（:::caution）使用的默认标签"
   },
   "theme.admonition.danger": {
-    "message": "danger",
-    "description": "The default label used for the Danger admonition (:::danger)"
+    "message": "危险",
+    "description": "危险提示（:::danger）使用的默认标签"
   },
   "theme.admonition.info": {
-    "message": "info",
-    "description": "The default label used for the Info admonition (:::info)"
+    "message": "信息",
+    "description": "信息提示（:::info）使用的默认标签"
   },
   "theme.admonition.note": {
-    "message": "note",
-    "description": "The default label used for the Note admonition (:::note)"
+    "message": "注释",
+    "description": "注释提示（:::note）使用的默认标签"
   },
   "theme.admonition.tip": {
-    "message": "tip",
-    "description": "The default label used for the Tip admonition (:::tip)"
+    "message": "提示",
+    "description": "提示提示（:::tip）使用的默认标签"
   },
   "theme.admonition.warning": {
-    "message": "warning",
-    "description": "The default label used for the Warning admonition (:::warning)"
+    "message": "警告",
+    "description": "警告提示（:::warning）使用的默认标签"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
-    "description": "The ARIA label for recent posts in the blog sidebar"
+    "message": "博客最近文章导航",
+    "description": "博客侧边栏最近文章的 ARIA 标签"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copied",
-    "description": "The copied button label on code blocks"
+    "message": "已复制",
+    "description": "代码块上复制按钮的标签"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
-    "description": "The ARIA label for copy code blocks button"
+    "message": "将代码复制到剪贴板",
+    "description": "复制代码块按钮的 ARIA 标签"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copy",
-    "description": "The copy button label on code blocks"
+    "message": "复制",
+    "description": "代码块上复制按钮的标签"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
+    "message": "切换自动换行",
+    "description": "代码块行自动换行切换按钮的标题属性"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
+    "message": "展开侧边栏类别 '{label}'",
+    "description": "展开侧边栏类别的 ARIA 标签"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
+    "message": "折叠侧边栏类别 '{label}'",
+    "description": "折叠侧边栏类别的 ARIA 标签"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
+    "message": "主要",
+    "description": "主导航的 ARIA 标签"
   },
   "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
-    "description": "The first paragraph of the 404 page"
+    "message": "我们找不到您要找的内容。",
+    "description": "404 页面的第一段"
   },
   "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
-    "description": "The 2nd paragraph of the 404 page"
+    "message": "请联系将您链接到原始 URL 的网站所有者，并告知他们他们的链接已损坏。",
+    "description": "404 页面的第二段"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
-    "description": "The label for the mobile language switcher dropdown"
+    "message": "语言",
+    "description": "移动语言切换器下拉菜单的标签"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
-    "description": "The label used by the button on the collapsible TOC component"
+    "message": "在此页面上",
+    "description": "可折叠目录组件上按钮使用的标签"
   },
   "theme.blog.post.readMore": {
-    "message": "Read More",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
+    "message": "阅读更多",
+    "description": "博客文章摘要中用于链接到完整博客文章的标签"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
+    "message": "阅读更多关于 {title} 的内容",
+    "description": "从摘要链接到完整博客文章的 ARIA 标签"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "message": "1 分钟阅读|{readingTime} 分钟阅读",
+    "description": "“{readingTime} 分钟阅读”的复数形式标签。使用您的语言支持的复数形式（由“|”分隔）（请参阅 https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html）"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
-    "description": "The ARIA label for the home page in the breadcrumbs"
+    "message": "主页",
+    "description": "面包屑中主页的 ARIA 标签"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
+    "message": "折叠侧边栏",
+    "description": "文档侧边栏折叠按钮的标题属性"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
+    "message": "折叠侧边栏",
+    "description": "文档侧边栏折叠按钮的标题属性"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
-    "description": "The ARIA label for the sidebar navigation"
+    "message": "文档侧边栏",
+    "description": "侧边栏导航的 ARIA 标签"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
-    "description": "The ARIA label for close button of mobile sidebar"
+    "message": "关闭导航栏",
+    "description": "移动侧边栏关闭按钮的 ARIA 标签"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+    "message": "展开侧边栏",
+    "description": "文档侧边栏展开按钮的 ARIA 标签和标题属性"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+    "message": "展开侧边栏",
+    "description": "文档侧边栏展开按钮的 ARIA 标签和标题属性"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+    "message": "← 返回主菜单",
+    "description": "移动导航栏侧边栏二级菜单中返回主菜单的返回按钮标签（特别用于显示文档侧边栏）"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
+    "message": "切换导航栏",
+    "description": "移动导航汉堡菜单按钮的 ARIA 标签"
   },
   "theme.SearchBar.seeAll": {
-    "message": "See all {count} results"
+    "message": "查看全部 {count} 个结果"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "One document found|{count} documents found",
-    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "message": "找到 1 个文档|找到 {count} 个文档",
+    "description": "“找到 {count} 个文档”的复数形式标签。使用您的语言支持的复数形式（由“|”分隔）（请参阅 https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html）"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": "Search results for \"{query}\"",
-    "description": "The search page title for non-empty query"
+    "message": "搜索结果为\"{query}\"",
+    "description": "非空查询的搜索页面标题"
   },
   "theme.SearchPage.emptyResultsTitle": {
-    "message": "Search the documentation",
-    "description": "The search page title for empty query"
+    "message": "搜索文档",
+    "description": "空查询的搜索页面标题"
   },
   "theme.SearchPage.inputPlaceholder": {
-    "message": "Type your search here",
-    "description": "The placeholder for search page input"
+    "message": "在此输入您的搜索",
+    "description": "搜索页面输入的占位符"
   },
   "theme.SearchPage.inputLabel": {
-    "message": "Search",
-    "description": "The ARIA label for search page input"
+    "message": "搜索",
+    "description": "搜索页面输入的 ARIA 标签"
   },
   "theme.SearchPage.algoliaLabel": {
-    "message": "Search by Algolia",
-    "description": "The ARIA label for Algolia mention"
+    "message": "由 Algolia 搜索",
+    "description": "Algolia 提及的 ARIA 标签"
   },
   "theme.SearchPage.noResultsText": {
-    "message": "No results were found",
-    "description": "The paragraph for empty search result"
+    "message": "未找到结果",
+    "description": "空搜索结果的段落"
   },
   "theme.SearchPage.fetchingNewResults": {
-    "message": "Fetching new results...",
-    "description": "The paragraph for fetching new search results"
+    "message": "正在获取新结果...",
+    "description": "正在获取新搜索结果的段落"
   },
   "theme.SearchBar.label": {
-    "message": "Search",
-    "description": "The ARIA label and placeholder for search button"
+    "message": "搜索",
+    "description": "搜索按钮的 ARIA 标签和占位符"
   },
   "theme.SearchModal.searchBox.resetButtonTitle": {
-    "message": "Clear the query",
-    "description": "The label and ARIA label for search box reset button"
+    "message": "清除查询",
+    "description": "搜索框重置按钮的标签和 ARIA 标签"
   },
   "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "Cancel",
-    "description": "The label and ARIA label for search box cancel button"
+    "message": "取消",
+    "description": "搜索框取消按钮的标签和 ARIA 标签"
   },
   "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "Recent",
-    "description": "The title for recent searches"
+    "message": "最近",
+    "description": "最近搜索的标题"
   },
   "theme.SearchModal.startScreen.noRecentSearchesText": {
-    "message": "No recent searches",
-    "description": "The text when no recent searches"
+    "message": "无最近搜索",
+    "description": "无最近搜索时的文本"
   },
   "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
-    "message": "Save this search",
-    "description": "The label for save recent search button"
+    "message": "保存此搜索",
+    "description": "保存最近搜索按钮的标签"
   },
   "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
-    "message": "Remove this search from history",
-    "description": "The label for remove recent search button"
+    "message": "从历史记录中移除此搜索",
+    "description": "从历史记录中移除此搜索按钮的标签"
   },
   "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "Favorite",
-    "description": "The title for favorite searches"
+    "message": "收藏",
+    "description": "收藏搜索的标题"
   },
   "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
-    "message": "Remove this search from favorites",
-    "description": "The label for remove favorite search button"
+    "message": "从收藏夹中移除此搜索",
+    "description": "从收藏夹中移除此搜索按钮的标签"
   },
   "theme.SearchModal.errorScreen.titleText": {
-    "message": "Unable to fetch results",
-    "description": "The title for error screen of search modal"
+    "message": "无法获取结果",
+    "description": "搜索模态框错误屏幕的标题"
   },
   "theme.SearchModal.errorScreen.helpText": {
-    "message": "You might want to check your network connection.",
-    "description": "The help text for error screen of search modal"
+    "message": "您可能需要检查您的网络连接。",
+    "description": "搜索模态框错误屏幕的帮助文本"
   },
   "theme.SearchModal.footer.selectText": {
-    "message": "to select",
-    "description": "The explanatory text of the action for the enter key"
+    "message": "选择",
+    "description": "回车键操作的说明文本"
   },
   "theme.SearchModal.footer.selectKeyAriaLabel": {
-    "message": "Enter key",
-    "description": "The ARIA label for the Enter key button that makes the selection"
+    "message": "回车键",
+    "description": "进行选择操作的回车键按钮的 ARIA 标签"
   },
   "theme.SearchModal.footer.navigateText": {
-    "message": "to navigate",
-    "description": "The explanatory text of the action for the Arrow up and Arrow down key"
+    "message": "导航",
+    "description": "向上和向下箭头键操作的说明文本"
   },
   "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
-    "message": "Arrow up",
-    "description": "The ARIA label for the Arrow up key button that makes the navigation"
+    "message": "向上箭头",
+    "description": "进行导航操作的向上箭头键按钮的 ARIA 标签"
   },
   "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
-    "message": "Arrow down",
-    "description": "The ARIA label for the Arrow down key button that makes the navigation"
+    "message": "向下箭头",
+    "description": "进行导航操作的向下箭头键按钮的 ARIA 标签"
   },
   "theme.SearchModal.footer.closeText": {
-    "message": "to close",
-    "description": "The explanatory text of the action for Escape key"
+    "message": "关闭",
+    "description": "Esc 键操作的说明文本"
   },
   "theme.SearchModal.footer.closeKeyAriaLabel": {
-    "message": "Escape key",
-    "description": "The ARIA label for the Escape key button that close the modal"
+    "message": "Esc 键",
+    "description": "关闭模态框的 Esc 键按钮的 ARIA 标签"
   },
   "theme.SearchModal.footer.searchByText": {
-    "message": "Search by",
-    "description": "The text explain that the search is making by Algolia"
+    "message": "搜索由",
+    "description": "说明搜索由 Algolia 执行的文本"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "No results for",
-    "description": "The text explains that there are no results for the following search"
+    "message": "无结果",
+    "description": "说明以下搜索无结果的文本"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "Try searching for",
-    "description": "The text for the suggested query when no results are found for the following search"
+    "message": "尝试搜索",
+    "description": "未找到以下搜索结果时建议查询的文本"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "Believe this query should return results?",
-    "description": "The text for the question where the user thinks there are missing results"
+    "message": "认为此查询应返回结果？",
+    "description": "用户认为有缺失结果时的问题文本"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "Let us know.",
-    "description": "The text for the link to report missing results"
+    "message": "告诉我们。",
+    "description": "报告缺失结果的链接文本"
   },
   "theme.SearchModal.placeholder": {
-    "message": "Search docs",
-    "description": "The placeholder of the input of the DocSearch pop-up modal"
+    "message": "搜索文档",
+    "description": "DocSearch 弹出模态框输入的占位符"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+    "message": "重试",
+    "description": "React 错误边界捕获错误时重试渲染按钮的标签"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+    "message": "跳转到主要内容",
+    "description": "用于辅助功能的跳转到内容标签，允许使用键盘 Tab/Enter 导航快速导航到主要内容"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
-    "description": "The title of the tag list page"
+    "message": "标签",
+    "description": "标签列表页面的标题"
   },
   "theme.unlistedContent.title": {
-    "message": "Unlisted page",
-    "description": "The unlisted content banner title"
+    "message": "未列出的页面",
+    "description": "未列出内容横幅标题"
   },
   "theme.unlistedContent.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
-    "description": "The unlisted content banner message"
+    "message": "此页面未列出。搜索引擎不会索引它，只有拥有直接链接的用户才能访问它。",
+    "description": "未列出内容横幅消息"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "未列出的页面",
+    "description": "未列出内容横幅标题"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "此页面未列出。搜索引擎不会索引它，只有拥有直接链接的用户才能访问它。",
+    "description": "未列出内容横幅消息"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "草稿页面",
+    "description": "草稿内容横幅标题"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "此页面是草稿。它仅在开发中可见，并从生产构建中排除。",
+    "description": "草稿内容横幅消息"
   },
   "providers.provider.not_listed.description": {
-    "message": "If your hosting provider is not listed, try enabling the `clone-remote-port` option in the config. Then, restart the server, and try connecting with the same IP and port as on Java Edition. <br> If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
+    "message": "如果您的托管提供商未列出，请尝试在配置中启用 `clone-remote-port` 选项。然后，重新启动服务器，并尝试使用与 Java 版相同的 IP 和端口连接。<br> 如果这不起作用，请向您的服务器托管提供商询问 UDP 端口，并使用该端口。对于 VPS/KVM 服务器，请按照自托管步骤操作。"
   },
   "providers.provider.wasabihosting.description": {
-    "message": "Install Geyser with the plugin installer. Use the same port as your Java server in the Geyser config. Connect with the same address and port as your Java server."
+    "message": "使用插件安装程序安装 Geyser。在 Geyser 配置中使用与 Java 服务器相同的端口。使用与 Java 服务器相同的地址和端口连接。"
   },
   "pages.download.description.hurricane": {
-    "message": "A plugin with various workarounds for Geyser players that modify the server in order to achieve their goal."
+    "message": "一个插件，包含针对 Geyser 玩家的各种解决方法，通过修改服务器来实现其目标。"
   },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
-    "description": "The title of the page for a blog author"
+    "description": "博客作者页面的标题"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
-    "description": "The title of the authors page"
+    "message": "作者",
+    "description": "作者页面的标题"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
-    "description": "The label of the link targeting the blog authors page"
+    "message": "查看所有作者",
+    "description": "指向博客作者页面的链接标签"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
-    "description": "The text for authors with 0 blog post"
-  },
-  "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
-    "description": "The unlisted content banner title"
-  },
-  "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
-    "description": "The unlisted content banner message"
-  },
-  "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
-    "description": "The draft content banner title"
-  },
-  "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
-    "description": "The draft content banner message"
+    "message": "此作者尚未撰写任何文章。",
+    "description": "0 篇博客文章的作者文本"
   }
 }

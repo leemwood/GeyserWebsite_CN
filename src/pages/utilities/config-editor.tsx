@@ -31,7 +31,7 @@ const ConfigEditorPage: React.FC = () => {
 
         // Makse sure the file is a .yml file
         if (!fileName.name.endsWith('.yml')) {
-            alert('Please select a .yml config file!');
+            alert('请选择.yml配置文件！');
             return;
         }
 
@@ -94,7 +94,7 @@ const ConfigEditorPage: React.FC = () => {
                 }
                 ignore = false;
                 if (commented) {
-                    currentComment += '<strong>Note: This option is commented out by default. It will be automatically uncommented if modified.</strong>' + '<br>';
+                    currentComment += '<strong>注意：此选项默认被注释。如果修改，将自动取消注释。</strong>' + '<br>';
                 }
 
                 currentComment = currentComment.replace(URL_REGEX, function ($0) {
@@ -124,7 +124,7 @@ const ConfigEditorPage: React.FC = () => {
             }
 
             if (commented) {
-                currentComment += '<strong>Note: This option is commented out by default. It will be automatically uncommented if modified.</strong>' + '<br>';
+                currentComment += '<strong>注意：此选项默认被注释。如果修改，将自动取消注释。</strong>' + '<br>';
             }
 
             currentComment = currentComment.replace(URL_REGEX, function ($0) {
@@ -147,7 +147,7 @@ const ConfigEditorPage: React.FC = () => {
     const generateHTML = (config: any) => {
         return Object.keys(config).map(configKey => (
             <div key={configKey} className={styles.card}>
-                <div className={styles.cardHeader}>{configKey === '' ? 'Root' : configKey}</div>
+                <div className={styles.cardHeader}>{configKey === '' ? '根配置' : configKey}</div>
                 <div className={styles.cardBody}>
                     {Object.keys(config[configKey]).map(configOption => {
                         const configOptionInfo = config[configKey][configOption];

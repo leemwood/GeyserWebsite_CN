@@ -41,7 +41,7 @@ const DumpViewerPage: React.FC = () => {
 
     const handleLoadClick = () => {
         if (dumpId === '') {
-            setStatusMessage('You haven\'t entered an ID or URL!');
+            setStatusMessage('您还没有输入ID或URL！');
             return;
         }
         let id = dumpId;
@@ -68,7 +68,7 @@ const DumpViewerPage: React.FC = () => {
             window.location.hash = '#' + dumpId;
             setData(data);
         } catch (error) {
-            setStatusMessage('An error occurred while loading the dump. Please try again later.<br><br>' + error);
+            setStatusMessage('加载转储时发生错误，请稍后再试。<br><br>' + error);
         }
     }
 

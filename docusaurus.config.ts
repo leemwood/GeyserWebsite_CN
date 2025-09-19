@@ -175,7 +175,7 @@ const config: Config = {
                 href: '/',
                 width: 430,
             },
-            copyright: `版权所有 © ${new Date().getFullYear()} GeyserMC. 基于 Docusaurus 构建。<br>本网站不是官方 Minecraft 网站，与 Mojang Studios 或 Microsoft 没有关联。所有产品名称和公司名称均为其各自持有者的商标或注册商标。使用这些名称并不意味着任何隶属关系或他们的认可。<br><br><strong>重要声明：geysermc.cn 只是 geysermc.org 的中文镜像站，与 Geyser 团队完全没有任何关系。</strong>`,
+            copyright: `版权所有 © ${new Date().getFullYear()} GeyserMC. 基于 Docusaurus 构建。<br>本网站不是官方 Minecraft 网站，与 Mojang Studios 或 Microsoft 没有关联。所有产品名称和公司名称均为其各自持有者的商标或注册商标。使用这些名称并不意味着任何隶属关系或他们的认可。重要声明：geysermc.cn 只是 geysermc.org 的中文镜像站，与 Geyser 团队完全没有任何关系。`,
             links: [
                 {
                     title: '文档',

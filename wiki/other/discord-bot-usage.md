@@ -1,52 +1,52 @@
 ---
-title: Discord Bot Usage
-description: Information about how to use the Geyser Discord bot.
+title: Discord机器人使用指南
+description: 关于如何使用Geyser Discord机器人的信息。
 ---
 
-Our discord bot provides some very useful toos to debug/issue track your server. We will go in-depth on how to use the bot commands and its tools.
+我们的Discord机器人提供了一些非常有用的工具来调试/跟踪您的服务器问题。我们将深入介绍如何使用机器人命令及其工具。
 
-## Server Logs {#server-logs}
+## 服务器日志 {#server-logs}
 
-If you are having console errors or Geyser isn't functioning/starting up, server logs are very useful to find the root cause of why Geyser is not running. You can safely share your server logs with [mclogs](https://mclo.gs) as it will remove all IP addresses and other sensitive information from the logs. 
+如果您遇到控制台错误或Geyser无法正常运行/启动，服务器日志对于找到Geyser无法运行的根本原因非常有用。您可以安全地使用 [mclogs](https://mclo.gs) 分享您的服务器日志，因为它会从日志中删除所有IP地址和其他敏感信息。
 
-If you paste the logs URL into our Discord, our bot will analyze the error and will give a fix if there is one present like seen below. You can also paste the `latest.log` file into Discord.
+如果您将日志URL粘贴到我们的Discord中，我们的机器人将分析错误，如果有解决方案，它会提供修复建议，如下所示。您也可以将 `latest.log` 文件粘贴到Discord中。
 
-![Example of an error](/img/wiki/discord-bot/logs.png)
+![错误示例](/img/wiki/discord-bot/logs.png)
 
 ## OCR {#ocr}
 
-OCR or Optical Character Recognition is something that our discord bot can process, which means if you upload a picture/image into our discord that contains an error like seen below the bot might be able to help you out with our issue.
+OCR或光学字符识别是我们的Discord机器人可以处理的功能，这意味着如果您在我们的Discord中上传包含错误的图片/图像，如下所示，机器人可能能够帮助您解决问题。
 
-![Example of an error](/img/wiki/discord-bot/ocr.png)
+![错误示例](/img/wiki/discord-bot/ocr.png)
 
-## Ping Server {#ping-server}
+## 服务器Ping {#ping-server}
 
-If you are not sure if your server is reachable from the outside you can use our ping tool. Using the ping command in #bot-spam; /ping "serverip" as seen below, The bot will check if your server is online/reachable. When you are not running your server on default port: java 25565 and bedrock 19132 you will need to specify the port like /ping "serverip:serverport".
+如果您不确定您的服务器是否可以从外部访问，您可以使用我们的ping工具。在#bot-spam频道中使用ping命令；/ping "服务器IP"，如下所示，机器人将检查您的服务器是否在线/可访问。当您的服务器不在默认端口上运行时：Java 25565和基岩19132，您需要指定端口，如 /ping "服务器IP:服务器端口"。
 
-If the bot returns `Unable to find Java/Bedrock server at the requested address`, your server either is not running/setup properly or your firewall is blocking the connection. More info on how to setup Geyser can be found on the [Geyser Setup page](/wiki/geyser/setup/).
+如果机器人返回 `无法在请求的地址找到Java/基岩服务器`，您的服务器可能未正确运行/设置，或者您的防火墙阻止了连接。有关如何设置Geyser的更多信息，请访问 [Geyser设置页面](/wiki/geyser/setup/)。
 
-![Example of the ping command](/img/wiki/discord-bot/ping.png)
+![ping命令示例](/img/wiki/discord-bot/ping.png)
 
-## Provider List {#provider-list}
+## 提供商列表 {#provider-list}
 
-Some hosting providers have unique setup methods for Geyser. If you do not know how to setup Geyser on your provider you can either checkout the [Geyser Host Provider List](/wiki/geyser/supported-hosting-providers/) manually, or use our bot command `/provider "providername"` as seen below.
+一些托管提供商有独特的Geyser设置方法。如果您不知道如何在您的提供商上设置Geyser，您可以手动查看 [Geyser托管提供商列表](/wiki/geyser/supported-hosting-providers/)，或者使用我们的机器人命令 `/provider "提供商名称"`，如下所示。
 
-![Example of the provider command](/img/wiki/discord-bot/provider.png)
+![提供商命令示例](/img/wiki/discord-bot/provider.png)
 
-## Download Command {#download-command}
+## 下载命令 {#download-command}
 
-Sends the download link of the chosen program/plugin. `/download "Geyser"` or `/download "ViaVersion"` and so on.
+发送所选程序/插件的下载链接。`/download "Geyser"` 或 `/download "ViaVersion"` 等等。
 
-## Leaderboard Command {#leaderboard-command}
+## 排行榜命令 {#leaderboard-command}
 
-Provides a link to the Geyser Bot XP leaderboards.
+提供Geyser机器人XP排行榜的链接。
 
-## Rank Command {#rank-command}
+## 等级命令 {#rank-command}
 
-You can give yourself two types of roles on our discord, "GeyserNews" and "Testers". You can use the command `/rank "chosen rank"` to give one to yourself.
+您可以在我们的Discord上给自己两种类型的角色："GeyserNews" 和 "Testers"。您可以使用命令 `/rank "选择的等级"` 来给自己分配一个角色。
 
-## Queue Command {#queue-command}
+## 队列命令 {#queue-command}
 
-Displays Current global api skin queue upload times.
+显示当前全局API皮肤队列上传时间。
 
 

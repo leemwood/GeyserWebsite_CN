@@ -1,13 +1,13 @@
 ---
 title: ThirdPartyCosmetics
-description: An optional Bedrock resource pack to extend Geyser functionality.
+description: 一个可选的基岩版资源包，用于扩展Geyser功能。
 ---
 
-## [Download here](/download/?project=other-projects&thirdpartycosmetics=expanded) {#download-here}
+## [点击此处下载](/download/?project=other-projects&thirdpartycosmetics=expanded) {#download-here}
 
-ThirdPartyCosmetics is an extension that adds support for loading ears and other third party cosmetics on java players.
+ThirdPartyCosmetics是一个扩展，增加了对Java版玩家加载耳朵和其他第三方装饰品的支持。
 
-## Installation
-1. Install Geyser for your platform
-2. Drop the `ThirdPartyCosmetics.jar` into the Geyser `extensions` folder (EG: `plugins/Geyser-Spigot/extensions`)
-3. Start the server
+## 安装
+1. 为您的平台安装Geyser
+2. 将 `ThirdPartyCosmetics.jar` 放入Geyser的 `extensions` 文件夹中（例如：`plugins/Geyser-Spigot/extensions`）
+3. 启动服务器

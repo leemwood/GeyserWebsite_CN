@@ -1,32 +1,31 @@
 ---
 title: Hydraulic
-description: 'Hydraulic is a companion to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers.'
+description: 'Hydraulic是Geyser的配套工具，允许基岩版玩家加入模组化的Minecraft：Java版服务器。'
 ---
 
-Hydraulic is a companion to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers. 
+Hydraulic是Geyser的配套工具，允许基岩版玩家加入模组化的Minecraft：Java版服务器。 
 
-## What is Hydraulic? {#what-is-hydraulic}
+## 什么是Hydraulic？ {#what-is-hydraulic}
 
-Hydraulic is a server-side mod, which allows for Bedrock players to join modded Minecraft: Java Edition servers. This project works alongside [Geyser](https://github.com/GeyserMC/Geyser) to make this possible.
+Hydraulic是一个服务器端模组，允许基岩版玩家加入模组化的Minecraft：Java版服务器。这个项目与 [Geyser](https://github.com/GeyserMC/Geyser) 协同工作以实现这一目标。
 
 :::caution
 
-This project is still in very early development and should not be used on production setups!
+此项目仍处于非常早期的开发阶段，不应在生产环境中使用！
 
 :::
 
-## Download {#download} 
+## 下载 {#download} 
 
-You can download Hydraulic [here](/download/?project=other-projects&hydraulic=expanded).
+您可以 [在这里](/download/?project=other-projects&hydraulic=expanded) 下载Hydraulic。
 
-## Contributing {#contributing}
+## 贡献 {#contributing}
 
-Any contributions are appreciated. Please feel free to reach out to us on [Discord](https://discord.gg/geysermc) if
-you're interested in helping out with Hydraulic.
+我们欢迎任何贡献。如果您有兴趣帮助Hydraulic项目，请随时在 [Discord](https://discord.gg/geysermc) 上联系我们。
 
-### Project Setup {#project-setup}
+### 项目设置 {#project-setup}
 
-1. Clone the repo to your computer.
-2. Navigate to the Hydraulic root directory and run `git submodule update --init --recursive`. This command downloads all the needed submodules for Hydraulic and is a crucial step in this process.
-3. The project should import into your IDE after the loom setup is complete. For more detailed information, see the [Fabric setup](https://fabricmc.net/wiki/tutorial:setup)
-4. Use `./gradlew build` to compile a jar file, or use `./gradlew :fabric:runServer` or `./gradlew :neoforge:runServer` to run a server with Hydraulic installed. Make sure to install Geyser into your `mods` folder!
+1. 将仓库克隆到您的计算机。
+2. 导航到Hydraulic根目录并运行 `git submodule update --init --recursive`。此命令下载Hydraulic所需的所有子模块，是此过程中的关键步骤。
+3. 在loom设置完成后，项目应该可以导入到您的IDE中。有关更详细的信息，请参见 [Fabric设置](https://fabricmc.net/wiki/tutorial:setup)
+4. 使用 `./gradlew build` 编译jar文件，或使用 `./gradlew :fabric:runServer` 或 `./gradlew :neoforge:runServer` 运行安装了Hydraulic的服务器。确保将Geyser安装到您的 `mods` 文件夹中！

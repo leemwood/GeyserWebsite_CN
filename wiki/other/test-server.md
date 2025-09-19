@@ -1,25 +1,25 @@
 ---
-title: Test Server
-description: Information about joining and using the Geyser test server.
+title: 测试服务器
+description: 关于加入和使用Geyser测试服务器的信息。
 ---
 
-### Details {#details}
-- IP: `test.geysermc.org` (default ports on both Bedrock and Java)
-- World size: 20k x 20k
+### 详细信息 {#details}
+- IP: `test.geysermc.org`（基岩版和Java版均使用默认端口）
+- 世界大小：20k x 20k
 
-### Infomation {#infomation}
-Geyser has a test server for those who want to test how Java \<-\> Bedrock crossplay works on their device, and to see the limitations and restrictions. You can join from either Bedrock or Java, and the server has [Floodgate](/wiki/floodgate/) installed so you don’t need a Java account to join from Bedrock.
+### 信息 {#information}
+Geyser有一个测试服务器，供那些想要测试Java版到基岩版跨平台游戏在其设备上如何工作，以及查看限制和约束的人使用。您可以从基岩版或Java版加入，服务器已安装[Floodgate](/wiki/floodgate/)，因此从基岩版加入不需要Java账户。
 
-If you can't build/destroy/interact with the world in the test server, run `/rtp` to get away from the protected spawn area.
+如果您在测试服务器中无法建造/破坏/与世界互动，请运行 `/rtp` 以离开受保护的主城区域。
 
-If you have any questions or problems be sure to join our [Discord](https://discord.gg/geysermc)!
+如果您有任何问题或疑问，请务必加入我们的 [Discord](https://discord.gg/geysermc)！
 
-### Commands: {#commands}
+### 命令： {#commands}
 
-|Command|Desc|
+|命令|描述|
 |---|---|
-|`/rtp`|Teleport to a random location|
-|`/ll`|LandLord base command for managing land claims|
-|`/spawn`|Teleport to spawn|
-|`/home`|Set/go-to a home|
-|`/linkaccount`|Link your Java and Bedrock accounts|
+|`/rtp`|传送到随机位置|
+|`/ll`|LandLord基础命令，用于管理领地声明|
+|`/spawn`|传送到主城|
+|`/home`|设置/前往家|
+|`/linkaccount`|关联您的Java版和基岩版账户|

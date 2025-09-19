@@ -29,7 +29,7 @@ export const providersData: Providers = {
             url: 'https://apexminecrafthosting.com/',
             description: translate({
                 id: 'providers.provider.apex_hosting.description',
-                message: "Full auto installation. Go to the Customizations tab in the panel and select 'Enabled' under the 'Geyser Auto Installer' option. Then, restart and connect to your server with your Java IP and port. See [Apex's article](https://apexminecrafthosting.com/geysermc/) for more details."
+                message: "全自动安装。在面板中进入自定义选项卡，在'Geyser 自动安装程序'选项下选择'启用'。然后，重启服务器并使用您的 Java IP 和端口连接。查看 [Apex 的文章](https://apexminecrafthosting.com/geysermc/) 获取更多详细信息。"
             })
         },
         {
@@ -45,7 +45,7 @@ export const providersData: Providers = {
             url: 'https://aternos.org/',
             description: translate({
                 id: 'providers.provider.aternos.description',
-                message: "Install Geyser in the Aternos plugin list and connect to your server with your Java IP and port. See [Aternos's article](https://support.aternos.org/hc/en-us/articles/360051047631) for more details. Do note: Aternos automatically installs the latest version of the plugin, but does not auto update it. To update Geyser on Aternos, simply reinstall the plugin (no need to uninstall the plugin/deleting the plugin files)."
+                message: "在 Aternos 插件列表中安装 Geyser，并使用您的 Java IP 和端口连接到服务器。查看 [Aternos 的文章](https://support.aternos.org/hc/en-us/articles/360051047631) 获取更多详细信息。注意：Aternos 会自动安装最新版本的插件，但不会自动更新。要在 Aternos 上更新 Geyser，只需重新安装插件（无需卸载插件/删除插件文件）即可。"
             })
         },
         {
@@ -69,7 +69,7 @@ export const providersData: Providers = {
             url: 'https://www.cubes.host/',
             description: translate({
                 id: 'providers.provider.cubes_hosting.description',
-                message: "Install Geyser using the plugin manager. Then restart the server and Geyser will run on an additional port - you can check it in the server console. Geyser-Standalone can be set up through a support ticket."
+                message: "使用插件管理器安装 Geyser。然后重启服务器，Geyser 将在额外的端口上运行 - 您可以在服务器控制台中查看。可以通过支持工单设置 Geyser-Standalone。"
             })
         },
         {
@@ -77,7 +77,7 @@ export const providersData: Providers = {
             url: 'https://exaroton.com/',
             description: translate({
                 id: 'providers.provider.exaroton.description',
-                message: "Install Geyser in the exaroton plugin list and connect to your server with your Java IP and port. See [exaroton's article](https://support.exaroton.com/hc/en-us/articles/360019857918-Geyser) for more details."
+                message: "在 exaroton 插件列表中安装 Geyser，并使用您的 Java IP 和端口连接到服务器。查看 [exaroton 的文章](https://support.exaroton.com/hc/en-us/articles/360019857918-Geyser) 获取更多详细信息。"
             })
         },
         {
@@ -93,7 +93,7 @@ export const providersData: Providers = {
             url: 'https://lilypad.gg',
             description: translate({
                 id: 'providers.provider.lilypad.description',
-                message: "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [lilypad.gg/bedrock](https://lilypad.gg/bedrock)."
+                message: "更改服务器软件时勾选'启用基岩版跨平台游戏？'选项以自动安装和配置 Geyser + Floodgate。获取更多详细信息，请访问 [lilypad.gg/bedrock](https://lilypad.gg/bedrock)。"
             })
         },
         {
@@ -109,7 +109,7 @@ export const providersData: Providers = {
             url: 'https://minefort.com/',
             description: translate({
                 id: 'providers.provider.minefort.description',
-                message: "On the server dashboard under 'Connect Support', make sure 'Allow Bedrock' is enabled. Then connect via `play.minefort.com` and join using `/server [servername]`, or connect via `[servername].minefort.com`."
+                message: "在服务器仪表板中的'连接支持'下，确保已启用'允许基岩版'。然后通过 `play.minefort.com` 连接并使用 `/server [servername]` 加入，或通过 `[servername].minefort.com` 连接。"
             })
         },
         {
@@ -138,7 +138,7 @@ export const providersData: Providers = {
             url: 'https://piglinhost.com/',
             description: translate({
                 id: 'providers.provider.piglinhost.description',
-                message: "Order from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html). Alternatively, contact their support by creating a [support ticket](https://billing.piglinhost.com/submitticket.php?step=2&deptid=5) or via discord for installation and configuration help."
+                message: "从 [跨平台服务器页面](https://piglinhost.com/minecraft-java-hosting.html) 订购。或者，通过创建 [支持工单](https://billing.piglinhost.com/submitticket.php?step=2&deptid=5) 或通过 Discord 联系他们的支持团队获取安装和配置帮助。"
             })
         },
         {
@@ -146,7 +146,7 @@ export const providersData: Providers = {
             url: 'https://play.hosting',
             description: translate({
                 id: 'providers.provider.playhosting.description',
-                message: "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [help.play.hosting/minecraft/crossplay](https://help.play.hosting/minecraft/crossplay)."
+                message: "更改服务器软件时勾选'启用基岩版跨平台游戏？'选项以自动安装和配置 Geyser + Floodgate。获取更多详细信息，请访问 [help.play.hosting/minecraft/crossplay](https://help.play.hosting/minecraft/crossplay)。"
             })
         },
         {
@@ -202,7 +202,7 @@ export const providersData: Providers = {
             url: 'https://wisehosting.com',
             description: translate({
                 id: 'providers.provider.wisehosting.description',
-                message: "Both auto and manual installation available. Find the GeyserMC presets from the `Properties` tab in the Game Panel. There, click `Install` and restart your server. See [Crossplay FAQ](https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server) for additional details."
+                message: "提供自动和手动安装两种方式。在游戏面板的`属性`选项卡中找到 GeyserMC 预设。然后，点击`安装`并重启服务器。查看 [跨平台 FAQ](https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server) 获取更多详细信息。"
             })
         },
         {
@@ -233,7 +233,7 @@ export const providersData: Providers = {
             url: 'https://aquatis.host/',
             description: translate({
                 id: 'providers.provider.aquatis.description',
-                message: "Need to open a support ticket to get a UDP port, then use that as the `bedrock port`."
+                message: "需要打开支持工单以获取 UDP 端口，然后将其用作 `bedrock port`。"
             })
         },
         {
@@ -241,7 +241,7 @@ export const providersData: Providers = {
             url: 'https://www.bisecthosting.com/',
             description: translate({
                 id: 'providers.provider.bisecthosting.description',
-                message: "You must have a plan with a dedicated IP. In Geyser's config, uncomment the `bedrock address` and set it to the public IP of your server (e.g. `address: 51.79.129.18`). Leave the port as `19132`. Under the home tab, select 'Enable UDP Network' and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
+                message: "您必须拥有带专用 IP 的方案。在 Geyser 配置中，取消注释 `bedrock address` 并将其设置为服务器的公共 IP（例如 `address: 51.79.129.18`）。保持端口为 `19132`。在主页选项卡下，选择'启用 UDP 网络'并重启服务器。查看 Bisect 的 [文章](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) 获取完整说明。如果在按照这些说明操作后仍无法连接，请联系 Bisect 支持，因为他们据称在某些节点上禁用了 UDP。"
             })
         },
         {
@@ -257,7 +257,7 @@ export const providersData: Providers = {
             url: 'https://www.bloom.host/',
             description: translate({
                 id: 'providers.provider.bloomhost.description',
-                message: "See [Bloom's documentation](https://docs.bloom.host/plugins/geysermc/) for setup instructions."
+                message: "查看 [Bloom 的文档](https://docs.bloom.host/plugins/geysermc/) 获取设置指南。"
             })
         },
         {
@@ -283,7 +283,7 @@ export const providersData: Providers = {
             url: 'https://dedicatedmc.io/',
             description: translate({
                 id: 'providers.provider.dedicatedmc.description',
-                message: "Check [DedicatedMC's documentation](https://docs.dedicatedmc.io/plugins-mods/how-to-install-geysermc/) for specific instructions."
+                message: "查看 [DedicatedMC 的文档](https://docs.dedicatedmc.io/plugins-mods/how-to-install-geysermc/) 获取具体设置指南。"
             })
         },
         {
@@ -309,7 +309,7 @@ export const providersData: Providers = {
             url: 'https://fadehost.com/',
             description: translate({
                 id: 'providers.provider.fadehost.description',
-                message: "Set the Bedrock port to the Java server's port and connect with that port. Alternatively, buy a dedicated IP address to support a different port."
+                message: "将基岩版端口设置为 Java 服务器的端口，并使用该端口连接。或者，购买专用 IP 地址以支持不同的端口。"
             })
         },
         {
@@ -333,7 +333,7 @@ export const providersData: Providers = {
             url: 'https://feroxhosting.nl',
             description: translate({
                 id: 'providers.provider.ferox_hosting.description',
-                message: "Open a port yourself in their panel and check out the [knowledgebase article](https://feroxhosting.nl/kb/) for how to install and configure Geyser."
+                message: "在面板中自行开放端口，并查看 [知识库文章](https://feroxhosting.nl/kb/) 了解如何安装和配置 Geyser。"
             })
         },
         {
@@ -382,7 +382,7 @@ export const providersData: Providers = {
             url: 'https://www.heavynode.com/',
             description: translate({
                 id: 'providers.provider.heavynode.description',
-                message: "Open a port yourself in the networking section of the control panel. Port `19132` is only available with a dedicated IP (contact support), otherwise you will need to use a randomly assigned port. To resolve further connection issues for servers located in Canada and the UK, contact their support with the info found [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
+                message: "在控制面板的网络部分自行开放端口。端口 `19132` 仅适用于专用 IP（联系支持），否则您需要使用随机分配的端口。要解决位于加拿大和英国的服务器的进一步连接问题，请使用 [这里](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart) 找到的信息联系他们的支持团队。"
             })
         },
         {
@@ -406,7 +406,7 @@ export const providersData: Providers = {
             url: 'https://hostez.io/minecraft',
             description: translate({
                 id: 'providers.provider.hostez.description',
-                message: "Geyser plugin supported with self-install or installed on request with its own port."
+                message: "支持 Geyser 插件自行安装或应要求安装并使用其专用端口。"
             })
         },
         {
@@ -443,7 +443,7 @@ export const providersData: Providers = {
             url: 'https://kinetichosting.net/',
             description: translate({
                 id: 'providers.provider.kinetic_hosting.description',
-                message: "Open a port in the Network and Ports page, and set that port as the `bedrock port` in the Geyser config. Alternatively, use the Java server's port by enabling the `clone-remote-port` option in the config. Connect with the same IP as on Java, and the port that you have chosen. For more info see the hosts [support article](https://www.kinetichosting.net/articles/minecraft-java/plugins/geyser)."
+                message: "在网络和端口页面中开放端口，并将该端口设置为 Geyser 配置中的 `bedrock port`。或者，通过在配置中启用 `clone-remote-port` 选项来使用 Java 服务器的端口。使用与 Java 版相同的 IP 和您选择的端口进行连接。更多信息请参见主机的 [支持文章](https://www.kinetichosting.net/articles/minecraft-java/plugins/geyser)。"
             })
         },
         {
@@ -472,7 +472,7 @@ export const providersData: Providers = {
             url: 'https://www.meloncube.net/',
             description: translate({
                 id: 'providers.provider.meloncube.description',
-                message: "Contact the support for a UDP port to use for Geyser. Set that port as the `bedrock port`, and connect with it."
+                message: "联系支持团队获取用于 Geyser 的 UDP 端口。将该端口设置为 `bedrock port`，并使用该端口连接。"
             })
         },
         {
@@ -490,7 +490,7 @@ export const providersData: Providers = {
             url: 'https://modrinth.com/servers',
             description: translate({
                 id: 'providers.provider.modrinth.description',
-                message: "Check [Modrinth's documentation](https://support.modrinth.com/en/articles/10986613-adding-geyser-to-your-server) for specific instructions."
+                message: "查看 [Modrinth 的文档](https://support.modrinth.com/en/articles/10986613-adding-geyser-to-your-server) 获取具体设置指南。"
             })
         },
         {
@@ -514,7 +514,7 @@ export const providersData: Providers = {
             url: 'https://nitrado.net',
             description: translate({
                 id: 'providers.provider.nitrado.description',
-                message: "Get Geyser as a plugin. Add 4 to the Port of the Java server. See [here](https://wiki.nitrado.net/en/How_to_install_GeyserMC_and_Floodgate) for specific instructions."
+                message: "将 Geyser 作为插件安装。将 Java 服务器的端口加 4。查看 [这里](https://wiki.nitrado.net/en/How_to_install_GeyserMC_and_Floodgate) 获取具体设置指南。"
             })
         },
         {
@@ -546,7 +546,7 @@ export const providersData: Providers = {
             url: 'https://pebblehost.com/',
             description: translate({
                 id: 'providers.provider.pebblehost.description',
-                message: "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and connect with the Java IP and port. See [this video](https://youtu.be/v9lC80UBZF4) for a PebbleHost-specific tutorial."
+                message: "启用 `clone-remote-port`（或手动将 `bedrock port` 设置为 Java 端口），并使用 Java IP 和端口连接。查看 [此视频](https://youtu.be/v9lC80UBZF4) 获取 PebbleHost 特定教程。"
             })
         },
         {
@@ -559,7 +559,7 @@ export const providersData: Providers = {
             url: 'https://pubcs.com',
             description: translate({
                 id: 'providers.provider.pubcs.description',
-                message: "Set the Bedrock port to the Java server's port and connect with that port, or upgrade to a plan that includes dedicated IP address to support a different port."
+                message: "将基岩版端口设置为 Java 服务器的端口，并使用该端口连接，或升级到包含专用 IP 地址的方案以支持不同的端口。"
             })
         },
         {
@@ -577,7 +577,7 @@ export const providersData: Providers = {
             url: 'https://revivenode.com/',
             description: translate({
                 id: 'providers.provider.revivenode.description',
-                message: "Set `bedrock port` to the Java server's port (either by setting it yourself, or enabling `clone-remote-port`). You can also create a secondary port in the `network tab` and use that. To fix random `Unable to Connect` issues, see [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
+                message: "将 `bedrock port` 设置为 Java 服务器的端口（可以手动设置，或启用 `clone-remote-port`）。您还可以在 `network tab` 中创建辅助端口并使用该端口。要解决随机的 `无法连接` 问题，请查看 [这里](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)。"
             })
         },
         {
@@ -660,7 +660,7 @@ export const providersData: Providers = {
             url: 'https://www.volthosting.co.uk/',
             description: translate({
                 id: 'providers.provider.volthosting.description',
-                message: "Enable clone-remote-port (or manually set bedrock port to the Java port), and connect with the Java IP and port. Alternatively, request an additional port, or buy a dedicated IP address. If you continue to have issues, please [contact VoltHosting support](https://volthosting.co.uk/contact.html) for further assistance."
+                message: "启用 clone-remote-port（或手动将基岩版端口设置为 Java 端口），并使用 Java IP 和端口连接。或者，申请额外端口，或购买专用 IP 地址。如果您仍然遇到问题，请 [联系 VoltHosting 支持](https://volthosting.co.uk/contact.html) 获取进一步帮助。"
             })
         },
         {
@@ -668,7 +668,7 @@ export const providersData: Providers = {
             url: 'https://vultam.net/',
             description: translate({
                 id: 'providers.provider.vultam.description',
-                message: "Enable `clone-remote-port` in the Geyser config, and connect with the Java IP and port. Alternatively, allocate an additional port to your server from the Network section of the control panel and set it as the `bedrock.port` in the Geyser config. Use that port to connect from Bedrock. Please contact [Vultam support](https://clients.vultam.net/submitticket.php?step=2&deptid=1) if you need assistance."
+                message: "在 Geyser 配置中启用 `clone-remote-port`，并使用 Java IP 和端口连接。或者，从控制面板的网络部分为您的服务器分配额外端口，并将其设置为 Geyser 配置中的 `bedrock.port`。使用该端口从基岩版连接。如需帮助，请联系 [Vultam 支持](https://clients.vultam.net/submitticket.php?step=2&deptid=1)。"
             })
         },
         {
@@ -700,7 +700,7 @@ export const providersData: Providers = {
             url: 'https://witherhosting.com/',
             description: translate({
                 id: 'providers.provider.witherhosting.description',
-                message: "Either use the Java server's port, or create a port in the ports manager on the panel and use that for Bedrock. Refer to the hosts [support article](https://support.witherhosting.com/en/article/how-to-install-and-use-geysermc-1xn5l6v/) for further info."
+                message: "使用 Java 服务器的端口，或在面板中的端口管理器创建端口并将其用于基岩版。参考主机的 [支持文章](https://support.witherhosting.com/en/article/how-to-install-and-use-geysermc-1xn5l6v/) 获取更多信息。"
             })
         }
     ],
@@ -718,7 +718,7 @@ export const providersData: Providers = {
             url: 'https://www.ni-host.com/',
             description: translate({
                 id: 'providers.provider.nicraft.description',
-                message: "Does not provide Bedrock support, and are affected by a [firewall configuration issue](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart), which prohibits most players from joining."
+                message: "不提供基岩版支持，并受到 [防火墙配置问题](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart) 的影响，这阻止了大多数玩家加入。"
             })
         },
         {
@@ -726,7 +726,7 @@ export const providersData: Providers = {
             url: 'https://feathermc.com/',
             description: translate({
                 id: 'providers.provider.feather.description',
-                message: "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
+                message: "他们的代理网络不支持 UDP。因此，不支持 Geyser。作为替代方案，请设置 paper 服务器，例如使用 playit.gg 而不是端口转发。"
             })
         }
     ]

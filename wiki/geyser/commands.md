@@ -64,4 +64,4 @@ Geyser-ViaProxy 和 Geyser-Standalone 拥有自己的基本权限处理器。要
 
 ## Floodgate 命令和权限 {#floodgate-commands-and-permissions}
 
-有关 Floodgate 命令，请参见 [此处](/zh-CN/wiki/floodgate/commands/)。
+有关 Floodgate 命令，请参见 [此处](/wiki/floodgate/commands/)。

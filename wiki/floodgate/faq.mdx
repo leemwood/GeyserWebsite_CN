@@ -1,41 +1,41 @@
 ---
-title: FAQ
-description: Frequently asked questions about Floodgate such as changing prefixes, obtaining Bedrock player UUIDs, and using Floodgate with PlaceholderAPI and Skript.
+title: 常见问题
+description: 关于Floodgate的常见问题，例如更改前缀、获取基岩版玩家UUID，以及将Floodgate与PlaceholderAPI和Skript一起使用。
 ---
 
 import { Questions, Q, A } from "@site/src/components/Questions";
 
-Here you can find answers to frequently asked questions about Floodgate - if you have a question that isn't answered here, feel free to ask in our [Discord](https://discord.gg/GeyserMC)!
+在这里您可以找到关于Floodgate的常见问题的答案 - 如果您有这里没有回答的问题，请随时在我们的[Discord](https://discord.gg/GeyserMC)中提问！
 
 <Questions>
     <Q>
-        How do I change or disable the prefix of Bedrock players?
+        如何更改或禁用基岩版玩家的前缀？
         <A>
-            ***Please note: we do not recommend removing the prefix unless you are certain that no one will share a username between a Java and Bedrock player. Duplicated usernames will cause weird situations, like being unable to teleport to one of the players.***
+            ***请注意：我们不建议移除前缀，除非您确定没有人在Java版和基岩版之间共享用户名。重复的用户名会导致奇怪的情况，比如无法传送到其中一个玩家。***
 
-            In your Floodgate config, change `username-prefix` to whichever prefix you desire - you can set it to `""` and there will be no prefix.
+            在您的Floodgate配置中，将 `username-prefix` 更改为您想要的前缀 - 您可以将其设置为 `""`，这样就没有前缀了。
 
-            On some older Paper servers (or any forks that use them), you may need to also shut down your server and delete your `usercache.json` file located in the same folder as your server jar to prevent users who already joined from having the old prefix. See [this issue](/wiki/floodgate/issues#prefix-is-not-changing-on-the-server-after-changing-it-in-the-config) for more information.
+            在一些较旧的Paper服务器（或任何使用它们的分支）上，您可能还需要关闭服务器并删除位于服务器jar同一文件夹中的 `usercache.json` 文件，以防止已经加入的用户保留旧的前缀。有关更多信息，请参见[此问题](/wiki/floodgate/issues#prefix-is-not-changing-on-the-server-after-changing-it-in-the-config)。
         </A>
     </Q>
     <Q>
-        How do I obtain the UUIDs of Bedrock players?
+        如何获取基岩版玩家的UUID？
         <A>
-            Check your server logs, or use [this](https://mcprofile.io/) page. If this doesn't work, then try this method:
+            检查您的服务器日志，或使用[此](https://mcprofile.io/)页面。如果这不起作用，请尝试以下方法：
 
-            First, you'll need to get the XUID of the player. There are several third-party websites to find this, for example, [this one](https://www.cxkes.me/xbox/xuid) (unaffiliated with Geyser). Make sure to choose "Hexidecimal." You'll need to enter the player's Xbox Gamertag, and, once submitted, and it should display the XUID in the format of `xxxxxxxxxxxxxxxx`. To turn the XUID into a UUID that Java Edition can recognize, you need to put the XUID in this format: `00000000-0000-0000-xxxx-xxxxxxxxxxxx`. If formatted right, Java Edition should accept it as a UUID.
+            首先，您需要获取玩家的XUID。有几个第三方网站可以找到这个，例如，[这个](https://www.cxkes.me/xbox/xuid)（与Geyser无关）。确保选择"十六进制"。您需要输入玩家的Xbox Gamertag，提交后，它应该以`xxxxxxxxxxxxxxxx`的格式显示XUID。要将XUID转换为Java版可以识别的UUID，您需要将其放入以下格式：`00000000-0000-0000-xxxx-xxxxxxxxxxxx`。如果格式正确，Java版应该接受它作为UUID。
         </A>
     </Q>
     <Q>
-        How do I get placeholders from PlaceholderAPI for Bedrock players?
+        如何为基岩版玩家获取PlaceholderAPI的占位符？
         <A>
-            If you're using the Spigot version of Floodgate, download the Placeholder plugin [here](https://github.com/rtm516/FloodgatePlaceholders/). Using the placeholders shouldn't require additional setup other than having [PlaceholderAPI](https://www.spigotmc.org/resources/6245/) installed. See the section above on installing Floodgate on backend servers if you wish to use this on BungeeCord.
+            如果您使用的是Spigot版本的Floodgate，请在此处下载占位符插件[这里](https://github.com/rtm516/FloodgatePlaceholders/)。使用占位符不需要额外的设置，只需要安装[PlaceholderAPI](https://www.spigotmc.org/resources/6245/)。如果您想在BungeeCord上使用此功能，请参见上面关于在后端服务器上安装Floodgate的部分。
         </A>
     </Q>
     <Q>
-        How do I use Skript with Floodgate?
+        如何将Skript与Floodgate一起使用？
         <A>
-            If you're using the Spigot version of Floodgate, there is an unofficial plugin that adds Skript support [here](https://github.com/kejonaMC/floodgate-skript).
+            如果您使用的是Spigot版本的Floodgate，有一个非官方插件添加了Skript支持[这里](https://github.com/kejonaMC/floodgate-skript)。
         </A>
     </Q>
-</Questions> 
+</Questions>

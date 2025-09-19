@@ -1,21 +1,21 @@
 ---
 title: GeyserConnect
-description: GeyserConnect is a extension for Geyser that allows you to join multiple servers using a single Geyser proxy.
+description: GeyserConnect是Geyser的一个扩展，允许您使用单个Geyser代理加入多个服务器。
 ---
 
-GeyserConnect is a extension for Geyser that allows you to join multiple servers using a single GeyserMC proxy.
+GeyserConnect是Geyser的一个扩展，允许您使用单个GeyserMC代理加入多个服务器。
 
-## Setup {#setup}
-(For GeyserConnect to work you need an open UDP port, by default it's `19132`).
-1. Download the latest Geyser build from the [downloads page](/download)
-2. Download the latest build from [here](https://geysermc.org/download/?project=other-projects&geyserconnect=expanded)
-3. Extract the downloaded ZIP file, and put the extracted JAR file into the `extensions` folder in your GeyserMC standalone installation.
-4. Start Geyser standalone as you do with a normal Geyser install. EG: `java -Xms1024M -jar Geyser.jar` (More info on [Creating a Startup Script](/wiki/geyser/creating-a-startup-script/))
-5. Shutdown the standalone Geyser instance, and make you're desired changes to the GeyserConnect configuration in `GeyserConnect` in the `extensions` folder.
-6. Connect to it to make sure its all working.
+## 设置 {#setup}
+（要使GeyserConnect正常工作，您需要一个开放的UDP端口，默认是 `19132`）。
+1. 从 [下载页面](/download) 下载最新的Geyser构建版本
+2. 从 [这里](https://geysermc.org/download/?project=other-projects&geyserconnect=expanded) 下载最新构建版本
+3. 解压下载的ZIP文件，将解压后的JAR文件放入您的GeyserMC独立安装中的 `extensions` 文件夹。
+4. 像正常安装Geyser一样启动Geyser独立版本。例如：`java -Xms1024M -jar Geyser.jar`（更多信息请参见 [创建启动脚本](/wiki/geyser/creating-a-startup-script/)）
+5. 关闭独立Geyser实例，并在 `extensions` 文件夹中的 `GeyserConnect` 中进行您想要的配置更改。
+6. 连接到它以确保一切正常工作。
 
 ## DNS {#dns}
-There are [DNS](https://github.com/GeyserMC/GeyserConnect/tree/master/bind9) (using bind9) configs in the repo if you would like to use them.
+如果您想要使用它们，仓库中有 [DNS](https://github.com/GeyserMC/GeyserConnect/tree/master/bind9)（使用bind9）配置。
 
-## Config {#config}
-See [here](https://github.com/GeyserMC/GeyserConnect/blob/master/src/main/resources/config.yml).
+## 配置 {#config}
+请参见 [这里](https://github.com/GeyserMC/GeyserConnect/blob/master/src/main/resources/config.yml)。

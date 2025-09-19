@@ -78,7 +78,7 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
             <p>{description}</p>
             <Columns>
                 <Column>
-                    <h3>Build #{latestBuild.build} · {new Date(latestBuild.time).toLocaleDateString()}:</h3>
+                    <h3>构建 #{latestBuild.build} · {new Date(latestBuild.time).toLocaleDateString()}:</h3>
                     <Grid elementsPerRow={gridColumns || 2} gap="8px">
                         { warning && 
                             <div className='warning-box'>
@@ -87,7 +87,7 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
                         }
                         { setup &&
                             <a href={setup} className='no-underline setup-button large-button'>
-                                <b><FontAwesomeIcon icon={faBook}/> Setup Instructions</b>
+                                <b><FontAwesomeIcon icon={faBook}/> 设置指南</b>
                             </a>
                         }
                         {
@@ -117,7 +117,7 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
                     </Grid>
                 </Column>
                 <Column>
-                    <h3>Recent Changes:</h3>
+                    <h3>最近更新：</h3>
                     <ul>
                         {
                             changes.map((change, i) => {

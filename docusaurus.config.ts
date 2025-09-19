@@ -67,17 +67,17 @@ const config: Config = {
                 }
             },
         ],
-        [
-            '@kas-tle/docusaurus-og',
-            {
-                path: './preview-images',
-                imageRenderers: {
-                    'docusaurus-plugin-content-docs': docOgRenderer,
-                    'docusaurus-plugin-content-pages': pageOgRenderer,
-                    'docusaurus-plugin-content-blog': blogOgRenderer,
-                },
-            },
-        ],
+        // [
+        //     '@kas-tle/docusaurus-og',
+        //     {
+        //         path: './preview-images',
+        //         imageRenderers: {
+        //             'docusaurus-plugin-content-docs': docOgRenderer,
+        //             'docusaurus-plugin-content-pages': pageOgRenderer,
+        //             'docusaurus-plugin-content-blog': blogOgRenderer,
+        //         },
+        //     },
+        // ],
         'docusaurus-plugin-sass',
         './src/plugins/create-versions-json.ts',
         './src/plugins/create-providers-json.ts'

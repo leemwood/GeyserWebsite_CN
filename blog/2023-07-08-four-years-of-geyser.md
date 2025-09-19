@@ -1,52 +1,57 @@
 ---
-title: "Four Years of Geyser"
+title: "Geyser 四周年"
 slug: "four-years-of-geyser"
 authors: RednedEpic
 hide_table_of_contents: false
-description: "Geyser is now four years old!"
+description: "Geyser 现在已经四岁了！"
 ---
 
-Hi everyone,
+大家好，
 
-Today is a super special day - it's Geyser's birthday 🥳. Geyser is now four years old and booyyy has it come a long way! This is a huge day for us and an incredible milestone. We're very proud of how far we've been able to come, the amount of servers Geyser has expanded the reach of, and the amazing community behind Geyser. Seeing millions of players being able to play with their Java friends is something I never dreamed Geyser would be able to do. The growth from day one has been amazing and we're all very grateful for everyone's support 💙 
+今天是超级特别的一天 - 这是 Geyser 的生日 🥳。Geyser 现在已经四岁了，天啊，它走过了多么漫长的道路！这对我们来说是一个重要的日子，也是一个令人难以置信的里程碑。我们为 Geyser 能够走多远、Geyser 扩展了多少服务器的覆盖范围以及 Geyser 背后令人惊叹的社区感到非常自豪。看到数百万玩家能够用他们的 Java 朋友一起玩，这是我从未梦想过 Geyser 能够做到的事情。从第一天开始的增长令人惊叹，我们非常感谢大家的支持 💙
 
-Not only is this a special day because it's our birthday, but we have some exiting news and sneak peeks to share with you all, alongside general updates on our project development. Continue reading for more information!
+今天之所以特别，不仅是因为这是我们的生日，而且我们还有一些令人兴奋的消息和预告要与大家分享，以及关于我们项目开发的一般更新。继续阅读以获取更多信息！
 
 <!-- truncate -->
 
-## Project Statistics 
-- Since the start of the project, there have been 3,337 commits contributed by 105 contributors
-- As of just a few days ago, Geyser has hit 4,000 stars on GitHub, making it one of the top open-source Minecraft projects ever, and _the_ #1 Minecraft Bedrock project
-- Our Discord server has continued to grow, now approaching 25,000 Discord members
+## 项目统计
+- 自项目开始以来，已有 3,337 次提交，由 105 位贡献者贡献
+- 就在几天前，Geyser 在 GitHub 上达到了 4,000 颗星，使其成为有史以来顶级的开源 Minecraft 项目之一，并且是 _排名第一_ 的 Minecraft 基岩版项目
+- 我们的 Discord 服务器持续增长，现在已接近 25,000 名 Discord 成员
 
 ![image](https://github.com/GeyserMC/GeyserBlog/assets/29153871/e2d83a49-aa94-46c4-b660-4bc150331818)
 
-None of these would have been possible without our amazing community. To that, we owe a debt of gratitude for the years of support from all of you 💙
+如果没有我们令人惊叹的社区，这一切都不可能实现。为此，我们向所有多年来支持我们的人表示深深的感谢 💙
 
-## Project Development
-It's likely well-known by now that Geyser has hit a state of maturity. Since about 2021, Geyser has reached the point of full survival and creative playability for Bedrock clients on Java servers. This has allowed us to place much more focus on improving stability, fixing bugs and designing a resilient platform. We've spent the latter half of last year designing an API for Geyser, creating an extension system, and ultimately adding more for developers. A couple notable additions include custom item support and a resource pack API.
+![image](https://github.com/GeyserMC/GeyserBlog/assets/29153871/e2d83a49-aa94-46c4-b660-4bc150331818)
 
-We've also made some major internal changes, one of the biggest being updating our Bedrock protocol library to version 3.0. This was a massive undertaking by the [CloudburstMC](https://github.com/CloudburstMC/) organization, which we work closely with. While a bit bumpy at first, these changes modernized the internal RakNet library and brought along some sweet network optimizations on the Bedrock side.
+如果没有我们令人惊叹的社区，这一切都不可能实现。为此，我们向所有多年来支持我们的人表示深深的感谢 💙
 
-At a steady pace, we're also working on integrating Floodgate and Geyser together! While Floodgate will still exist as a separate project for proxy and standalone instances, we are working on shipping it inside Geyser to improve setup processes and reduce complexity when creating Geyser servers. One of our goals internally has been to make the Geyser setup as seamless as possible, and this is just one way we're doing that! We'll share more on this once it gets closer to completion.
+## 项目开发
 
-## What's Next?
-With Geyser being in a state of maturity in terms of vanilla compatibility, we're shifting our attention onto expanding all the "custom" features Bedrock supports. There's a huge and growing demand for utilizing many of Bedrock's custom features, such as resource packs, entities, blocks, items and UIs. One of our biggest goals going forward is to design a platform that allows developers and server owners to bring their server to the next level for Bedrock players.
+到现在，你们大多数人可能都知道 Geyser 已经达到了成熟状态。从2021年左右开始，Geyser 已经达到了基岩版客户端在 Java 服务器上完全可以进行生存和创造模式游戏的程度。这使我们能够将更多精力放在提高稳定性、修复错误和设计弹性平台上。我们在去年下半年花了时间为 Geyser 设计 API，创建扩展系统，最终为开发者添加了更多功能。一些值得注意的添加包括自定义物品支持和资源包 API。
 
-### API Additions
-Recently, we added a [resource pack loading API](https://github.com/GeyserMC/Geyser/pull/3696) which allows for developers to fine-tune and integrate their resource packs through the Geyser API, and are actively working on even more, such as [custom blocks](https://github.com/GeyserMC/Geyser/pull/3505) and [custom entities](https://github.com/GeyserMC/Geyser/pull/3754). These are just a few things we're doing inside the Geyser API, but that's not all we have in store!
+我们还进行了一些重大的内部更改，其中最大的一个是将我们的基岩版协议库更新到 3.0 版本。这是由我们密切合作的 [CloudburstMC](https://github.com/CloudburstMC/) 组织完成的巨大工程。虽然一开始有些波折，但这些更改使内部 RakNet 库现代化，并带来了一些基岩版方面的网络优化。
 
-### Resource Pack Conversion
-Some of you who were around a few years ago may remember we used to maintain a resource pack conversion project. Well, we've decided to [revive this project](https://github.com/GeyserMC/PackConverter/tree/feature/refactor)! While we know that third party projects exist now and handle conversions fairly well, we're working to make this part of mainline Geyser to further simplify the work needed by server owners and plugin developers. This means that once the project is integrated into Geyser, pack conversion will happen automatically. Contributions are most certainly welcome and please do reach out on Discord if you'd like to get involved!
+我们还在稳步地将 Floodgate 和 Geyser 整合在一起！虽然 Floodgate 仍将作为代理和独立实例的单独项目存在，但我们正在努力将其内置到 Geyser 中，以改善设置过程并减少创建 Geyser 服务器时的复杂性。我们的内部目标之一是使 Geyser 设置尽可能无缝，这只是我们实现该目标的方式之一！随着我们接近完成，我们将分享更多信息。
 
-### Wait, there's more???
-There is! And the exciting news is we're expanding Geyser to Forge! Of all the major platforms we support, Forge is one of the ones we do not support. We want to further expand the Geyser ecosystem, and I'm happy to announce that Geyser is coming to Forge in the next couple of weeks! This will also include some improvements to the Fabric platform as well. One such change is an integrated world manager, which exists only on Spigot platforms currently. This means Geyser will use the server to retrieve things such as blocks, significantly reducing the amount of RAM used for caching world data. 
+## 未来计划？
+随着 Geyser 在原版兼容性方面达到成熟，我们正在将注意力转向扩展基岩版支持的所有"自定义"功能。对于利用基岩版的许多自定义功能（如资源包、实体、方块、物品和 UI）的需求巨大且不断增长。我们未来最大的目标之一是设计一个平台，让开发者和服务器所有者能够将他们的服务器为基岩版玩家提升到新的水平。
 
-Additionally, since the Forge and Fabric platforms will use a common codebase for 95% of everything, thanks to [Architectury](https://github.com/architectury/), we can update both platforms very easily and changes that happen to one in most cases will carry over to the other.
+### API 新增功能
+最近，我们添加了一个[资源包加载 API](https://github.com/GeyserMC/Geyser/pull/3696)，允许开发者通过 Geyser API 微调和集成他们的资源包，并且我们正在积极开发更多功能，如[自定义方块](https://github.com/GeyserMC/Geyser/pull/3505)和[自定义实体](https://github.com/GeyserMC/Geyser/pull/3754)。这些只是我们在 Geyser API 中做的几件事情，但这还不是全部！
 
-### One more thing...
-Not only are we wanting to expand what Geyser can do with custom features on _vanilla_ servers, but there's a **lot** we want to do with both Fabric and Forge in the near future. Keep an eye out for further announcements over the next few weeks 👀🍰🥳 
+### 资源包转换
+你们中的一些几年前就存在的人可能还记得我们曾经维护过一个资源包转换项目。好吧，我们决定[重启这个项目](https://github.com/GeyserMC/PackConverter/tree/feature/refactor)！虽然我们知道现在存在第三方项目并且处理转换相当不错，但我们正在努力使其成为 Geyser 主线的一部分，以进一步简化服务器所有者和插件开发者所需的工作。这意味着一旦该项目集成到 Geyser 中，资源包转换将自动发生。非常欢迎贡献，如果您想参与，请在 Discord 上联系我们！
+
+### 等等，还有更多？？？
+是的！令人兴奋的消息是，我们正在将 Geyser 扩展到 Forge！在我们支持的所有主要平台中，Forge 是我们不支持的平台之一。我们希望进一步扩展 Geyser 生态系统，我很高兴地宣布，Geyser 将在未来几周内登陆 Forge！这也将包括对 Fabric 平台的一些改进。其中一个变化是集成的世界管理器，目前仅存在于 Spigot 平台上。这意味着 Geyser 将使用服务器来检索诸如方块之类的东西，显著减少用于缓存世界数据的 RAM 数量。
+
+此外，由于 Forge 和 Fabric 平台将在 95% 的所有内容上使用通用代码库，这要归功于 [Architectury](https://github.com/architectury/)，我们可以非常轻松地更新两个平台，并且大多数情况下，发生在一个平台上的更改将传递到另一个平台。
+
+### 还有一件事...
+我们不仅想要扩展 Geyser 在_原版_服务器上使用自定义功能的能力，而且在不久的将来，我们还想对 Fabric 和 Forge 做很多**很多**事情。请密切关注未来几周的进一步公告 👀🍰🥳
 
 ![Minecraft 7_8_2023 2_15_26 PM](https://github.com/GeyserMC/GeyserBlog/assets/29153871/5f60d150-3081-4fe8-9dba-ce04d8edcd85)
 
-And that's all I have to share for today! Once again, thank you all for your continued support over the years and we cannot wait to see the creativity you unleash on your server with these features! In typical Geyser fashion, here is a Gource render of all commits since the start of the project: [https://youtu.be/ss6GlUkVgEE](https://youtu.be/ss6GlUkVgEE)
+以上就是我今天要分享的全部内容！再次感谢大家多年来的持续支持，我们迫不及待地想看到您使用这些功能在服务器上释放的创造力！按照典型的 Geyser 风格，这里是从项目开始以来所有提交的 Gource 渲染：[https://youtu.be/ss6GlUkVgEE](https://youtu.be/ss6GlUkVgEE)

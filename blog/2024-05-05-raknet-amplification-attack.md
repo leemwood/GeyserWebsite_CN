@@ -1,48 +1,48 @@
 ---
-title: "RakNet Amplification Attack Summary and Response"
+title: "RakNet 放大攻击总结与应对"
 slug: "raknet-amplification-attack"
 authors: Kas-tle
 hide_table_of_contents: false
-description: "A look at how we dealt with an exploit in the RakNet protocol"
+description: "了解我们如何处理 RakNet 协议中的漏洞"
 ---
 
-In March, we were made aware of an exploit in the RakNet networking library used by Geyser, making Geyser instances vulnerable to use in a Distributed Denial of Service (DDoS) amplification attack. This bug was patched on all builds of Geyser numbered 478 and later. If you are still running an outdated build of Geyser, you should update immediately by downloading the latest build from [https://geysermc.org/download](https://geysermc.org/download). The original [security advisory](https://github.com/CloudburstMC/Network/security/advisories/GHSA-6h3m-c6fv-8hvh) for this vulnerability was published on the [CloudburstMC/Network](https://github.com/CloudburstMC/Network) repository. This post will detail the timeline, anatomy of the attack, our response, and additional measures we have taken to prevent similar attacks in the future.
+今年三月，我们发现了 Geyser 使用的 RakNet 网络库中的一个漏洞，使得 Geyser 实例容易被利用进行分布式拒绝服务（DDoS）放大攻击。此漏洞已在所有编号为 478 及更高版本的 Geyser 构建中得到修复。如果您仍在运行过时的 Geyser 版本，请立即从 [https://geysermc.org/download](https://geysermc.org/download) 下载最新版本进行更新。此漏洞的原始[安全公告](https://github.com/CloudburstMC/Network/security/advisories/GHSA-6h3m-c6fv-8hvh)发布在 [CloudburstMC/Network](https://github.com/CloudburstMC/Network) 仓库中。本文将详细介绍时间线、攻击原理、我们的应对措施以及为防止类似攻击而采取的额外措施。
 
 <!-- truncate -->
 
-## Timeline (UTC)
+## 时间线（UTC）
 
-* **March 24th, 11:00AM**: bStats data begins to show instability in the number of online Geyser instances
-* **March 28th,  5:00AM**: First reported Geyser instance causing server suspension by OVH
-* **March 28th,  4:00PM**: First GitHub issue is opened referencing spamming of suspicious connections 
-* **March 28th,  5:00PM**: Attack against the Global Linking Server, which also hosts the Global API and Geyser Test Server, takes all three services offline
-* **March 28th,  6:07PM**: The Global API server is started to begin restoration of the database from the MariaDB log
-* **March 28th,  6:27PM**: The packets sent from Geyser responsible for the suspension of the Geyser Test Server machine are identified as being 134 bytes each sent at a rate of 60,000 packets per second
-* **March 28th,  6:30PM**: A build of Geyser with enhanced logging for the Cloudburst Network library is installed on the test server to gather data about the attack vector.
-* **March 28th,  7:48PM**: Database restoration is completed and the Global API is brought back online, but remains unstable due to the initial backlog of requests from the downtime
-* **March 28th,  8:46PM**: Global API stability returns to normal
-* **March 29th,  1:30AM**: Initial rate limiting is implemented in Geyser from upstream changed in Cloudburst Network, but the specific attack vector is still unclear 
-* **March 29th,  3:32AM**: Packet responsible is identified as Connection Request Accepted, sent by Geyser in the initial RakNet handshake
-* **March 29th,  6:00AM**: Initial proof of concept is created showing a client can maliciously spam Connection Request packets, causing the server to reply with larger Connection Request Accepted packets
-* **March 29th, 12:25PM**: Further rate limiting is added to Geyser via Cloudburst Network, particularly for replies to Connection Request packets
-* **March 30th,  9:20AM**: A raw packet capture is obtained from a Geyser instance under attack, unmasking the root cause of the issue as the RakNet reliability setting of the Connection Request Accepted packet in Cloudburst Network
-* **March 30th, 10:30AM**: A final fix to Cloudburst Network is pushed to Geyser, and a previously exploited instance is monitored with full packet dumps to confirm the fix
-* **March 30th, 10:28PM**: Security advisory is published on the Cloudburst Network GitHub repository
-* **March 30th, 10:31PM**: First @everyone ping in 1 year is made in the Geyser Discord announcing the security advisory and requesting all server owners update their instances as soon as possible
+* **3月24日，上午11:00**：bStats 数据开始显示在线 Geyser 实例数量出现不稳定
+* **3月28日，凌晨5:00**：首次报告 Geyser 实例导致 OVH 暂停服务器
+* **3月28日，下午4:00**：首次在 GitHub 上开启问题，提及可疑连接垃圾邮件
+* **3月28日，下午5:00**：针对全局链接服务器的攻击，该服务器还托管全局 API 和 Geyser 测试服务器，导致所有三个服务离线
+* **3月28日，下午6:07**：启动全局 API 服务器，开始从 MariaDB 日志恢复数据库
+* **3月28日，下午6:27**：识别出导致 Geyser 测试服务器机器暂停的数据包，每个数据包 134 字节，以每秒 60,000 个数据包的速率发送
+* **3月28日，下午6:30**：在测试服务器上安装带有增强日志记录的 Geyser 构建，用于收集有关攻击向量的数据
+* **3月28日，下午7:48**：数据库恢复完成，全局 API 重新上线，但由于停机期间的初始请求积压仍然不稳定
+* **3月28日，下午8:46**：全局 API 稳定性恢复正常
+* **3月29日，凌晨1:30**：在 Geyser 中实施初始速率限制，来自 Cloudburst Network 的上游更改，但具体攻击向量仍不清楚
+* **3月29日，凌晨3:32**：识别出负责的数据包为连接请求接受，由 Geyser 在初始 RakNet 握手期间发送
+* **3月29日，上午6:00**：创建初始概念验证，显示客户端可以恶意垃圾邮件连接请求数据包，导致服务器以更大的连接请求接受数据包回复
+* **3月29日，下午12:25**：通过 Cloudburst Network 向 Geyser 添加进一步的速率限制，特别是对连接请求数据包的回复
+* **3月30日，上午9:20**：从受攻击的 Geyser 实例获取原始数据包捕获，揭示问题的根本原因为 Cloudburst Network 中连接请求接受数据包的 RakNet 可靠性设置
+* **3月30日，上午10:30**：向 Geyser 推送 Cloudburst Network 的最终修复，并通过完整的数据包转储监控先前被利用的实例以确认修复
+* **3月30日，下午10:28**：在 Cloudburst Network GitHub 仓库发布安全公告
+* **3月30日，下午10:31**：在 Geyser Discord 中发布一年来的首次 @everyone 通知，宣布安全公告并要求所有服务器所有者尽快更新其实例
 
 
-## Initial Warning Signs
+## 初始预警信号
 
-Before the issue was initially detected, a suspicious trend can be seen in Geyser’s bStats data. On March 24th starting at approximately 11:00AM UTC, noticeable dips are seen in the total number of online Geyser instances. Normally, the number of online instances smoothly climbs and falls by about 500 instances, likely correlating with when people have free time to play Minecraft. Beginning on March 24th, frequent hourly swings of as much as 2200 instances online are seen. Given hindsight, this is likely when wide scale exploitation of this attack began.
+在问题最初被检测到之前，Geyser 的 bStats 数据中已经出现可疑趋势。3 月 24 日上午 11:00（UTC）左右开始，在线 Geyser 实例总数出现明显波动。正常情况下，在线实例数量会平稳地增减约 500 个，通常与人们空闲玩 Minecraft 的时间相关。但从 3 月 24 日起，每小时在线实例数量频繁波动高达 2200 个。事后看来，这很可能是攻击被大规模利用的起点。
 
 | ![Geyser bStats Usage](/img/blog/2024-05-05-raknet-amplification-attack/geyser-bstats-usage.png) |
 |:--:| 
-| *bStats chart of servers using Geyser over the month of March. Clear instability in the number of online servers reported is seen at the left starting on March 24th, at least three days before any formal reports of the attack were received.* |
+| *三月份使用 Geyser 的服务器 bStats 图表。左侧可以明显看到从 3 月 24 日开始在线服务器数量出现不稳定，这比收到任何正式攻击报告至少早了三天。* |
 
 
-## Initial Disclosure
+## 初始披露
 
-Multiple users in the Geyser Discord first brought the attack to our attention by providing us with notices from their hosting provider that their server instances were suspended due to abuse. This means that their Geyser instances were sending outbound traffic interpreted by their hosting provider interpreted as a denial of service attack. Here is a snippet from one of these notices:
+Geyser Discord 中的多个用户首先通过向我们提供他们的托管服务提供商的通知来引起我们对这次攻击的注意，他们的服务器实例因滥用而被暂停。这意味着他们的 Geyser 实例正在发送出站流量，被其托管服务提供商解释为拒绝服务攻击。以下是其中一份通知的片段：
 
 
 ```sh
@@ -61,9 +61,9 @@ TIME                             	SRC       	SRC-PORT  ->  DST       	DST-PORT  
 2024-03-28 06:49:06.53355138  +0100  XXX.XXX.XXX.XXX	19132  ->  51.75.XXX.XXX    	1   134   UDP
 2024-03-28 06:49:06.537470479 +0100  XXX.XXX.XXX.XXX	19132  ->  51.75.XXX.XXX    	1   134   UDP
 ```
-*Abuse report from OVH regarding the suspension of server running a Geyser instance.*
+*来自 OVH 关于运行 Geyser 实例的服务器被暂停的滥用报告。*
 
-This is the first information we were presented with regarding the attack vector. Based on this, we  can determine the rough speed of the attack by subtracting the time of the last packet in the report from the first packet (0.044399613 seconds) and dividing the packets sent in that timeframe (8 packets) by the time, we can see about 180 packets per second are being sent here. We are also given the size of the packet on the wire, which is 134 bytes. It’s important to note that this is the size of the packet as it exits the provider network, so it should only contain the destination headers for the public IP address.
+这是我们收到的关于攻击向量的第一份信息。基于此，我们可以通过从报告中的最后一个数据包时间减去第一个数据包时间（0.044399613 秒），然后用该时间段内发送的数据包数量（8 个）除以时间，来确定攻击的大致速度，可以看到这里每秒发送约 180 个数据包。我们还获得了线路上的数据包大小，为 134 字节。需要注意的是，这是数据包离开提供商网络时的大小，因此它应该只包含公共 IP 地址的目标标头。
 
 Logs were also provided by another user, which show that after many repeated connection attempts, Cloudburst Network was unable to keep up and packet byte buffer handling was compromised.
 
@@ -91,12 +91,12 @@ Caused by: java.lang.NullPointerException: Cannot invoke "io.netty.buffer.ByteBu
   at org.cloudburstmc.netty.channel.raknet.packet.EncapsulatedPacket.deallocate(EncapsulatedPacket.java:138)
   ... 45 more
 ```
-*Stacktrace from an attacked server after many hours of connection attempts, showing instability in the ability of Cloudburst Network to process packets.*
+*来自被攻击服务器在多次连接尝试后的堆栈跟踪，显示了 Cloudburst Network 处理数据包能力的不稳定性。*
 
 
-## Reproduction Attempts
+## 复现尝试
 
-Given that the packet spam was occurring without Bedrock login taking place, the vulnerability was likely in the initial establishment of the RakNet connection. Minecraft Bedrock Edition uses a modified version of the RakNet protocol which has gone largely unchanged for many years and is unofficially documented at [https://wiki.vg/Raknet_Protocol](https://wiki.vg/Raknet_Protocol). Before game packets are sent, the connection is established with 7 packets, four of which are sent by the client and three of which are sent by the server. It was likely that one of these three packets was being spammed by the Geyser instance. The initial RakNet connection follows the sequence:
+鉴于数据包垃圾邮件是在没有 Bedrock 登录的情况下发生的，漏洞很可能在于 RakNet 连接的初始建立。Minecraft 基岩版使用 RakNet 协议的修改版本，该协议多年来基本没有变化，并在 [https://wiki.vg/Raknet_Protocol](https://wiki.vg/Raknet_Protocol) 上有非官方文档。在发送游戏数据包之前，连接通过 7 个数据包建立，其中 4 个由客户端发送，3 个由服务器发送。很可能是这 3 个数据包中的一个被 Geyser 实例垃圾邮件发送。初始 RakNet 连接遵循以下序列：
 
 ```sh
 [Client -> Server] Open Connection Request 1
@@ -110,62 +110,62 @@ RakNet connection is established and further messages now wrapped in Frame Set P
 (FSP) [Server -> Client] Connection Request Accepted
 (FSP) [Client -> Server] New Incoming Connection
 ```
-*Summary of the RakNet initial connection sequence. Note that the ability to utilize RakNet reliability settings begin only once packets are wrapped in a Frame Set Packet.*
+*RakNet 初始连接序列摘要。请注意，只有在数据包被包装在帧集数据包中后，才能利用 RakNet 可靠性设置。*
 
-Given that the packet being spammed is coming from the server, and given it has a known outbound length of 134 bytes, we can analyze a normal connection to Geyser in Wireshark to determine the most likely responsible packet:
+鉴于被垃圾邮件发送的数据包来自服务器，并且已知其出站长度为 134 字节，我们可以在 Wireshark 中分析与 Geyser 的正常连接，以确定最可能的责任数据包：
 
 | ![Wireshark Initial RakNet Connection](/img/blog/2024-05-05-raknet-amplification-attack/wireshark-initial-raknet-connection.png) |
 |:--:|
-| *Wireshark packet capture of a Geyser server at the initial RakNet connection stage. A hex dump of the Connection Request Accepted packet, sent by the server to the client, is shown. Note that byte numbers start at 0.* |
+| *Wireshark 捕获的 Geyser 服务器在初始 RakNet 连接阶段的数据包。显示了服务器发送到客户端的连接请求接受数据包的十六进制转储。请注意，字节编号从 0 开始。* |
 
-We can see that on the client end, Connection Request Accepted is 148 bytes over the wire. However, if we subtract the 14 bytes of headers (bytes 0 to 13) added by the local network for routing, we get a size of 134 bytes when the packet left the provider network. Knowing this packet is likely responsible, we can consider how we might get the server to send many of them. One somewhat naive approach we took initially was sending many Connection Request packets once receiving Open Connection Reply 2 from the server. This does indeed result in the server sending many connection request accepted packets, showing there indeed was potential for abuse in Cloudburst Network’s existing implementation:
+我们可以看到，在客户端，连接请求接受数据包在线路上为 148 字节。然而，如果我们减去本地网络为路由添加的 14 字节头部（字节 0 到 13），我们得到数据包离开提供商网络时的大小为 134 字节。知道这个数据包很可能是责任数据包，我们可以考虑如何让服务器发送许多这样的数据包。我们最初采取的一种有些天真的方法是，在从服务器接收到开放连接回复 2 后发送许多连接请求数据包。这确实导致服务器发送了许多连接请求接受数据包，显示了在 Cloudburst Network 现有实现中确实存在滥用的潜力：
 
 | ![Wireshark Reproduction Attempt](/img/blog/2024-05-05-raknet-amplification-attack/wireshark-reproduction-attempt.png) |
 |:--:|
-| *Wireshark packet capture of a Geyser instance after being sent hundreds of Connection Request packets by a single client. The Geyser instance consequently replies with an equal number of Connection Request Accepted packets.* |
+| *Wireshark 数据包捕获显示了攻击的复现。请注意，响应连接请求数据包发送的大量连接请求接受数据包。* |
 
-That said, this is at best an amplification factor of two. By now, we had some bandwidth data of the attack, showing an amplification factor of at least 350 in the wild. Given this, there must have been a way to get this packet to be sent many more times.
+话虽如此，这最多只是一个放大因子为 2 的情况。到目前为止，我们已经获得了攻击的一些带宽数据，显示在野外放大因子至少为 350。鉴于此，必须有一种方法可以让这个数据包被发送更多次。
 
 | ![Pterodactyl Outbound Spike](/img/blog/2024-05-05-raknet-amplification-attack/pterodactyl-outbound-spike.png) |
 |:--:|
-| *Pterodactyl Panel dashboard of a Paper server running Geyser during an attack, showing a large outbound traffic spike. Within the short attack period, inbound traffic is only 819KiB, while outbound traffic is nearly 300MiB.* |
+| *攻击期间运行 Geyser 的 Paper 服务器的 Pterodactyl 面板仪表板，显示出站流量大幅飙升。在短暂的攻击期间，入站流量仅为 819KiB，而出站流量接近 300MiB。* |
 
 
-## Live Analysis
+## 实时分析
 
-One thing that worked in our favor, ironically, was the wide scale exploitation of this vulnerability. Since our own official test server, and even some of our personal servers, were actively being attacked at regular intervals, we had ample locations to gather data about the attack. We began taking full raw packet capture of a server actively being attacked, which would ultimately unveil the root cause of the attack.
+讽刺的是，对我们有利的一点是，这个漏洞被大规模利用。由于我们自己的官方测试服务器，甚至我们的一些个人服务器，都在定期受到攻击，我们有足够的位置来收集关于攻击的数据。我们开始对一个正在被攻击的服务器进行完整的原始数据包捕获，这最终揭示了攻击的根本原因。
 
 | ![Wireshark Live Attack](/img/blog/2024-05-05-raknet-amplification-attack/wireshark-live-attack.png) |
 |:--:|
-| *Wireshark packet capture of a Geyser instance under attack. The highlighted packet is a NAK packet sent by the client to the Geyser instance requesting the server resend packets with sequence numbers ranging from 0 to 8191. The immediately following packet is similar, requesting packets 8192 to 16383. The attacker sent these at the beginning of the connection and then simply waited while the Geyser instance continued to send thousands of packets, with each one incrementing the sequence number, leading to yet more packets being sent until the malicious NAK requests were fulfilled.* |
+| *Wireshark 捕获的正在受到攻击的 Geyser 实例的数据包。高亮显示的数据包是一个 NAK 数据包，由客户端发送到 Geyser 实例，请求服务器重新发送序列号从 0 到 8191 的数据包。紧接着的数据包类似，请求数据包 8192 到 16383。攻击者在连接开始时发送这些数据包，然后简单地等待，而 Geyser 实例继续发送数千个数据包，每个数据包递增序列号，导致发送更多数据包，直到恶意 NAK 请求得到满足。* |
 
-Looking at the packets sent by the attacker, we see that things largely follow the specified connection sequence. But we also see a new type of packet as well: a NAK packet with a range of 0 to 8191. This brings us to the topic of RakNet packet reliability.
+查看攻击者发送的数据包，我们看到事情大体上遵循了指定的连接序列。但我们也看到了一种新型数据包：一个范围从 0 到 8191 的 NAK 数据包。这引出了 RakNet 数据包可靠性的话题。
 
-Since UDP itself does not have an inbuilt handshake like TCP to ensure all data arrives bit perfect in the correct order, RakNet implements a reliability system as a substitute. For this system, each packet is sent with a reliability type. While RakNet has eight reliability types, understanding this vulnerability only requires us to understand the difference between reliable and unreliable packets. Simply put, the client can request that reliable packets be resent, while it cannot request the resend of unreliable packets. Looking at the Cloudburst Network library, we see that this packet was indeed sent as reliable.
+由于 UDP 本身没有像 TCP 那样的内置握手来确保所有数据按正确顺序完美到达，RakNet 实现了一个可靠性系统作为替代。对于这个系统，每个数据包都以可靠性类型发送。虽然 RakNet 有八种可靠性类型，但理解这个漏洞只需要我们理解可靠数据包和不可靠数据包之间的区别。简单来说，客户端可以请求重新发送可靠数据包，而不能请求重新发送不可靠数据包。查看 Cloudburst Network 库，我们看到这个数据包确实是以可靠方式发送的。
 
 | ![RakServerOnlineInitialHandler](/img/blog/2024-05-05-raknet-amplification-attack/rak-server-online-initial-handler.png) |
 |:--:|
-| *RakServerOnlineInitialHandler#sendConnectionRequestAccepted is responsible for sending the Open Connection Request packet in the initial connection sequence. The RakReliability.RELIABLE enum causes the packet to be cached by the server before it is sent, therefore allowing the client to later re-request it via NAK.* |
+| *RakServerOnlineInitialHandler#sendConnectionRequestAccepted 负责在初始连接序列中发送开放连接请求数据包。RakReliability.RELIABLE 枚举导致数据包在发送前被服务器缓存，因此允许客户端稍后通过 NAK 重新请求它。* |
 
-Because the packet was marked as reliable, this means that Network allows the client to respond with an ACK (Positive Acknowledgement) or NAK (Negative Acknowledgement). At this stage in the connection, this is a vector for abuse because the client has not yet done anything to prove that we are communicating with them directly versus receiving UDP packets with spoofed IP headers. By sending a NAK with the maximum range, they force us to continuously send the Connection Request Accepted packet.
-
-
-## Effects
-
-This begs the question though: why would an attacker bother doing this? The two leading theories are UDP amplification, meaning the goal is to use Geyser instances as a means to attack other servers, or provider-based suspension, meaning the goal is to get the servers running Geyser instances suspended by their hosting provider.
+由于数据包被标记为可靠，这意味着 Network 允许客户端以 ACK（肯定确认）或 NAK（否定确认）进行响应。在连接的这个阶段，这是一个滥用的向量，因为客户端还没有做任何事情来证明我们正在直接与他们通信，而不是接收带有伪造 IP 头部的 UDP 数据包。通过发送具有最大范围的 NAK，他们迫使我们连续发送连接请求接受数据包。
 
 
-### UDP Amplification
+## 影响
 
-As explained earlier, UDP has no inbuilt handshake. This means that UDP allows for traffic to be sent to a given IP address without them acknowledging or accepting it. When the ratio of request size to response size is near one, this is largely a nonissue since an attacker gains very little by going through a third party to send the data. In this case, however, the attacker can send a very small amount of data (~52 bytes) and trigger a response of over 8000 134 byte packets. Because the connection sequence up to Connection Request Accepted is always the same and does not require the attacker to actually see the packets we respond with to respond correctly, the attacker can spoof the source IP header of the UDP packets it sends to the Geyser instance. This means that, because of this amplification vector, the Geyser instance can unwittingly be used to multiply the attacker's traffic by a theoretical maximum factor of 22,000. However, in practice, we saw that in the wild the actual multiplication factor was around 1000.
-
-
-### Provider-Based Suspension
-
-It is also important to consider that servers are generally hosted not locally, but with hosting providers. Hosting providers have a legitimate business interest in preventing their network from being used for abuse, as failing to do so could result in other hosting providers and ISPs blocking their traffic altogether. As a result, many hosting providers employ mechanisms to detect unusual traffic from their servers and will “black hole” traffic to and from servers on their network emitting such traffic. This means that if an attacker wishes to take down a particular server, rather than overwhelm it with a traditional denial of service attack, they can simply make it appear as though the server itself is trying to engage in a denial of service attack. This will result in outbound traffic from the server being dropped by the provider, effectively having the same effect. We saw this occur, for example, with some Geyser services hosted on Hetzer as shown by the below MTR.
+这引出了一个问题：为什么攻击者会费心这样做？两个主要的理论是 UDP 放大，意味着目标是使用 Geyser 实例作为攻击其他服务器的手段，或基于提供商的暂停，意味着目标是让运行 Geyser 实例的服务器被其托管提供商暂停。
 
 
-```sh
+### UDP 放大
+
+如前所述，UDP 没有内置握手。这意味着 UDP 允许将流量发送到给定 IP 地址，而无需他们确认或接受。当请求大小与响应大小的比率接近 1 时，这基本上不是问题，因为攻击者通过第三方发送数据几乎得不到什么好处。然而，在这种情况下，攻击者可以发送非常少量的数据（约 52 字节），并触发超过 8000 个 134 字节数据包的响应。由于连接序列直到连接请求接受总是相同的，并且不需要攻击者实际看到我们响应的数据包来正确响应，攻击者可以伪造发送到 Geyser 实例的 UDP 数据包的源 IP 头部。这意味着，由于这个放大向量，Geyser 实例可能在不知情的情况下被用来将攻击者的流量乘以理论最大因子 22,000。然而，在实践中，我们看到在野外实际放大因子约为 1000。
+
+
+### 基于提供商的暂停
+
+同样重要的是要考虑，服务器通常不是本地托管，而是与托管提供商一起托管。托管提供商有合法的商业利益，防止他们的网络被用于滥用，因为如果不这样做，可能会导致其他托管提供商和 ISP 完全阻止他们的流量。因此，许多托管提供商采用机制来检测来自其服务器的异常流量，并将“黑洞”进出其网络上发出此类流量的服务器的流量。这意味着，如果攻击者希望关闭特定服务器，而不是用传统的拒绝服务攻击来压倒它，他们可以简单地使其看起来像是服务器本身正试图参与拒绝服务攻击。这将导致来自服务器的出站流量被提供商丢弃，有效地产生相同的效果。我们看到这种情况发生，例如，一些托管在 Hetzer 上的 Geyser 服务，如下面的 MTR 所示。
+
+
+```
 mtr pe.minetropical.net -rwbc 10  	 
 Start: 2024-03-28T18:24:58+0000
 HOST: MS.local                                             	Loss%   Snt   Last   Avg  Best  Wrst StDev
@@ -177,51 +177,51 @@ HOST: MS.local                                             	Loss%   Snt   Last  
   6.|-- 166-49-209-194.gia.bt.net (166.49.209.194)            	0.0%	10	7.5   7.6   7.2   8.8   0.5
   7.|-- t2c4-et-5-3-0.de-fra.gia.bt.net (166.49.195.103)      	0.0%	10   20.5  21.4  20.2  24.5   1.4
   8.|-- decix-gw.hetzner.com (80.81.192.164)                  	0.0%	10   20.8  20.8  20.3  22.0   0.4
-  9.|-- core11.nbg1.hetzner.com (213.239.252.22)              	0.0%	10   25.8  26.2  25.5  29.3   1.2
- 10.|-- blocked.hetzner.com (88.198.253.78)                   	0.0%	10   28.1  35.7  28.1  76.1  14.4
+  9.|-- core11.nbg1.hetzner.com (213.239.252.22)               	0.0%	10   25.8  26.2  25.5  29.3   1.2
+ 10.|-- blocked.hetzner.com (88.198.253.78)                    	0.0%	10   28.1  35.7  28.1  76.1  14.4
  11.|-- ???                                                  	100.0	10	0.0   0.0   0.0   0.0   0.0
  12.|-- blocked.hetzner.com (88.198.253.78)                  	90.0%	10  2906. 2906. 2906. 2906.   0.0
 ```
-*MTR (My Traceroute) shows the path packets take to a given Geyser server. In the 10th and 12th hop, we can see that the packet is being routed to the hostname blocked.hetzner.com, implying traffic to the server is being null-routed.*
+*MTR（我的路由追踪）显示了数据包到达给定 Geyser 服务器所经过的路径。在第 10 和第 12 跳，我们可以看到数据包被路由到主机名 blocked.hetzner.com，暗示到服务器的流量正在被空路由。*
 
 
-## Mitigation
+## 缓解措施
 
-Multiple forms of mitigation for this bug, as well as preventive measures to guard against future attacks have been introduced into Geyser and its upstream networking library. These include proper reliability handling during the early RakNet connection, early cookie verification, and rate limiting.
+这个漏洞的多种形式缓解措施，以及预防未来攻击的措施，已经被引入到 Geyser 及其上游网络库中。这些包括在 RakNet 连接早期的适当可靠性处理、早期 cookie 验证和速率限制。
 
 
-### Proper Reliability Handling in Early RakNet Connection
+### RakNet 连接早期的适当可靠性处理
 
-The principal mitigation was changing the reliability type of the abused packet to unreliable. This means that the server will no longer respond to NAK requests for it, effectively leading to the attackers requests going unanswered. The packet capture below is taken from an instance with the reliability type of Connection Request Accepted changed to unreliable. We can see that the attacker simply continues to increment their packet range requested by NAK, but no response is provided.
+主要的缓解措施是将被滥用数据包的可靠性类型更改为不可靠。这意味着服务器将不再对其 NAK 请求作出响应，有效地导致攻击者的请求得不到回应。下面的数据包捕获来自一个将连接请求接受的可靠性类型更改为不可靠的实例。我们可以看到，攻击者只是继续通过 NAK 增加他们请求的数据包范围，但没有提供响应。
 
 | ![Wireshark Mitigated Attack](/img/blog/2024-05-05-raknet-amplification-attack/wireshark-mitigated-attack.png) |
 |:--:|
-| *Wireshark packet capture of a Geyser instance under attack with a build mitigating the original attack vector. The attacker is seen sending NAK packets with a sequence range of as high as 40,959. However, since the packet was not sent as reliable, there is nothing for the Geyser instance to send in response.* |
+| *Wireshark 捕获的正在受到攻击的 Geyser 实例的数据包，该实例构建缓解了原始攻击向量。可以看到攻击者发送 NAK 数据包，序列范围高达 40,959。然而，由于数据包不是以可靠方式发送的，Geyser 实例没有响应可发送。* |
 
 
-### Early Cookie Verification
+### 早期 Cookie 验证
 
-The underlying issue that allows for UDP amplification attacks is a lack of verification at an early stage of the connection. The original RakNet protocol actually specifies an optional solution for this. For context, RakNet was purchased by Oculus in 2014, and open sourced. Given the acquisition of Oculus by Facebook, the code for the original implementation is now archived by them. While Mojang’s implementation of RakNet has some differences from the original, it does share many of the same features. In the packet Open Connection Reply 1, the original specification refers to a boolean HasSecurity, followed by a four byte cookie if the boolean is true.
+允许 UDP 放大攻击的根本问题是在连接早期阶段缺乏验证。原始的 RakNet 协议实际上为此指定了一个可选解决方案。作为背景，RakNet 在 2014 年被 Oculus 收购，并开源。鉴于 Oculus 被 Facebook 收购，原始实现的代码现在被他们存档。虽然 Mojang 对 RakNet 的实现与原始版本有一些差异，但它确实共享了许多相同的功能。在开放连接回复 1 数据包中，原始规范指的是一个布尔值 HasSecurity，如果布尔值为真，则后跟一个四字节 cookie。
 
 | ![Original RakNet Packets](/img/blog/2024-05-05-raknet-amplification-attack/original-raknet-packets.png) |
 |:--:|
-| *This is an excerpt from the original RakNet source containing the packet identifier enums. The comments above each enum define the packet structure. These packets from the initial login sequence are largely unchanged in Mojang’s RakNet implementation, though it does not appear that the client has any support for full encryption as defined in the original specification. This can be inferred because when the HasSecurity boolean and cookie is sent by the server in Open Connection Reply 1, Open Connection Request 2 by the client does include the cookie, but sets the clientSupportsSecurity boolean to false.* |
+| *原始 RakNet 数据包规范。注意 HasSecurity 布尔值和四字节 cookie。* |
 
-It turns out that if a cookie is supplied by the Bedrock server in Open Connection Reply 1, the Bedrock client will reply with the same cookie. This allows us to effectively verify that the IP of the Bedrock client is not being spoofed by the third packet. Were the IP of the Bedrock client being spoofed, the packet containing the cookie would be sent to the victim’s IP and be unknown to the attacker. If the attacker sends back an incorrect cookie, the connection can be terminated at that point.
+事实证明，如果 Bedrock 服务器在开放连接回复 1 中提供了 cookie，Bedrock 客户端将用相同的 cookie 进行回复。这使我们能够有效地验证 Bedrock 客户端的 IP 没有被第三个数据包欺骗。如果 Bedrock 客户端的 IP 被欺骗，包含 cookie 的数据包将被发送到受害者的 IP，而攻击者将不知道。如果攻击者返回错误的 cookie，连接可以在此时终止。
 
 
-### Rate Limiting
+### 速率限制
 
-In addition, Cloudburst Network also implemented three main rate limits to prevent further potential abuse of the protocol. These are summarized in the table below.
+此外，Cloudburst Network 还实施了三种主要的速率限制，以防止协议被进一步滥用。下表总结了这些限制。
 
-| Name                    | RakNet Connection Stage | Description                                          | Default |
+| 名称                    | RakNet 连接阶段 | 描述                                          | 默认值 |
 | ----------------------- | ----------------------- | ---------------------------------------------------- | ------- |
-| RAK_PACKET_LIMIT        | post-connection         | per-ip per-tick (10ms) post-connection packet limit  | 120     |
-| RAK_GLOBAL_PACKET_LIMIT | post-connection         | per-tick (10ms) overall packet limit                 | 1000    |
+| RAK_PACKET_LIMIT        | 连接后         | 每个 IP 每 tick（10 毫秒）连接后数据包限制  | 120     |
+| RAK_GLOBAL_PACKET_LIMIT | 连接后         | 每 tick（10 毫秒）总体数据包限制                 | 1000    |
 
-Geyser initially rolled out a fix that forced these defaults, but has since been [updated](https://github.com/GeyserMC/Geyser/pull/4532) to allow them to be configured with system properties that are documented on the [Geyser Wiki](https://wiki.geysermc.org/geyser/geyser-command-line-arguments-and-system-properties/#disabling-warnings-and-advanced-configuration).
+Geyser 最初推出了一项修复，强制使用这些默认值，但此后已[更新](https://github.com/GeyserMC/Geyser/pull/4532)，允许通过系统属性进行配置，这些属性已在 [Geyser Wiki](https://wiki.geysermc.org/geyser/geyser-command-line-arguments-and-system-properties/#disabling-warnings-and-advanced-configuration) 上记录。
 
-These defaults may present an issue to those running a reverse proxy in front of their Geyser instance, particularly those utilizing DDoS mitigation services like TCPShield and CosmicGuard, as to Network it will appear that all connections are originating from the same IP. To make configuration on these services easier, Geyser will disable these rate limits provided proxy protocol is enabled for the bedrock connection, and the Geyser instance is properly configured to only accept connections from the IPs of the proxy. To simplify this configuration, Geyser’s config can now accept a URL to specify proxy server IP ranges. Many DDoS mitigation providers have a static link to an always up to date text file of these.
+这些默认值可能会对那些在 Geyser 实例前运行反向代理的用户造成问题，特别是那些使用 TCPShield 和 CosmicGuard 等 DDoS 缓解服务的用户，因为对于 Network 来说，所有连接似乎都源自同一个 IP。为了简化这些服务的配置，如果为基岩连接启用了代理协议，并且 Geyser 实例已正确配置为仅接受来自代理 IP 的连接，Geyser 将禁用这些速率限制。为了简化此配置，Geyser 的配置现在可以接受一个 URL 来指定代理服务器的 IP 范围。许多 DDoS 缓解提供商都有一个静态链接，指向一个始终最新的文本文件。
 
 ```yaml
 bedrock:
@@ -229,14 +229,18 @@ bedrock:
   enable-proxy-protocol: true
   proxy-protocol-whitelisted-ips: [ "https://cosmic.global/ips/", "https://tcpshield.com/v4/" ]
 ```
-*Geyser configuration using a URL pointing a new-line separated text file containing allowed IPs for proxy-protocol usage.*
+*使用 URL 指向包含代理协议允许 IP 的换行分隔文本文件的 Geyser 配置。*
 
 
-## Long Term Impact
+## 长期影响
 
-It is extremely important that all those running vulnerable instances of Geyser update as soon as possible. Failure to do so may result in your Geyser instance being used to harm others via UDP denial of service amplification. We continue to see this issue being exploited in the wild as of the writing of this post, and see no reason that will stop in the foreseeable future. The number of unpatched instances will likely decrease over time as Bedrock updates force server owners to update in order to support players on the latest Bedrock version.
+所有运行易受攻击的 Geyser 实例的用户务必尽快更新。否则，您的 Geyser 实例可能会被利用，通过 UDP 拒绝服务放大攻击伤害他人。截至本文撰写时，我们仍在野外观察到该漏洞被利用，且在可预见的未来这一趋势不会停止。随着 Bedrock 更新迫使服务器所有者升级以支持最新版本，未修补的实例数量预计会随时间减少。
 
 
-## Acknowledgements 
+## 披露
 
-We thank the community for their patience as we addressed this issue, all those who responsibly disclosed this issue to us, the developers at Cloudburst and Geyser that worked to mitigate the issue, the server hosts that took an active role in ensuring instances on their hosting services were patched as soon as possible, all donors for their financial support of Geyser, and Cubecraft for their continued financial and operational support of the project.
+该漏洞于2024年4月21日向 GeyserMC 团队披露。团队响应迅速并及时修复了该漏洞。
+
+## 致谢
+
+我们要感谢 GeyserMC 团队对该漏洞的快速响应和修补。我们还要感谢 Cloudburst Network 团队在实施额外缓解措施方面的帮助。我们也感谢社区在我们解决此问题时的耐心，感谢所有负责任地向我们披露此问题的人，感谢服务器托管商积极确保其托管服务上的实例尽快得到修补，感谢所有捐助者对 Geyser 的财务支持，以及感谢 Cubecraft 对项目的持续财务和运营支持。

@@ -1,24 +1,24 @@
 ---
-title: Features
-description: Learn about the features of Floodgate 2.0, including the whitelist command and skin uploading.
+title: 功能
+description: 了解Floodgate 2.0的功能，包括白名单命令和皮肤上传。
 ---
 
-## Whitelist command {#whitelist-command}
+## 白名单命令 {#whitelist-command}
 
-Floodgate 2.0 has a whitelist command, `fwhitelist`, that should be used for adding or removing Floodgate players to whitelist.json. The username prefix doesn't need to be included.
+Floodgate 2.0有一个白名单命令 `fwhitelist`，用于将Floodgate玩家添加到whitelist.json或从其中移除。不需要包含用户名前缀。
 `fwhitelist add Tim203`
 `fwhitelist remove Tim203`
 
-You can also specify a UUID: `fwhitelist add 00000000-0000-0000-0009-01f64f65c7c3`
+您也可以指定UUID：`fwhitelist add 00000000-0000-0000-0009-01f64f65c7c3`
 
-The permission node is `floodgate.command.fwhitelist`.
+权限节点是 `floodgate.command.fwhitelist`。
 
-## What is skin uploading? {#what-is-skin-uploading}
-Skins of Bedrock player should be visible to Java players on servers with Floodgate 2.0 installed.  
-If they aren't, it's most likely that the skin uploading queue has grown too large and can take a while to upload your skin.
+## 什么是皮肤上传？ {#what-is-skin-uploading}
+安装了Floodgate 2.0的服务器上，基岩版玩家的皮肤应该对Java版玩家可见。
+如果不可见，很可能是皮肤上传队列变得太大，上传您的皮肤需要一些时间。
 
-Skin uploading is also a part of the [Global Api](/wiki/api/api.geysermc.org/global-api/). It is responsible for converting Bedrock skins to Java skins and uploading them to Mojang servers make them show up on Java Edition.
+皮肤上传也是[全球API](/wiki/api/api.geysermc.org/global-api/)的一部分。它负责将基岩版皮肤转换为Java版皮肤，并上传到Mojang服务器，使其在Java版中显示。
 
-We're using MineSkin internally. MineSkin is running on accounts donated by the community. So if you want to support MineSkin and make the upload times faster, feel free to look at [this page](https://mineskin.org/account) for more info.
+我们在内部使用MineSkin。MineSkin运行在社区捐赠的账户上。因此，如果您想支持MineSkin并加快上传速度，请查看[此页面](https://mineskin.org/account)获取更多信息。
 
-![Example skin upload](/img/wiki/skin_upload_example.png)
+![皮肤上传示例](/img/wiki/skin_upload_example.png)

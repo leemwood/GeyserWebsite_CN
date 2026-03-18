@@ -272,13 +272,6 @@ const config: Config = {
                 hideable: true,
             }
         },
-        algolia: {
-            appId: '0DTHI9QFCH',
-            apiKey: '3cc0567f76d2ed3ffdb4cc94f0ac9815',
-            indexName: 'geysermc',
-            contextualSearch: false,
-            searchPagePath: 'search',
-        },
         metadata: [
             { name: 'theme-color', content: '#25c2a0' },
         ],

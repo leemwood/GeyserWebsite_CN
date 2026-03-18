@@ -48,7 +48,7 @@
         "sass": "1.77.8",
         "typescript": "5.7.2"
     },
-    "overrides": {
+    "resolutions": {
         "postman-code-generators": "1.14.0"
     },
     "browserslist": {
@@ -65,5 +65,6 @@
     },
     "engines": {
         "node": ">=22.0"
-    }
+    },
+    "packageManager": "yarn@4.12.0"
 }

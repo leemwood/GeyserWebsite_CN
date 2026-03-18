@@ -1,31 +1,31 @@
 ---
-title: Forms and Cumulus
-description: Cumulus is the Forms API used in Geyser and Floodgate, and is available for use in projects that extend Geyser or Floodgate.
+title: 表单与 Cumulus
+description: Cumulus 是 Geyser 和 Floodgate 中使用的表单 API，可用于扩展 Geyser 或 Floodgate 的项目中。
 ---
 
-# What is Cumulus?
+# 什么是 Cumulus？
 
-Bedrock Edition has a cool exclusive feature called Forms.  
-Cumulus is the Forms API that we use in Geyser and Floodgate.  
-The source code is available [here](https://github.com/GeyserMC/Cumulus). You can access the Cumulus API through the [Floodgate API](/wiki/floodgate/api/), or the [Geyser API](/wiki/geyser/api).
+Bedrock Edition 有一个很酷的独占功能 called Forms。
+Cumulus 是我们在 Geyser 和 Floodgate 中使用的 Forms API。
+源代码在[此处](https://github.com/GeyserMC/Cumulus)可用。您可以通过 [Floodgate API](/wiki/floodgate/api/) 或 [Geyser API](/wiki/geyser/api) 访问 Cumulus API。
 
-Bedrock knows three types of Forms:
+Bedrock 知道三种类型的表单：
 * ModalForm
 * SimpleForm
 * CustomForm
 
-We'll discuss them one by one starting with the easiest and ending with the least easy form type.  
-After that, you get an overview of every single component.  
-Then we'll talk about sending the form, receiving a response and doing advanced stuff.  
+我们将一个一个地讨论它们，从最简单的开始，到最不简单的结束。
+之后，您将了解每个组件的概述。
+然后我们将讨论如何发送表单、接收响应以及做一些高级操作。
 
 ## ModalForm {#modalform}
 
-While this is the easiest form type it's also the least customisable.  
-You have a title, description (content) and two buttons.
+虽然这是最简单的表单类型，但它也是定制化程度最低的。
+您有一个标题、描述（内容）和两个按钮。
 
-![Example of a ModalForm](https://i.imgur.com/kMpMgOh.png)
+![ModalForm 示例](https://i.imgur.com/kMpMgOh.png)
 
-Code used in the image:
+图片中使用的代码：
 
 ```java
 ModalForm.builder()
@@ -37,12 +37,12 @@ ModalForm.builder()
 
 ## SimpleForm {#simpleform}
 
-While this one is less easy than ModalForm is, it also has more customizability.  
-It's still limited to a title, content and buttons, but these buttons can also have images and do not have a minimum and maximum of two.
+虽然这个比 ModalForm 难一点，但它也有更多的定制性。
+它仍然局限于标题、内容和按钮，但这些按钮也可以有图片，并且没有最少和最多的两个限制。
 
-![Example of a SimpleForm](https://i.imgur.com/3rj2OQ2.png)
+![SimpleForm 示例](https://i.imgur.com/3rj2OQ2.png)
 
-Code used in the image:
+图片中使用的代码：
 ```java
 SimpleForm.builder()
     .title("Title")
@@ -54,13 +54,13 @@ SimpleForm.builder()
 
 ## CustomForm {#customform}
 
-While the CustomForm is the last one on our list (and thus the least easy one), it also has the greatest customizability.  
-This form exists of a title, content and a list of different components e.g. label, slider and input.  
-See [Components](https://github.com/GeyserMC/Cumulus/tree/master/src/main/java/org/geysermc/cumulus/component) for more information about every component you can use and in which form type.
+虽然 CustomForm 是我们列表中的最后一个（因此也是最难的一个），但它也具有最大的定制性。
+此表单由标题、内容和不同组件的列表组成，例如标签、滑块和输入框。
+请参阅[组件](https://github.com/GeyserMC/Cumulus/tree/master/src/main/java/org/geysermc/cumulus/component)获取有关您可以使用的每个组件以及在哪种表单类型中使用它们的更多信息。
 
-![Example of a CustomForm](https://i.imgur.com/zHgxELm.png)
+![CustomForm 示例](https://i.imgur.com/zHgxELm.png)
 
-Code used in the image:
+图片中使用的代码：
 
 ```java
 CustomForm.builder()
@@ -71,19 +71,19 @@ CustomForm.builder()
     .slider("Text", 0, 10, 1, 5)
 ```
 
-## Sending a form {#sending-a-form}
+## 发送表单 {#sending-a-form}
 
-After you decided which form type you want to use and finished filling in the actual content, it's time to send the Form to the Bedrock player.  
-You can do that by calling the API and send a form to the player's UUID and the form:
+在您决定要使用哪种表单类型并填写完实际内容后，就该将表单发送给 Bedrock 玩家了。
+您可以通过调用 API 并将表单发送到玩家的 UUID 和表单来做到这一点：
 ```java
-FloodgateApi.getInstance().sendForm(uuid, form); // or #sendForm(uuid, formBuilder)
+FloodgateApi.getInstance().sendForm(uuid, form); // 或 #sendForm(uuid, formBuilder)
 ```
-Or you can do it by using the Player's FloodgatePlayer instance:
+或者您可以通过使用玩家的 FloodgatePlayer 实例来做到这一点：
 ```java
 FloodgatePlayer player = FloodgateApi.getInstance().getPlayer(uuid);
-player.sendForm(form); // or #sendForm(formBuilder)
+player.sendForm(form); // 或 #sendForm(formBuilder)
 ```
-So you can make and send forms in a pretty compact way by doing something like this:
+所以您可以通过执行以下操作以相当紧凑的方式创建和发送表单：
 ```java
 FloodgatePlayer player = FloodgateApi.getInstance().getPlayer(uuid);
 ...
@@ -94,11 +94,11 @@ player.sendForm(
 );
 ```
 
-## Receiving a response from the client {#receiving-a-response-from-the-client}
+## 从客户端接收响应 {#receiving-a-response-from-the-client}
 
-It's nice and all that we can send forms to a client, but we also want to be able to get a response from a client and being able to handle them.  
-We can do that using one (or multiple) result handers. The most used result handlers are: `validResultHandler(BiConsumer<Form, ValidFormResponseResult> | Consumer<ValidFormResponseResult>)`, `invalidResultHandler`, `closedResultHandler` and `closedOrInvalidResultHandler`.  
-Here follows an example that uses result handlers:
+我们可以将表单发送给客户端当然很好，但我们也希望能够从客户端获取响应并能够处理它们。
+我们可以使用一个（或多个）结果处理器来做到这一点。最常用的结果处理器是：`validResultHandler(BiConsumer<Form, ValidFormResponseResult> | Consumer<ValidFormResponseResult>)`、`invalidResultHandler`、`closedResultHandler` 和 `closedOrInvalidResultHandler`。
+以下是一个使用结果处理器的示例：
 ```java
 CustomForm.builder()
     .title("geyser.auth.login.form.details.title")
@@ -109,10 +109,10 @@ CustomForm.builder()
     .validResultHandler(response -> session.authenticate(response.next(), response.next())));
 ```
 
-## Advanced stuff {#advanced-stuff}
+## 高级操作 {#advanced-stuff}
 
-The FormBuilder also has support for translating the data used in the builder.  
-To add a translator, you can use the `translator(BiFunction<String, String, String>)` or the `translator(BiFunction<String, String, String>, String)` method:
+FormBuilder 还支持翻译构建器中使用的数据。
+要添加翻译器，您可以使用 `translator(BiFunction<String, String, String>)` 或 `translator(BiFunction<String, String, String>, String)` 方法：
 ```java
 ModalForm form = ModalForm.builder()
     .translator(this::translate, userLanguage)
@@ -123,21 +123,21 @@ ModalForm form = ModalForm.builder()
     .build();
 
 public String translate(String key, String locale) {
-    // this method will be called for every string, in this case, 4 times:
-    // Title, Content, translate.button1, translate.button2
-    // your own translate logic here
-    // return the value that replaces the key
+    // 此方法将为每个字符串调用，在本例中为 4 次：
+    // Title、Content、translate.button1、translate.button2
+    // 这里放置您自己的翻译逻辑
+    // 返回替换该键的值
 }
 ```
-Or you can have the translate method directly in the FormBuilder instead of a separate method:
+或者您可以直接在 FormBuilder 中使用翻译方法，而不是单独的方法：
 ```java
 ModalForm form = ModalForm.builder()
     .translator((key, unused) -> {
-        // this method will be called for every string, in this case, 4 times:
-        // Title, Content, translate.button1, translate.button2
-        // since this isn't a separate method, you don't need the locale argument, so it's unused.
-        // your own translate logic here
-        // return the value that replaces the key
+        // 此方法将为每个字符串调用，在本例中为 4 次：
+        // Title、Content、translate.button1、translate.button2
+        // 由于这不是单独的方法，因此不需要 locale 参数，所以它是未使用的。
+        // 这里放置您自己的翻译逻辑
+        // 返回替换该键的值
     })
     .title("Title")
     .content("Content")

@@ -1,51 +1,52 @@
 ---
-title: Using Resource Packs with Geyser
-description: This page explains how to use resource packs with Geyser.
+title: 在 Geyser 中使用资源包
+description: 本页面说明如何在 Geyser 中使用资源包。
 ---
 
-# Introduction
+# 简介
 
-Geyser supports sending Bedrock edition resource packs to connecting Bedrock clients. 
-However, Geyser does not convert resource packs from the Java Edition format into the Bedrock edition format.
+Geyser 支持向连接的 Bedrock 客户端发送 Bedrock 版本的资源包。
+但是，Geyser 不会将 Java Edition 格式的资源包转换为 Bedrock 版本格式。
 
-Resource packs offer a range of customization options. Just like on Java, they can be used for a wide variety of things:
-- Texture Modifications: Resource packs can change the look of blocks, items, and entities, providing a unique visual experience.
-- Sound Changes: Custom sound effects or music tracks can be added to create a more immersive atmosphere.
-- UI Enhancements: Resource packs can modify the user interface - a popular example would be providing a dark mode UI option.
-... and much more!
+资源包提供多种自定义选项。就像 Java 版一样，它们可用于各种用途：
+- 材质修改：资源包可以改变方块、物品和实体的外观，提供独特的视觉体验。
+- 声音更改：可以添加自定义音效或音乐曲目，以创造更身临其境的氛围。
+- UI 增强：资源包可以修改用户界面——一个流行的例子是提供深色模式 UI 选项。
+... 还有更多！
 
-# Using resource packs
+# 使用资源包
 
-### Sending local packs
-The easiest way to send resource packs to Bedrock players is by putting the Bedrock edition resource pack, either as a `.zip` or `.mcpack` file, into Geyser's `packs` folder.
+### 发送本地资源包
+向 Bedrock 玩家发送资源包最简单的方法是将 Bedrock 版本的资源包（可以是 `.zip` 或 `.mcpack` 文件）放入 Geyser 的 `packs` 文件夹中。
 
-Location of the 'packs' folder:
+"packs"文件夹的位置：
 
 - Fabric/NeoForge: `/config/Geyser-<platform>/packs/`
-- Geyser Standalone: `/packs/` at the root directory
-- Other platforms: `/plugins/Geyser-<platform>/packs/`
+- Geyser Standalone: 根目录下的 `/packs/`
+- 其他平台: `/plugins/Geyser-<platform>/packs/`
 
-After restarting the server (or reloading Geyser), players that connect will receive all packs that are in that folder.
+重启服务器（或重新加载 Geyser）后，连接的玩家将收到该文件夹中的所有资源包。
 
 
-### Remote pack urls (accessible using the Geyser API)
-As an alternative to sending local packs, you can also send resource packs by sending Bedrock players a link to download the packs from.
-This works similarly to Java edition's pack downloading. However, there are a few key limitations:
+### 远程资源包链接（可使用 Geyser API 访问）
 
-- The link must be a direct link to the resource pack download (it will follow redirects, but those must result in a file download)
-- The Content-Length header must specify the exact file size.
-- The Content-Type application header must be set to `application/zip`.
+除了发送本地资源包外，您还可以通过向 Bedrock 玩家发送下载资源包的链接来发送资源包。
+这与 Java 版本的资源包下载方式类似。但是，有几个关键限制：
 
-Geyser will download your configured remote resource packs once on boot, and warn you if any of these conditions are not met.
-It is unfortunately not possible to bypass these, as these are restrictions imposed by the Bedrock client. 
+- 链接必须是资源包下载的直接链接（它会跟随重定向，但重定向必须导致文件下载）
+- Content-Length 头必须指定确切的文件大小。
+- Content-Type application 头必须设置为 `application/zip`。
 
-To verify headers manually, curl the website and check the values.
-For example:
-`curl -I -L https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/1.0.10/builds/11/downloads/geyseroptionalpack` returns the following:
-- `-I`: This option tells curl to fetch the HTTP response headers in the output.
-- `-L`: Ensures that curl follows redirects
+Geyser 会在启动时下载您配置的远程资源包一次，如果这些条件中的任何一个不满足，它会发出警告。
+不幸的是，不可能绕过这些限制，因为这些是 Bedrock 客户端施加的限制。
 
-The output for this shows the following:
+要手动验证 headers，请使用 curl 获取网站并检查值。
+例如：
+`curl -I -L https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/1.0.10/builds/11/downloads/geyseroptionalpack` 返回以下内容：
+- `-I`：此选项告诉 curl 在输出中获取 HTTP 响应头。
+- `-L`：确保 curl 跟随重定向
+
+这将显示以下输出：
 ```shell
 HTTP/1.1 200 OK
 Date: Wed, 03 Jul 2024 23:03:06 GMT
@@ -67,35 +68,34 @@ Server: cloudflare
 CF-RAY: 89da81ca69c63735-FRA
 alt-svc: h3=":443"; ma=86400
 ```
-This shows that the content-length is indeed set correctly, and that the content type indeed is `application/zip`.
-Further, Geyser will attempt to read the `ETag` to see if the content has changed. To query that, you can use the following:
+这显示 content-length 确实设置正确，并且 content type 确实是 `application/zip`。
+此外，Geyser 会尝试读取 `ETag` 以查看内容是否已更改。要查询它，您可以使用以下命令：
 
 `curl -I -L -v https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/1.0.10/builds/11/downloads/geyseroptionalpack 2>&1 | grep ETag`
-Alternatively, just using the `-v` header will turn on verbose mode that would also display the etag.
+或者，只需使用 `-v` 标头就会打开详细模式，也会显示 etag。
 
-# Common questions
- 
-- **Does Geyser support behavior packs/add-ons?** <br />
-No. These would require modifications on the Java server side, which isn't possible when Geyser is used on a proxy. 
-However, many things that are possible with add-ons or behavior packs can be done with Geyser's API - such as [custom items](/wiki/geyser/custom-items)
-or [custom blocks](/wiki/geyser/custom-blocks).
+# 常见问题
 
-- **Does Geyser convert Java edition resource packs?** <br />
-Not currently. For now, you need to manually create a Bedrock edition resource pack equivalent.
+- **Geyser 支持行为包/附加组件吗？** <br />
+不。这些需要在 Java 服务器端进行修改，而在 Geyser 用在代理上时，这是不可能的。
+但是，可以使用 Geyser 的 API 完成附加组件或行为包可以完成的许多事情——例如[自定义物品](/wiki/geyser/custom-items)
+或[自定义方块](/wiki/geyser/custom-blocks)。
 
-- **Can I allow players to choose resource packs themselves?** <br />
-On most Bedrock platforms (except consoles), players are able to download and install resource packs on the client. 
-There is also a Geyser extension, [PickPack](https://github.com/onebeastchris/PickPack) that uses the Geyser API to allow all Bedrock players to choose from a set of resource packs.
+- **Geyser 会转换 Java 版本的资源包吗？** <br />
+目前不会。现在，您需要手动创建 Bedrock 版本的等效资源包。
 
-- **On proxy setups: Are per-backend-server resource packs possible?** <br />
-This unfortunately is not possible natively, as Bedrock edition only allows removing and adding packs when connecting initially to the server.
-However, with the usage of the transfer packet, it is possible to instruct the Bedrock client to re-connect to the server, and to apply changes then.
-For per-server-packs, you can use the unofficial [GeyserPackSync](https://github.com/onebeastchris/GeyserPackSync) plugin.
+- **我可以允许玩家自己选择资源包吗？** <br />
+在大多数 Bedrock 平台上（主机除外），玩家能够在客户端下载和安装资源包。
+还有一个 Geyser 扩展 [PickPack](https://github.com/onebeastchris/PickPack)，它使用 Geyser API 允许所有 Bedrock 玩家从一组资源包中进行选择。
 
-- **Does Geyser have an API to send resource packs?** <br />
-Yes! See the [Geyser API docs](/wiki/geyser/api/) for more info on that. There is a `SessionLoadResourcePacksEvent` to determine which 
-packs are sent to each connecting player, or the more general `GeyserDefineResourcePacksEvent` that defines the packs all users receive.
+- **在代理设置上：是否可以按后端服务器设置资源包？** <br />
+遗憾的是，这无法在原生状态下实现，因为 Bedrock 版本只允许在最初连接到服务器时移除和添加资源包。
+但是，通过使用 transfer 数据包，可以指示 Bedrock 客户端重新连接到服务器，然后在此时应用更改。
+对于每个服务器的包，您可以使用非官方的 [GeyserPackSync](https://github.com/onebeastchris/GeyserPackSync) 插件。
 
-- **Can I use subpacks or specify the load order of resource packs**? <br />
-You can! However, this feature requires you to use the Geyser API. 
+- **Geyser 有 API 可以发送资源包吗？** <br />
+是的！有关更多信息，请参阅 [Geyser API 文档](/wiki/geyser/api/)。有一个 `SessionLoadResourcePacksEvent` 可以确定哪些
+资源包被发送到每个连接的玩家，或者更通用的 `GeyserDefineResourcePacksEvent` 来定义所有用户接收的资源包。
 
+- **我可以使用子包或指定资源包的加载顺序吗**？
+可以！但是，此功能需要您使用 Geyser API。

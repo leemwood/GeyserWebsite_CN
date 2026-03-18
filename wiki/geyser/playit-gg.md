@@ -1,43 +1,43 @@
 ---
-title: playit.gg Setup
-description: How to set up playit.gg to use Geyser without port forwarding.
+title: playit.gg 设置
+description: 如何设置 playit.gg 以使用 Geyser 而无需端口转发。
 ---
 
-## Prerequisites {#prerequisites}
+## 前置要求 {#前置要求}
 
 :::info
-You must be able to connect to your Geyser instance locally!
+您必须能够本地连接到您的 Geyser 实例！
 :::
 
 :::warning
-The playit.gg Minecraft server plugin does not support UDP tunnels. You will need to use the program agent instead!
+playit.gg Minecraft 服务器插件不支持 UDP 隧道。您需要使用程序代理！
 :::
 
-- If you already have playit.gg running & set up (for e.g. Minecraft Java edition), skip steps 1 and 2 and proceed with step 3.
+- 如果您已经运行并设置了 playit.gg（例如用于 Minecraft Java 版本），请跳过步骤 1 和 2，继续步骤 3。
 
-## Setup {#setup}
-1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it. It will open the login site in the browser - create an account & sign in. Or, use a guest account.
-2. Once logged in, make sure to connect the program + site, until step 4 is reached. This should happen automatically, if it does not, follow the instructions on the website and the playit.gg program console.
+## 设置 {#设置}
+1. 前往 [playit.gg 网站](https://playit.gg/) - 下载程序并运行它。它会在浏览器中打开登录站点 - 创建一个账户并登录。或者，使用访客账户。
+2. 登录后，确保连接程序和站点，直到达到步骤 4。如果不是，请按照网站上的说明和 playit.gg 程序控制台的说明进行操作。
    ![img](/img/wiki/playit-gg/running.png)
-3. Click "Create Tunnel" if you see the screen above, or, select the "Tunnels" tab when logged in to your account. There, select "Minecraft Bedrock", leave "Enable Tunnel" ticked, and click "Add tunnel".
+3. 如果您看到上面的屏幕，请点击"Create Tunnel"，或者在登录账户后选择"Tunnels"标签。在那里，选择"Minecraft Bedrock"，保留"Enable Tunnel"勾选，然后点击"Add tunnel"。
    ![img](/img/wiki/playit-gg/add_tunnel.png)
-4. Once "Add tunnel" is clicked, it should create a new tunnel, and you are set! Scroll down until you see this:
+4. 点击"Add tunnel"后，它应该会创建一个新隧道，您就完成了！向下滚动直到看到以下内容：
    ![img](/img/wiki/playit-gg/added_tunnel.png)
-   In Geyser config, set the `advanced.bedrock.broadcast-port` to the playit.gg port from the "Allocation" tab. It is necessary for the motd to appear.
-   
-   **Please do not change your Geyser port in `config.yml`** unless you have a reason to (e.g. hosting another Geyser server on the same machine), in which case skip to the paragraph below. The bedrock (Geyser) port in `config.yml` and the playit.gg ports are entirely seperate, playit.gg will forward its port to the default Geyser port and should already work. Changing it can cause errors. If you have changed your config port, change the bedrock port back to the default of 19132 and ensure that `clone-remote-port` is `false`.
-   
-   If you have Geyser running on a port that is not 19132, update the "Local Port" with your Geyser port on the page shown above. The "Local Address" does not need to be changed unless you are not running playit.gg and Geyser on the same device.
-5. Connect to your server - use the IP and Port from the "Allocation" tab. In our example - "180.ip.ply.gg" as the IP, and "17019" as the port. Alternatively, use the Domain it gives you instead of the IP.
-6. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
-   (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.) 
+   在 Geyser 配置中，将 `advanced.bedrock.broadcast-port` 设置为 playit.gg"Allocation"标签中的端口。这对于 motd 显示是必要的。
 
-## Troubleshooting {#troubleshooting}
+   **请不要更改 `config.yml` 中的 Geyser 端口**，除非您有理由这样做（例如在同一台机器上托管另一个 Geyser 服务器），在这种情况下，请跳到下面的段落。`config.yml` 中的 bedrock (Geyser) 端口和 playit.gg 端口是完全分开的，playit.gg 会将其端口转发到默认的 Geyser 端口，应该已经可以工作了。更改它可能会导致错误。如果您更改了配置端口，请将 bedrock 端口改回默认的 19132，并确保 `clone-remote-port` 是 `false`。
 
-### I can't connect to my server! {#i-cant-connect-to-my-server}
-* *Are there errors in your minecraft server console?*
-* *Unless you manually changed the "Local Port" on the playit.gg website, in Geyser config, ensure that the bedrock port is the default of `19132` and that `clone-remote-port` is `false`.*
-* *If you changed the `bedrock-port` or set `clone-remote-port` to `true` and have a reason for doing so (e.g. hosting another Geyser server on the same machine), you'll have to tell playit.gg to use that port instead! See the last paragraph in step 4.*
-* *Check that you're joining with playit.gg's IP and port from the "Allocation" tab.*
-* *Make sure that you have the program agent open while trying to join.*
-* *See [here](/wiki/geyser/fixing-unable-to-connect-to-world/) for general troubleshooting steps.*
+   如果您的 Geyser 运行在不是 19132 的端口上，请使用上面显示页面中的"Local Port"更新您的 Geyser 端口。"Local Address"不需要更改，除非您不是在同一台设备上运行 playit.gg 和 Geyser。
+5. 连接到您的服务器 - 使用"Allocation"标签中的 IP 和端口。在我们的示例中 - "180.ip.ply.gg"作为 IP，"17019"作为端口。或者，使用它给您的域名代替 IP。
+6. 如果您成功加入，那么您就完成了！请确保让 playit.gg 程序保持运行，因为关闭它会关闭隧道。您可能还需要限制单个连接 - 使用"Per Connection Rate Limit"选项来执行此操作。
+   （如果您无法加入，请查看页面的[故障排除](#故障排除)部分。）
+
+## 故障排除 {#故障排除}
+
+### 我无法连接到我的服务器！ {#我无法连接到我的服务器}
+* *您的 minecraft 服务器控制台中有错误吗？*
+* *除非您手动更改了 playit.gg 网站上的"Local Port"，否则在 Geyser 配置中，确保 bedrock 端口是默认的 `19132`，并且 `clone-remote-port` 是 `false`。*
+* *如果您更改了 `bedrock-port` 或将 `clone-remote-port` 设置为 `true`，并且您有理由这样做（例如在同一台机器上托管另一个 Geyser 服务器），您需要告诉 playit.gg 使用该端口！请参阅步骤 4 中的最后一段。*
+* *检查您是否使用 playit.gg"Allocation"标签中的 IP 和端口加入。*
+* *确保在尝试加入时打开程序代理。*
+* *请参阅[此处](/wiki/geyser/fixing-unable-to-connect-to-world/)获取常规故障排除步骤。*

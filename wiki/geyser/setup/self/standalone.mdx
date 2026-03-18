@@ -1,101 +1,100 @@
 ---
-title: Geyser Standalone Setup
-description: Learn how to set up Geyser Standalone, a standalone Java program that allows you to connect Bedrock players to your Java Edition server.
+title: Geyser 独立版安装
+description: 了解如何设置 Geyser 独立版，这是一个独立的 Java 程序，可让 Bedrock 玩家连接到你的 Java Edition 服务器。
 hide_title: true
 ---
 
 :::info
-You need to have Java 17 or higher installed to run Geyser. To run Geyser Standalone on Android, see the bottom of this page.
+你需要安装 Java 17 或更高版本才能运行 Geyser。要在 Android 上运行 Geyser 独立版，请参阅本页面底部。
 :::
 
 :::caution
-Geyser-Standalone is NOT a plugin or mod! It is a standalone Java program that you would run separately to your Java Edition server.
+Geyser-Standalone 不是插件或模组！它是一个独立的 Java 程序，需要在 Java Edition 服务器之外单独运行。
 :::
 
-#### General Setup & Configuration \{#general-setup--configuration}
+#### 一般设置与配置 \{#general-setup--configuration}
 
-1. Download Geyser Standalone from [here](/download).
-2. Create a new folder for Geyser, and drop the jar in there.
-3. Start Geyser Standalone:
-   - **GUI** (Recommended):   
-   Double-click the jar file and all the necessary files for Geyser will be created.
-   - Or use the **console setup**:   
-   Create a new bat or startup script, similar to the one you'd use for a Spigot/Paper server, and take a look at [this](/wiki/geyser/creating-a-startup-script/) page for what to put into it.   
-   Run the startup script/bat, and all the necessary files for Geyser will be created.
+1. 从 [这里](/download) 下载 Geyser 独立版。
+2. 为 Geyser 创建一个新文件夹，并将 jar 文件放入其中。
+3. 启动 Geyser 独立版：
+   - **GUI**（推荐）：   
+   双击 jar 文件，Geyser 所需的所有文件将会被创建。
+   - 或使用 **控制台设置**：   
+   创建一个新的 bat 或启动脚本，类似于你用于 Spigot/Paper 服务器的脚本，并查看 [此页面](/wiki/geyser/creating-a-startup-script/) 了解需要在其中放置什么内容。   
+   运行启动脚本/bat，Geyser 所需的所有文件将会被创建。
 
-4. Open your Geyser config (`config.yml`), and find the following:
+4. 打开你的 Geyser 配置文件（`config.yml`），找到以下内容：
 
    ```yaml
    bedrock:
-     # The IP address that Geyser will bind on to listen for incoming Bedrock connections.
-     # Generally, you should only change this if you want to limit what IPs can connect to your server.
+     # Geyser 将绑定以监听传入 Bedrock 连接的 IP 地址。
+     # 通常，你只有在想限制哪些 IP 可以连接到你的服务器时才应该更改此设置。
      address: 0.0.0.0
 
-     # The port that will Geyser will listen on for incoming Bedrock connections.
-     # Since Minecraft: Bedrock Edition uses UDP, this port must allow UDP traffic.
+     # Geyser 将监听传入 Bedrock 连接的端口。
+     # 由于 Minecraft: Bedrock Edition 使用 UDP，此端口必须允许 UDP 流量。
      port: 19132
 
    ```
-   The `port` is the port Bedrock players will enter to connect to the server.   
-   Uncommenting and changing `address` here is only needed if you need to limit connections to a specific IP address.
+   `port` 是 Bedrock 玩家连接服务器时需要输入的端口。   
+   取消注释并更改此处的 `address` 仅在你需要将连接限制到特定 IP 地址时才需要。
      
 
-   To configure which Java Edition server Geyser Standalone will send players to, find the remote section:
+   要配置 Geyser 独立版将玩家发送到哪个 Java Edition 服务器，找到 remote 部分：
    ```yaml
    java:
-     # The IP address of the Java Edition server.
+     # Java Edition 服务器的 IP 地址。
      address: 127.0.0.1
 
-     # The port of the Java Edition server.
+     # Java Edition 服务器的端口。
      port: 25565
 
-     # What type of authentication Bedrock players will be checked against when logging into the Java server.
-     # Can be "floodgate" (see https://wiki.geysermc.org/floodgate/), "online", or "offline".
+     # Bedrock 玩家在登录 Java 服务器时将针对哪种类型的身份验证进行检查。
+     # 可以是 "floodgate"（参见 https://wiki.geysermc.org/floodgate/）、"online" 或 "offline"。
      auth-type: online
    ```
-   Here, change `address` to the Java server's address, or leave it as-is if the server is on the same machine as Geyser-Standalone.
-Then, change `port` to the Java server's port. If you have set up Floodgate on the remote Java server, you can set auth-type to "floodgate" - otherwise, 
-set it to either `online` for an online mode server, or `offline` for an offline mode server. To install and set up Floodgate with a Standalone server, see [here](/wiki/floodgate/setup).   
+   在此处，将 `address` 更改为 Java 服务器的地址，或者如果服务器与 Geyser-Standalone 在同一台机器上则保持原样。
+   然后，将 `port` 更改为 Java 服务器的端口。如果你在远程 Java 服务器上设置了 Floodgate，可以将 auth-type 设置为 "floodgate" - 否则，
+   对于在线模式服务器设置为 `online`，或对于离线模式服务器设置为 `offline`。要在独立服务器上安装和设置 Floodgate，请参阅 [这里](/wiki/floodgate/setup)。   
    
-5. Connecting to your server
+5. 连接到你的服务器
         
-   **Connecting locally in the same network**   
-   On the same device as the server, you can connect using `localhost`, or `127.0.0.1` as the address.
-   Do note: When hosting and playing on the same Windows device, you will need the [loopback fix](/wiki/geyser/fixing-unable-to-connect-to-world#using-geyser-on-the-same-computer).
-   Other devices in the same local network can use your local IPv4 to connect - it starts with `10.` or `192.168.`.
-   Alternatively, open Minecraft: Bedrock edition, and join the LAN-Server in the **Friends** tab.
+   **在同一网络中本地连接**   
+   在与服务器相同的设备上，你可以使用 `localhost` 或 `127.0.0.1` 作为地址进行连接。
+   请注意：在同一台 Windows 设备上托管和游玩时，你需要 [环回修复](/wiki/geyser/fixing-unable-to-connect-to-world#using-geyser-on-the-same-computer)。
+   同一本地网络中的其他设备可以使用你的本地 IPv4 进行连接 - 它以 `10.` 或 `192.168.` 开头。
+   或者，打开 Minecraft: Bedrock Edition，然后在 **好友** 选项卡中加入 LAN 服务器。
         
-   **Connecting from a different network**  
-   You will need to expose the port Geyser runs on to the Internet if you want players from outside your network to join.
-   To achieve that, you have two options:   
+   **从不同网络连接**  
+   如果你想让网络外的玩家加入，你需要将 Geyser 运行的端口暴露到互联网。
+   要实现这一点，你有两个选项：   
 
-    - Port forwarding: Open the Geyser port (e.g. 19132) on the UDP protocol in your router/modem, and in the Windows/Linux firewall.
-      After doing this, players can connect with your public IPv4 + port to your server.
-      See [here](/wiki/geyser/port-forwarding/) for a helpful guide.   
+    - 端口转发：在路由器/调制解调器以及 Windows/Linux 防火墙中打开 Geyser 端口（例如 19132）的 UDP 协议。
+      完成此操作后，玩家可以使用你的公共 IPv4 + 端口连接到你的服务器。
+      请参阅 [这里](/wiki/geyser/port-forwarding/) 获取有用的指南。   
 
-    - playit.gg: Instead of opening a port (which might not be an option/if you do not want to expose your home ip), you can use
-      the playit.gg service to create a tunnel for you to route the traffic through. See our [playit.gg guide](/wiki/geyser/playit-gg).
-      Ngrok will not work since it is TCP-only.   
+    - playit.gg：与其打开端口（这可能不是一个选项/或者你不想暴露你的家庭 IP），你可以使用
+      playit.gg 服务为你创建一个隧道来路由流量。请参阅我们的 [playit.gg 指南](/wiki/geyser/playit-gg)。
+      Ngrok 无法工作，因为它仅支持 TCP。   
 
-6. Verify whether connections from other networks are possible by running `geyser connectiontest <ip> <port>` in the console.
+6. 通过在控制台中运行 `geyser connectiontest <ip> <port>` 来验证是否可以来自其他网络的连接。
 
-#### Running Geyser-Standalone on Android \{#running-geyser-standalone-on-android}
+#### 在 Android 上运行 Geyser-Standalone \{#running-geyser-standalone-on-android}
 
 :::caution
-Applications such as Termux on Android are capable of running Geyser, but this largely depends on how powerful your Android device is. Please do so at your own risk.
+Termux 等 Android 应用程序能够运行 Geyser，但这很大程度上取决于你的 Android 设备的性能。请自行承担风险。
 :::
 
 ##### Termux (Android) \{#termux-android}
-1. Download and install [Termux](https://termux.com/)
-2. Run `pkg install openjdk-17`
-3. Run `wget https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/standalone`
-4. Run `java -jar Geyser-Standalone.jar`
+1. 下载并安装 [Termux](https://termux.com/)
+2. 运行 `pkg install openjdk-17`
+3. 运行 `wget https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/standalone`
+4. 运行 `java -jar Geyser-Standalone.jar`
 
-OR
+或
 
-We have an automated setup script for clean Termux installs, which might not work for all users. If the manual guide above does not work, try this.
-Run this to start the download/install:
+我们有一个用于干净 Termux 安装的自动化设置脚本，可能不适用于所有用户。如果上面的手动指南不起作用，请尝试这个。
+运行此命令开始下载/安装：
 ```
 curl https://gist.githubusercontent.com/rtm516/e3e07d6595ee41e05a38b03c0f4d7a80/raw/install.sh | bash
 ```
-

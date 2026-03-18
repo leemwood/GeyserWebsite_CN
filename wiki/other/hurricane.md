@@ -1,25 +1,25 @@
 ---
 title: Hurricane
-description: Hurricane is a Paper / Spigot plugin and Fabric / NeoForge mod that fixes some bugs that otherwise cannot be fixed without server-side modification.
+description: Hurricane 是一个 Paper/Spigot 插件和 Fabric/NeoForge 模组，用于修复一些否则无法在不修改服务器的情况下修复的错误。
 ---
 
 # Hurricane
 
-Hurricane is a Paper/Spigot plugin, and Fabric mod (unofficial port), that fixes some bugs that otherwise cannot be fixed without server modification. 
+Hurricane 是一个 Paper/Spigot 插件和 Fabric 模组（非官方移植），用于修复一些否则无法在不修改服务器的情况下修复的错误。
 
-## Fixes {#fixes}
-Issues with each workaround are listed in the Hurricane config. **Please take your time to read them as the workarounds in this plugin can be used for exploitative purposes.**
+## 修复 {#fixes}
+每个变通方法的 issues 列在 Hurricane 配置中。**请花时间阅读它们，因为此插件中的变通方法可用于利用目的。**
 
-- Bamboo and dripstone collision (by setting them to no server-side collision)
+- 竹子和滴水石碰撞（通过将它们设置为无服务器端碰撞）
 
-Supported Versions:
-- Spigot/Paper: 1.14 - 1.21.8
-- Fabric: 1.21 - 1.21.4
+支持的版本：
+- Spigot/Paper：1.14 - 1.21.8
+- Fabric：1.21 - 1.21.4
 
-## Download {#download}
-- Spigot/Paper: [GeyserMC downloads page](/download/?project=other-projects&hurricane=expanded)
-- Fabric/NeoForge: [Modrinth](https://modrinth.com/mod/hurricane/versions)
+## 下载 {#download}
+- Spigot/Paper：[GeyserMC 下载页面](/download/?project=other-projects&hurricane=expanded)
+- Fabric/NeoForge：[Modrinth](https://modrinth.com/mod/hurricane/versions)
 
-## Source {#source}
-- Main: [GeyserMC/Hurricane](https://github.com/GeyserMC/Hurricane)
-- Unofficial mod fork: [onebeastchris/Hurricane-Modded](https://github.com/onebeastchris/Hurricane-Modded)
+## 源代码 {#source}
+- 主版本：[GeyserMC/Hurricane](https://github.com/GeyserMC/Hurricane)
+- 非官方模组分叉：[onebeastchris/Hurricane-Modded](https://github.com/onebeastchris/Hurricane-Modded)

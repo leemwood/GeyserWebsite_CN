@@ -1,15 +1,15 @@
 ---
-title: Custom Skulls
-description: Geyser allows mapping of custom skulls to custom blocks for use in inventories and on entities.
+title: 自定义头颅
+description: Geyser 允许将自定义头颅映射到自定义方块，以用于物品栏和实体上。
 ---
 
-Unlike Java Edition, Bedrock does not have native support for custom skull items. As a result, any method to display custom skulls with Geyser is, to some extent, a workaround. Geyser has long supported in-world custom skulls via the spawning of player entities. This, however, does not allow for the use of custom skulls in inventories, nor does it allow them to be worn by entities. To resolve this, Geyser now allows for the pre-registration of custom skulls via a config file. Geyser will then use this config file to generate a custom resource pack on start that contains the geometry and textures for the pre-registered custom skulls. To the client, these skulls are blocks. Therefore, they can be held in player inventories. In additional, attachables are defined for each skull block so that it is displayed correctly when worn and held by entities.
+与 Java Edition 不同，Bedrock 没有对自定义头颅物品的原生支持。因此，任何使用 Geyser 显示自定义头颅的方法在某种程度上都是一种变通方法。长期以来，Geyser 通过生成玩家实体来支持世界内的自定义头颅。然而，这不允许在物品栏中使用自定义头颅，也不允许实体佩戴它们。为了解决这个问题，Geyser 现在允许通过配置文件预先注册自定义头颅。Geyser 将使用此配置文件在启动时生成一个包含自定义头颅几何形状和纹理的自定义资源包。对于客户端来说，这些头颅是方块。因此，它们可以保存在玩家物品栏中。此外，为每个头颅方块定义了 attachables，以便在实体佩戴和持有时正确显示。
 
-To setup custom skulls in geyser, you have to choose how you are going to register your blocks. The easiest is [using custom-skulls.yml](#custom-skullsyml), but you can also [use a Geyser extension](#geyser-extensions).
+要在 Geyser 中设置自定义头颅，你需要选择注册方块的方式。最简单的方式是[使用 custom-skulls.yml](#custom-skullsyml)，但你也可以[使用 Geyser 扩展](#geyser-extensions)。
 
-## Enabling custom skulls {#enabling-custom-skulls}
+## 启用自定义头颅 {#enabling-custom-skulls}
 
-To enable custom skulls, you must set `gameplay.enable-custom-content` to `true` in the `config.yml` file. This will enable the generation of the custom resource pack and the translation of custom skulls to custom blocks. You can then add custom skulls to the `custom-skulls.yml` file.
+要启用自定义头颅，你必须在 `config.yml` 文件中将 `gameplay.enable-custom-content` 设置为 `true`。这将启用自定义资源包的生成以及自定义头颅到自定义方块的转换。然后你可以将自定义头颅添加到 `custom-skulls.yml` 文件中。
 
 ```yaml
 # Whether to add any items and blocks which normally does not exist in Bedrock Edition.
@@ -22,7 +22,7 @@ enable-custom-content: true
 
 ## custom-skulls.yml {#custom-skullsyml}
 
-The configuration file `custom-skulls.yml` is present in Geyser's configuration folder and is laid out as follows:
+配置文件 `custom-skulls.yml` 位于 Geyser 的配置文件夹中，其布局如下：
 
 ```yml
 # --------------------------------
@@ -56,19 +56,19 @@ skin-hashes:
   - a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f
 ```
 
-To add a skull, you need to choose any of the four methods, and add a new entry. The following sections will explain each method:
+要添加头颅，你需要选择四种方法中的任意一种，并添加一个新条目。以下部分将解释每种方法：
 
-### Player usernames {#player-usernames}
+### 玩家用户名 {#player-usernames}
 
-Skulls can be registered in this section via player usernames. These will be updated when Geyser starts. As a result, they may change if the player's username or skin changes.
+头颅可以通过玩家用户名在此部分注册。这些将在 Geyser 启动时更新。因此，如果玩家的用户名或皮肤发生变化，它们可能会发生变化。
 
-### Player UUIDs {#player-uuids}
+### 玩家 UUID {#player-uuids}
 
-Skulls can be registered in this section via player UUIDs. These will be updated when Geyser starts. As a result, they may change if skin changes.
+头颅可以通过玩家 UUID 在此部分注册。这些将在 Geyser 启动时更新。因此，如果皮肤发生变化，它们可能会发生变化。
 
-### Player profiles {#player-profiles}
+### 玩家档案 {#player-profiles}
 
-Skulls can be registered in this section via the texture string found in the NBT of custom player heads. Unless the value is changed manually, these will not be updated when Geyser starts. As a result, they will not change if the player's username or skin changes. The data is simply base64 encoded JSON. For instance, the example given in the config decodes as follows:
+头颅可以通过在自定义玩家头颅的 NBT 中找到的纹理字符串在此部分注册。除非手动更改值，否则这些不会在 Geyser 启动时更新。因此，如果玩家的用户名或皮肤发生变化，它们不会发生变化。数据是简单的 base64 编码 JSON。例如，配置中给出的示例解码如下：
 
 ```json
 {
@@ -86,24 +86,24 @@ Skulls can be registered in this section via the texture string found in the NBT
 }
 ```
 
-If on a paper server, this data can be obtained for a skull by holding the item in hand, and running the command `/paper dumpitem`. This will output the NBT data of the item to chat and console. The texture string is found in the `SkullOwner` tag, under the `Properties` tag, under the `textures` tag, under the `Value` tag. For example:
+如果在 Paper 服务器上，可以通过手持物品并运行命令 `/paper dumpitem` 来获取头颅的数据。这将把物品的 NBT 数据输出到聊天和控制台。纹理字符串可以在 `SkullOwner` 标签下、`Properties` 标签下、`textures` 标签下、`Value` 标签下找到。例如：
 
 ```log
 [05:58:07 INFO]: .KastleFirefox issued server command: /paper dumpitem
 [05:58:07 INFO]: minecraft:player_head{display: {Name: '{"text":"Test"}'}, SkullOwner: {Properties: {textures: [{Value: "ewogICJ0aW1lc3RhbXAiIDogMTY1NzMyMjIzOTgzMywKICAicHJvZmlsZUlkIiA6ICJjZGRiZTUyMGQwNDM0YThiYTFjYzlmYzkyZmRlMmJjZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJkYXZjaG9vIiwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2E5MDc5MGM1N2UxODFlZDEzYWRlZDE0YzQ3ZWUyZjdjOGRlMzUzM2UwMTdiYTk1N2FmN2JkZjlkZjFiZGU5NGYiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ"}]}, Id: [I; -229048314, -553040501, -1407961158, 465313087]}}
 ```
 
-### Skin Hashes {#skin-hashes}
+### 皮肤哈希 {#skin-hashes}
 
-Skulls can be registered in this section via the hash of the skin on Minecraft's skin server. This is found at the end of the URL. For example, in the URL `http://textures.minecraft.net/texture/a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f` the hash is `a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f`.Unless the value is changed manually, these will not be updated when Geyser starts. As a result, they will not change if the player's username or skin changes.
+头颅可以通过 Minecraft 皮肤服务器上皮肤的哈希值在此部分注册。这可以在 URL 的末尾找到。例如，在 URL `http://textures.minecraft.net/texture/a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f` 中，哈希值是 `a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f`。除非手动更改值，否则这些不会在 Geyser 启动时更新。因此，如果玩家的用户名或皮肤发生变化，它们不会发生变化。
 
-This can be obtained by decoding the base64 data obtained from a player profile.
+这可以通过解码从玩家档案获得的 base64 数据来获取。
 
-## Geyser extensions {#geyser-extensions}
+## Geyser 扩展 {#geyser-extensions}
 
-In this example, we will register a custom skull from a player profile. We will use the player profile from the example above.
+在这个示例中，我们将从玩家档案注册一个自定义头颅。我们将使用上面示例中的玩家档案。
 
-First, create a class that implements Geyser's Extension class:
+首先，创建一个实现 Geyser Extension 类的类：
 
 ```java
 public class RegisterCustomSkull implements Extension {
@@ -111,7 +111,7 @@ public class RegisterCustomSkull implements Extension {
 }
 ```
 
-Next, create a method to register your blocks in the `GeyserDefineCustomSkullsEvent`:
+接下来，创建一个在 `GeyserDefineCustomSkullsEvent` 中注册方块的方法：
 
 ```java
 public class RegisterCustomSkull implements Extension {
@@ -122,7 +122,7 @@ public class RegisterCustomSkull implements Extension {
 }
 ```
 
-Finally, register your skull in the event. Use the enum SkullTextureType to specify that the value being passed is a player profile:
+最后，在事件中注册你的头颅。使用 SkullTextureType 枚举指定正在传递的值是玩家档案：
 
 ```java
 public class RegisterCustomSkull implements Extension {
@@ -134,6 +134,6 @@ public class RegisterCustomSkull implements Extension {
 }
 ```
 
-## Scraping custom skulls from a world {#scraping-custom-skulls-from-a-world}
+## 从世界中提取自定义头颅 {#scraping-custom-skulls-from-a-world}
 
-Custom skulls can be extracted from an existing world for easy implementation via mappings or API using the tool [HeadExtractor](https://github.com/davchoo/HeadExtractor) made by Amberichu. See the linked repository for usage instructions.
+可以使用工具 [HeadExtractor](https://github.com/davchoo/HeadExtractor)（由 Amberichu 制作）从现有世界中提取自定义头颅，以便通过映射或 API 轻松实现。请参阅链接的仓库以获取使用说明。

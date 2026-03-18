@@ -1,10 +1,10 @@
 ---
-title: Commands
-description: Commands and their associated permission nodes for Floodgate.
+title: 命令
+description: Floodgate 的命令及其相关的权限节点。
 ---
 
-| Command | Permission | Description |
+| 命令 | 权限 | 描述 |
 |:---:|:---:|:---:|
-| `fwhitelist` | `floodgate.command.fwhitelist` | Whitelist command for Floodgate players. See [here](/wiki/floodgate/features#whitelist-command) for details. |
-| `linkaccount` | `floodgate.command.linkaccount` | Link your account for local linking. |
-| `unlinkaccount` | `floodgate.command.unlinkaccount` | Unlink your account for local linking. |
+| `fwhitelist` | `floodgate.command.fwhitelist` | 用于 Floodgate 玩家的白名单命令。详细信息请参见[此处](/wiki/floodgate/features#whitelist-command)。 |
+| `linkaccount` | `floodgate.command.linkaccount` | 链接您的账户以进行本地链接。 |
+| `unlinkaccount` | `floodgate.command.unlinkaccount` | 取消链接您的账户以进行本地链接。 |

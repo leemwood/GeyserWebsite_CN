@@ -1,9 +1,9 @@
 ---
 title: FloodgatePlayer
-description: FloodgatePlayer is the main class for accessing bedrock player data.
+description: FloodgatePlayer 是用于访问 Bedrock 玩家数据的主要类。
 ---
 
-FloodgatePlayer is something that every player who's connect through Floodgate has.  
-It contains information about the Bedrock client which can be useful in various situations.
+FloodgatePlayer 是每个通过 Floodgate 连接的玩家都拥有的东西。
+它包含有关 Bedrock 客户端的信息，这在各种情况下都很有用。
 
-You can get a FloodgatePlayer by using the `FloodgateApi#getPlayer(uuid)` method (where uuid is the unique id of the connected player)
+您可以通过使用 `FloodgateApi#getPlayer(uuid)` 方法获取 FloodgatePlayer（其中 uuid 是已连接玩家的唯一 id）

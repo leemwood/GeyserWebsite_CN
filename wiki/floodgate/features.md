@@ -1,24 +1,25 @@
 ---
-title: Features
-description: Learn about the features of Floodgate 2.0, including the whitelist command and skin uploading.
+title: 功能
+description: 了解 Floodgate 2.0 的功能，包括白名单命令和皮肤上传。
 ---
 
-## Whitelist command {#whitelist-command}
+## 白名单命令 {#whitelist-command}
 
-Floodgate 2.0 has a whitelist command, `fwhitelist`, that should be used for adding or removing Floodgate players to whitelist.json. The username prefix doesn't need to be included.
+Floodgate 2.0 有一个白名单命令 `fwhitelist`，用于向 whitelist.json 添加或移除 Floodgate 玩家。不需要包含用户名前缀。
 `fwhitelist add Tim203`
 `fwhitelist remove Tim203`
 
-You can also specify a UUID: `fwhitelist add 00000000-0000-0000-0009-01f64f65c7c3`
+您也可以指定 UUID：`fwhitelist add 00000000-0000-0000-0009-01f64f65c7c3`
 
-The permission node is `floodgate.command.fwhitelist`.
+权限节点是 `floodgate.command.fwhitelist`。
 
-## What is skin uploading? {#what-is-skin-uploading}
-Skins of Bedrock player should be visible to Java players on servers with Floodgate 2.0 installed.  
-If they aren't, it's most likely that the skin uploading queue has grown too large and can take a while to upload your skin.
+## 什么是皮肤上传？ {#what-is-skin-uploading}
 
-Skin uploading is also a part of the [Global Api](/wiki/api/api.geysermc.org/global-api/). It is responsible for converting Bedrock skins to Java skins and uploading them to Mojang servers make them show up on Java Edition.
+安装了 Floodgate 2.0 的服务器上，Bedrock 玩家的皮肤应该对 Java 玩家可见。
+如果不可见，很可能是因为皮肤上传队列已经变得太大，需要一段时间才能上传您的皮肤。
 
-We're using MineSkin internally. MineSkin is running on accounts donated by the community. So if you want to support MineSkin and make the upload times faster, feel free to look at [this page](https://mineskin.org/account) for more info.
+皮肤上传也是 [Global Api](/wiki/api/api.geysermc.org/global-api/) 的一部分。它负责将 Bedrock 皮肤转换为 Java 皮肤并上传到 Mojang 服务器，使它们可以在 Java Edition 上显示。
 
-![Example skin upload](/img/wiki/skin_upload_example.png)
+我们在内部使用 MineSkin。MineSkin 运行的是由社区捐赠的账户。因此，如果您想支持 MineSkin 并加快上传速度，请随时查看[此页面](https://mineskin.org/account)了解更多信息。
+
+![皮肤上传示例](/img/wiki/skin_upload_example.png)

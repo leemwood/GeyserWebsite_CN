@@ -1,0 +1,164 @@
+{
+  "components.provider.instructions": {
+    "message": "Provider 操作指南"
+  },
+  "components.provider.select": {
+    "message": "选择一个 provider 以查看具体的安装说明"
+  },
+  "providers.templates.default": {
+    "message": "启用 `clone-remote-port`（或手动将 `bedrock port` 设置为 Java 端口），然后使用 Java IP 和端口连接。"
+  },
+  "providers.templates.ip_and_port": {
+    "message": "启用 `clone-remote-port`（或手动将 `bedrock port` 设置为 Java 端口），并将 `bedrock address` 从 `0.0.0.0` 更改为 Java 服务器的 IP。使用 Java IP 和端口连接。"
+  },
+  "providers.templates.forwarding_option": {
+    "message": "提供有效的端口转发选项。"
+  },
+  "providers.templates.java_ip": {
+    "message": "将 `bedrock address` 从 `0.0.0.0` 更改为 Java 服务器的 IP。"
+  },
+  "pages.main.title": {
+    "message": "革新你的 Minecraft 服务器"
+  },
+  "pages.main.subtitle": {
+    "message": "让 Minecraft Bedrock 版的客户端能够加入你的 Minecraft Java 服务器"
+  },
+  "components.homepage_features.1.line1": {
+    "message": "Geyser 是一个允许 Minecraft Bedrock 版客户端加入 Minecraft Java 版服务器的程序，实现两个版本之间的真正跨平台游戏。"
+  },
+  "components.homepage_features.1.line2": {
+    "message": "该项目的最终目标是让 Minecraft Bedrock 版用户能够无缝加入 Minecraft Java 版服务器。"
+  },
+  "components.homepage_features.2": {
+    "message": "Geyser 充当翻译器，位于 Bedrock 客户端和 Java 服务器之间。它接收来自 Bedrock 客户端的数据并将其转换为 Java 服务器理解的格式，反之亦然。Geyser 适用于任何现代 Minecraft 版本，可以作为插件安装或作为独立程序运行。"
+  },
+  "components.homepage_features.3.line1": {
+    "message": "可以从 Windows 10/11、iOS、Android 甚至主机上的 Bedrock 客户端加入 Geyser。Geyser 适用于各种托管服务提供商，但也可以用作独立的代理来加入任何 Minecraft 服务器！"
+  },
+  "components.homepage_features.3.line2": {
+    "message": "如果你是服务器所有者，可以安装我们的 Floodgate 插件，允许通过 Xbox Live 认证的 Bedrock 用户无需 Java 版账户即可加入！"
+  },
+  "pages.download.title": {
+    "message": "下载"
+  },
+  "pages.download.subheading": {
+    "message": "下载我们各种项目的最新版本。"
+  },
+  "pages.download.description.geyser": {
+    "message": "一个桥接/代理，允许你使用 Minecraft Bedrock 版连接 Minecraft Java 版服务器。"
+  },
+  "pages.download.description.floodgate": {
+    "message": "混合模式插件，允许来自 Geyser 的连接加入在线模式服务器。"
+  },
+  "pages.download.description.geyserconnect": {
+    "message": "一个 Geyser 扩展，允许玩家连接到不同的 Java 或 Geyser 服务器。"
+  },
+  "pages.download.description.thirdpartycosmetics": {
+    "message": "一个扩展，添加了对 Java 玩家加载耳朵和其他第三方装饰品的支持。"
+  },
+  "pages.download.description.emoteoffhand": {
+    "message": "一个扩展，允许 Bedrock 玩家通过表情切换副手和主手物品。"
+  },
+  "pages.download.description.hurricane": {
+    "message": "一个插件，为 Geyser 玩家提供各种变通方法以修改服务器来实现他们的目标。"
+  },
+  "pages.download.description.rainbow": {
+    "message": "一个 Minecraft 模组，用于生成 Geyser 物品映射和 Bedrock 资源包，供 Geyser 的自定义物品 API（v2）使用。"
+  },
+  "pages.download.description.hydraulic": {
+    "message": "Geyser 的 companion 模组，允许 Bedrock 玩家加入模组化的 Minecraft Java 版服务器。"
+  },
+  "pages.download.description.thunder": {
+    "message": "一个 Java 应用程序，将简单的 Java 版资源包转换为 Bedrock 版。"
+  },
+  "pages.dumpviewer.title": {
+    "message": "Dump Viewer"
+  },
+  "pages.dumpviewer.subheading": {
+    "message": "查看你的 Geyser dump 的详细信息。"
+  },
+  "pages.dumpviewer.enterdumpid": {
+    "message": "在下方输入 Dump ID 或 URL 并点击加载。"
+  },
+  "pages.dumpviewer.button.load": {
+    "message": "加载"
+  },
+  "pages.dumpviewer.versions": {
+    "message": "版本"
+  },
+  "pages.dumpviewer.versions.geyerver": {
+    "message": "Geyser 版本"
+  },
+  "pages.dumpviewer.versions.javaver": {
+    "message": "Java 版本"
+  },
+  "pages.dumpviewer.versions.os": {
+    "message": "操作系统"
+  },
+  "pages.dumpviewer.geyserver": {
+    "message": "Geyser 版本"
+  },
+  "pages.dumpviewer.geyserver.build": {
+    "message": "构建"
+  },
+  "pages.dumpviewer.geyserver.commit": {
+    "message": "Commit Hash"
+  },
+  "pages.dumpviewer.geyserver.branch": {
+    "message": "分支"
+  },
+  "pages.dumpviewer.platform": {
+    "message": "平台信息"
+  },
+  "pages.dumpviewer.platform.id": {
+    "message": "平台标识符"
+  },
+  "pages.dumpviewer.platform.name": {
+    "message": "平台名称"
+  },
+  "pages.dumpviewer.platform.version": {
+    "message": "平台版本"
+  },
+  "pages.dumpviewer.platform.apiver": {
+    "message": "平台 API 版本"
+  },
+  "pages.dumpviewer.platform.onlinemode": {
+    "message": "在线模式"
+  },
+  "pages.dumpviewer.sysinfo": {
+    "message": "系统信息"
+  },
+  "pages.dumpviewer.cpucount": {
+    "message": "CPU 数量"
+  },
+  "pages.dumpviewer.cpuname": {
+    "message": "CPU 名称"
+  },
+  "pages.dumpviewer.ram": {
+    "message": "内存"
+  },
+  "pages.dumpviewer.javaname": {
+    "message": "Java 名称"
+  },
+  "pages.dumpviewer.javavendor": {
+    "message": "Java 供应商"
+  },
+  "pages.dumpviewer.dockercheck": {
+    "message": "使用 Docker？"
+  },
+  "pages.dumpviewer.plugins": {
+    "message": "插件"
+  },
+  "pages.dumpviewer.plugins.noplugins": {
+    "message": "没有插件可显示。"
+  },
+  "pages.dumpviewer.plugins.helptext": {
+    "message": "点击插件查看更多信息。"
+  },
+  "pages.dumpviewer.config": {
+    "message": "配置"
+  },
+  "pages.dumpviewer.viewsource": {
+    "message": "查看 dump 源"
+  }
+}

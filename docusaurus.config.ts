@@ -4,11 +4,11 @@ import type * as Preset from '@docusaurus/preset-classic';
 import { docOgRenderer, blogOgRenderer, pageOgRenderer } from './src/renderer/ImageRenderers';
 
 const config: Config = {
-    title: 'GeyserMC',
-    tagline: 'Revolutionize Your Minecraft Server',
+    title: 'Geyser 中文镜像站',
+    tagline: '革新你的 Minecraft 服务器',
     favicon: 'img/favicon.ico',
     
-    url: 'https://geysermc.org',
+    url: 'https://geysermc.cn',
     baseUrl: '/',
 
     organizationName: 'GeyserMC',
@@ -18,8 +18,8 @@ const config: Config = {
     onBrokenMarkdownLinks: 'warn',
 
     i18n: {
-        defaultLocale: 'en',
-        locales: ['en'],
+        defaultLocale: 'zh-CN',
+        locales: ['zh-CN'],
     },
 
     presets: [
@@ -87,7 +87,7 @@ const config: Config = {
     themeConfig: {
         image: 'img/site/geyser.png',
         navbar: {
-            title: 'GeyserMC',
+            title: 'Geyser 中文镜像站',
             logo: {
                 alt: 'GeyserMC logo',
                 src: 'img/apple-touch-icon.png',
@@ -118,19 +118,19 @@ const config: Config = {
                         {
                             type: 'doc',
                             docId: 'other/index',
-                            label: 'Other',
+                            label: '其他',
                         },
                     ]
                 },
                 {
                     to: 'blog',
-                    label: 'Blog',
+                    label: '博客',
                     position: 'left',
                     className: 'header-blog-link'
                 },
                 {
                     type: 'dropdown',
-                    label: 'Utilities',
+                    label: '实用工具',
                     className: 'header-utilities-link',
                     position: 'left',
                     items: [
@@ -143,7 +143,7 @@ const config: Config = {
                 },
                 {
                     to: 'download',
-                    label: 'Download',
+                    label: '下载',
                     position: 'left',
                     className: 'header-download-link'
                 },
@@ -170,7 +170,7 @@ const config: Config = {
                 href: '/',
                 width: 430,
             },
-            copyright: `Copyright © ${new Date().getFullYear()} GeyserMC. Built with Docusaurus.<br>This website is not an official Minecraft website and is not associated with Mojang Studios or Microsoft. All product and company names are trademarks or registered trademarks of their respective holders. Use of these names does not imply any affiliation or endorsement by them.`,
+            copyright: `Copyright © ${new Date().getFullYear()} GeyserMC. 使用 Docusaurus 构建。<br>本网站非官方 Minecraft 网站，与 Mojang Studios 或 Microsoft 无关。所有产品和公司名称均为其各自所有者的商标或注册商标。使用这些名称并不代表与其有任何关联或认可。`,
             links: [
                 {
                     title: 'Wiki',
@@ -188,13 +188,13 @@ const config: Config = {
                             to: 'wiki/api/api.geysermc.org/global-api',
                         },
                         {
-                            label: 'Other',
+                            label: '其他',
                             to: 'wiki/other/geyseroptionalpack',
                         },
                     ],
                 },
                 {
-                    title: 'Downloads',
+                    title: '下载',
                     items: [
                         {
                             label: 'Geyser',
@@ -205,13 +205,13 @@ const config: Config = {
                             to: 'download?project=floodgate',
                         },
                         {
-                            label: 'Other',
+                            label: '其他',
                             to: 'download?project=other-projects',
                         }
                     ],
                 },
                 {
-                    title: 'Community',
+                    title: '社区',
                     items: [
                         {
                             label: 'Crowdin',
@@ -236,18 +236,18 @@ const config: Config = {
                     ],
                 },
                 {
-                    title: 'More',
+                    title: '更多',
                     items: [
                         {
-                            label: 'Blog',
+                            label: '博客',
                             to: 'blog',
                         },
                         {
-                            label: 'Donate',
+                            label: '捐赠',
                             href: 'https://opencollective.com/geysermc',
                         },
                         {
-                            label: 'Global Linking',
+                            label: '全局链接',
                             to: 'https://link.geysermc.org/',
                         },
                     ],

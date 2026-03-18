@@ -1,77 +1,73 @@
 ---
-title: Commands and Permissions
-description: Commands and their associated permission nodes for Geyser.
+title: 命令和权限
+description: Geyser 的命令及其关联的权限节点。
 ---
 
-# Commands and Permissions
+# 命令和权限
 
-Geyser features many built-in commands that can be used by players or server owners.
+Geyser 拥有许多内置命令，可供玩家或服务器管理员使用。
 
 :::info
 
-When using BungeeCord and Velocity, you will need to use a permission plugin such as <a href="https://luckperms.net/">LuckPerms</a>
-on the proxy server to assign permissions to players. Assigning permissions on the backend servers will not work.
+当使用 BungeeCord 和 Velocity 时，你需要在代理服务器上安装权限插件（如 <a href="https://luckperms.net/">LuckPerms</a>）来分配权限给玩家。在后端服务器上分配权限将不起作用。
 
 :::
 
-## Geyser commands & their permissions {#geyser-commands--their-permissions}
+## Geyser 命令及其权限 {#geyser-commands--their-permissions}
 
-|                Command                |          Permission           |                                             Description                                              |
+|                命令                |          权限           |                                             描述                                              |
 |:-------------------------------------:|:-----------------------------:|:----------------------------------------------------------------------------------------------------:|
-|  `geyser` <br/> Geyser root command   |       `geyser.command`        |                       The permission required to see/run any Geyser commands.                        |
-|    `geyser help` <br/> `geyser ?`     |     `geyser.command.help`     |                               Shows help for all registered commands.                                |
-|         `geyser advancements`         | `geyser.command.advancements` |                                   Open the Java advancements menu.                                   |
-|             `geyser dump`             |     `geyser.command.dump`     |                           Dumps Geyser debug information for bug reports.                            |
-|             `geyser list`             |     `geyser.command.list`     |                              List all players connected through Geyser.                              |
-|           `geyser offhand`            |   `geyser.command.offhand`    |                                    Puts an item in your offhand.                                     |
-|            `geyser reload`            |    `geyser.command.reload`    |                   Reloads the Geyser configurations. Kicks all players when used!                    |
-|           `geyser settings`           |   `geyser.command.settings`   |                  Opens a settings menu allowing you to modify aspects of the world.                  |
-| `geyser shutdown` <br/> `geyser stop` |   `geyser.command.shutdown`   |                   Shuts down Geyser.<br/>*This command only works on Standalone.*                    |
-|          `geyser statistics`          |  `geyser.command.statistics`  |                                    Open the Java statistics menu.                                    |
-|           `geyser version`            |   `geyser.command.version`    |                       Shows the current Geyser version and checks for updates.                       |
-|           `geyser tooltips`           |   `geyser.command.tooltips`   |                          Toggle showing Advanced Tooltips (F3 + H on Java)                           |
-|          `geyser extensions`          |  `geyser.command.extensions`  | Lists all currently loaded extensions. This command is only registered if any extensions are loaded. |
-|             `geyser ping`             |     `geyser.command.ping`     |                      Shows the ping between the player and the Geyser instance.                      |
-|           `geyser options`            |   `geyser.command.options`    |               Opens the "pause screen additions" dialogue, if sent by the Java server                |
-|         `geyser quickactions`         | `geyser.command.quickactions` |                   Opens the "quick actions" dialogue, if sent by the Java server.                    |
+|  `geyser` <br/> Geyser 根命令   |       `geyser.command`        |                       查看/运行任何 Geyser 命令所需的权限。                        |
+|    `geyser help` <br/> `geyser ?`     |     `geyser.command.help`     |                               显示所有已注册命令的帮助信息。                                |
+|         `geyser advancements`         | `geyser.command.advancements` |                                   打开 Java 版进度菜单。                                   |
+|             `geyser dump`             |     `geyser.command.dump`     |                           转储 Geyser 调试信息用于错误报告。                            |
+|             `geyser list`             |     `geyser.command.list`     |                              列出所有通过 Geyser 连接的玩家。                              |
+|           `geyser offhand`            |   `geyser.command.offhand`    |                                    将物品放入你的副手。                                     |
+|            `geyser reload`            |    `geyser.command.reload`     |                   重新加载 Geyser 配置。使用时会踢出所有玩家！                    |
+|           `geyser settings`           |   `geyser.command.settings`   |                  打开设置菜单，允许你修改世界的各个方面。                  |
+| `geyser shutdown` <br/> `geyser stop` |   `geyser.command.shutdown`   |                   关闭 Geyser。<br/>*此命令仅在独立版中有效。*                    |
+|          `geyser statistics`          |  `geyser.command.statistics`  |                                    打开 Java 版统计菜单。                                    |
+|           `geyser version`            |   `geyser.command.version`     |                       显示当前 Geyser 版本并检查更新。                       |
+|           `geyser tooltips`           |   `geyser.command.tooltips`   |                          切换显示高级工具提示（Java 版上的 F3 + H）                           |
+|          `geyser extensions`          |  `geyser.command.extensions`  | 列出所有当前已加载的扩展。仅在有扩展加载时才会注册此命令。 |
+|             `geyser ping`             |     `geyser.command.ping`     |                      显示玩家与 Geyser 实例之间的延迟。                      |
+|           `geyser options`            |   `geyser.command.options`    |               打开"暂停屏幕附加"对话框（如果 Java 服务器发送了此功能）                |
+|         `geyser quickactions`         | `geyser.command.quickactions` |                   打开"快速操作"对话框（如果 Java 服务器发送了此功能）。                    |
 
-## Permissions for Geyser extensions {#extension-permissions}
+## Geyser 扩展的权限 {#extension-permissions}
 
-For the following, `<id>` refers to the extensions' id.
+对于以下内容，`<id>` 指的是扩展的 ID。
 
-| Command                    | Permission                    | Description                                               |
+| 命令                    | 权限                    | 描述                                               |
 |:---------------------------|:------------------------------|:----------------------------------------------------------|
-| `<id> help` <br/> `<id> ?` | `geyser.command.exthelp.<id>` | Shows help for all commands registered by this extension. |
+| `<id> help` <br/> `<id> ?` | `geyser.command.exthelp.<id>` | 显示此扩展注册的所有命令的帮助信息。 |
 
-## Other Permissions {#other-permissions}
+## 其他权限 {#other-permissions}
 
-Besides commands, there are other permissions that are used to guard specific Geyser features.
+除了命令之外，还有其他权限用于保护特定的 Geyser 功能。
 
-| Permission                  | Description                                                                                                                         |
+| 权限                  | 描述                                                                                                                         |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| `geyser.settings.server`    | Allow players to use the [game settings menu](/img/wiki/game_menu.png). (Also requires player to have op.)                          |
-| `geyser.settings.gamerules` | Defines whether a user can alter gamerules in the [game settings menu](/img/wiki/game_menu.png). (Also requires player to have op.) |
-| `geyser.update`             | Whether this player will receive Geyser update notifications upon joining.                                                          |
+| `geyser.settings.server`    | 允许玩家使用 [游戏设置菜单](/img/wiki/game_menu.png)。（还需要玩家拥有 op 权限。）                          |
+| `geyser.settings.gamerules` | 定义用户是否可以在 [游戏设置菜单](/img/wiki/game_menu.png) 中修改游戏规则。（还需要玩家拥有 op 权限。） |
+| `geyser.update`             | 该玩家加入时是否会收到 Geyser 更新通知。                                                          |
 
-## Permissions when using Geyser-Standalone/Geyser-ViaProxy {#standalone-viaproxy-permissions}
-Geyser-ViaProxy and Geyser-Standalone feature their own basic permission handler. To edit base permissions,
-open the `permissions.yml` file and add or remove permissions that Geyser players should receive when joining.
-See the file for more information.
+## 使用 Geyser-Standalone/Geyser-ViaProxy 时的权限 {#standalone-viaproxy-permissions}
+Geyser-ViaProxy 和 Geyser-Standalone 拥有自己的基础权限处理器。要编辑基础权限，
+请打开 `permissions.yml` 文件，并添加或删除 Geyser 玩家加入时应获得的权限。
+有关更多信息，请参阅该文件。
 
-You can further customize permission handling by creating a [Geyser extension](/wiki/geyser/extensions/) that makes use of Geysers API
-to deal with permission checking.
+你可以通过创建使用 Geyser API 处理权限检查的 [Geyser 扩展](/wiki/geyser/extensions/) 来进一步自定义权限处理。
 
-## Permissions when using Geyser on platforms without permission handlers {#permissions-platforms-no-permission-handlers}
-The following affects Geyser-BungeeCord, Geyser-Velocity, and Geyser-Fabric.
-These platforms unfortunately do not have built-in permission handlers. Because of that, you will need to grant permissions on those platforms
-manually using permission handlers, such as [LuckPerms](https://luckperms.net/). Geyser's permission are listed above. For extension permissions, consult their documentation.
+## 在没有权限处理器的平台上使用 Geyser 时的权限 {#permissions-platforms-no-permission-handlers}
+以下情况会影响 Geyser-BungeeCord、Geyser-Velocity 和 Geyser-Fabric。
+不幸的是，这些平台没有内置的权限处理器。因此，你需要使用权限处理器（如 [LuckPerms](https://luckperms.net/)）手动授予这些平台上的权限。Geyser 的权限如上所列。对于扩展权限，请参阅它们的文档。
 
-Alternatively, you can use [LuckLink](https://github.com/onebeastchris/LuckLink), a third-party Geyser extension, to automatically register permissions using [LuckPerms](https://luckperms.net/).
-- Install [LuckPerms](https://luckperms.net/) on the platform where you've installed Geyser (BungeeCord/Velocity/Fabric).
-- To allow Geyser to automatically register permission defaults, install the [LuckLink](https://github.com/onebeastchris/LuckLink) Geyser extension
-  by downloading the `LuckLink.jar` and adding it to Geyser's `extensions` folder.
-- Restart the server, and permissions should be automatically registered.
+或者，你可以使用 [LuckLink](https://github.com/onebeastchris/LuckLink)（一个第三方 Geyser 扩展）来使用 [LuckPerms](https://luckperms.net/) 自动注册权限。
+- 在安装 Geyser 的平台上安装 [LuckPerms](https://luckperms.net/)（BungeeCord/Velocity/Fabric）。
+- 要允许 Geyser 自动注册权限默认值，请下载 `LuckLink.jar` 并将其添加到 Geyser 的 `extensions` 文件夹中，从而安装 [LuckLink](https://github.com/onebeastchris/LuckLink) Geyser 扩展。
+- 重启服务器，权限将自动注册。
 
-## Floodgate commands and permissions {#floodgate-commands-and-permissions}
+## Floodgate 命令和权限 {#floodgate-commands-and-permissions}
 
-For Floodgate commands, see [here](/wiki/floodgate/commands/).
+关于 Floodgate 命令，请参阅 [此处](/wiki/floodgate/commands/)。
